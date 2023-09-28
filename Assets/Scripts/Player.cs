@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Bullet bulletPrefab;
+    public Factory<Bullet> factory;
+    ObjectPool<Bullet> myPool;
+
     void Start()
     {
-        
+
+        factory = new Factory<Bullet>(bulletPrefab);
+        myPool = new ObjectPool<Bullet>(factory.GetObject, Bullet.TurnOff, Bullet.TurnOn, 100);
+
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            var x = myPool.Get();
+            x.Initialize(myPool, 10);
+            x.transform.position = transform.position;
+            x.transform.forward = transform.forward;
+        }
     }
 }
