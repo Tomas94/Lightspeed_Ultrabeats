@@ -21,6 +21,7 @@ public class ObjectPool<T>
         for (int i = 0; i < warmup; i++)
         {
             var x = _factory();
+            
             _turnOff(x);
             _stock.Add(x);
         }

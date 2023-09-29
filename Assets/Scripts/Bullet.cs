@@ -2,37 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IPooleableObject<Bullet>
 {
-    public float count;
-    public float speed;
+    float _count;
+    float _speed;
     ObjectPool<Bullet> _objectPool;
 
     public void Initialize(ObjectPool<Bullet> op, float speed)
     {
         _objectPool = op;
-        this.speed = speed;
+        _speed = speed;
     }
-
 
     void Update()
     {
-        transform.position += transform.forward * speed * Time.deltaTime;
-        count += Time.deltaTime;
+        transform.position += transform.forward * _speed * Time.deltaTime;
+        _count += Time.deltaTime;
 
-        if (count > 2)
+        if (_count > 2)
         {
             _objectPool.RefillStock(this);
         }
     }
 
-    public static void TurnOff(Bullet x)
+    public void TurnOff(Bullet x)
     {
         x.gameObject.SetActive(false);
-        x.count = 0;
+        x._count = 0;
     }
 
-    public static void TurnOn(Bullet x)
+    public void TurnOn(Bullet x)
     {
         x.gameObject.SetActive(true);
     }
