@@ -11,6 +11,8 @@ public class Player : Entity
             Debug.Log("crea bala");
             Disparar();
         }
+
+
     }
 
     public override void Disparar()
@@ -19,5 +21,11 @@ public class Player : Entity
         x.Initialize(OP_BulletManager._playerBulletPool, _bulletSpeed);
         x.transform.position = transform.position;
         x.transform.forward = transform.forward;
+    }
+
+    public override void Die()
+    {
+        Debug.Log("moriste");
+       // throw new System.NotImplementedException();
     }
 }

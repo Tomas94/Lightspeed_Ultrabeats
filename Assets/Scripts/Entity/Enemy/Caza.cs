@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Caza : Enemy
 {
-    void Update()
+    public override void Update()
     {
-        Die();
+        //Die();
+        base.Update();
         
         transform.position += transform.forward * _speed * Time.deltaTime;
 

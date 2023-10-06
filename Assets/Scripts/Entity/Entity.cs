@@ -9,6 +9,13 @@ public abstract class Entity : MonoBehaviour
     public float currentLife;
 
     public abstract void Disparar();
+    public abstract void Die();
+
+    private void Start()
+    {
+        currentLife = maxLife;
+    }
+
     public void TakeDamage()
     {
         currentLife--;

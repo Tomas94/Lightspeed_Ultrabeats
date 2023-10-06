@@ -39,13 +39,13 @@ public class Bullet : MonoBehaviour, IPooleableObject<Bullet>
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer != _targetLayer)
-        {
-            return;
-        }
-        else
+        Debug.Log("la bala no hizo nada");
+
+        if (_targetLayer == (_targetLayer | (1 << other.gameObject.layer)))
         {
             other.GetComponent<Entity>().TakeDamage();
+            Debug.Log("la bala impacto");
+            _objectPool.RefillStock(this);
         }
     }
 

@@ -16,12 +16,12 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
         _speed = speed;
     }
 
-    private void Start()
+    public virtual void Update()
     {
-        currentLife = maxLife;
+        Die();
     }
 
-    public void Die()
+    public override void Die()
     {
         if (currentLife <= 0 || outOfScreen)
         {
