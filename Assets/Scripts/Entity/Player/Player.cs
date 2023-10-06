@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Entity
 {
     void Update()
     {
+        Die();
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("crea bala");
             Disparar();
         }
-
-
     }
 
     public override void Disparar()
@@ -25,7 +24,19 @@ public class Player : Entity
 
     public override void Die()
     {
-        Debug.Log("moriste");
-       // throw new System.NotImplementedException();
+        if(currentLife<=0)
+        {
+            SceneChanger.ResetGame();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            Enemy enemy = other.GetComponent<Enemy>();
+            enemy.RefillStock(enemy);
+            TakeDamage();
+        }
     }
 }

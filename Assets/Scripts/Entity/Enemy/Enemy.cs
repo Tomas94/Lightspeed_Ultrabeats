@@ -29,6 +29,11 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
         }
     }
 
+    public void RefillStock(Enemy enemy)
+    {
+        _enemyPool?.RefillStock(enemy);
+    }
+
     public void TurnOff(Enemy x)
     {
         x.gameObject.SetActive(false);
