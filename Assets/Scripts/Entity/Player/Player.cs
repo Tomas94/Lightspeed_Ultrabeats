@@ -5,21 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class Player : Entity
 {
+    [SerializeField] float maxLife;
+
+    private void Start()
+    {
+        currentLife = maxLife;
+    }
+
     void Update()
     {
         Die();
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Disparar();
         }
-    }
-
-    public override void Disparar()
-    {
-        var x = OP_BulletManager._playerBulletPool.Get();
-        x.Initialize(OP_BulletManager._playerBulletPool, _bulletSpeed);
-        x.transform.position = transform.position;
-        x.transform.forward = transform.forward;
     }
 
     public override void Die()
@@ -30,13 +30,21 @@ public class Player : Entity
         }
     }
 
+    public override void Disparar()
+    {
+        var bala = OP_BulletManager._playerBulletPool.Get();
+        bala.Initialize(OP_BulletManager._playerBulletPool);
+        bala.transform.position = transform.position;
+        bala.transform.forward = transform.forward;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
             Enemy enemy = other.GetComponent<Enemy>();
             enemy.RefillStock(enemy);
-            TakeDamage();
+            //TakeDamage();
         }
     }
 }

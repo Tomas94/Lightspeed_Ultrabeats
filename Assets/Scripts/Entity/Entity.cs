@@ -4,21 +4,13 @@ using UnityEngine;
 
 public abstract class Entity : MonoBehaviour
 {
-    public float _bulletSpeed;
-    [SerializeField] protected float maxLife;
     public float currentLife;
 
     public abstract void Disparar();
     public abstract void Die();
 
-    private void Start()
+    public void TakeDamage(float damage)
     {
-        currentLife = maxLife;
+        currentLife -= damage;
     }
-
-    public void TakeDamage()
-    {
-        currentLife--;
-    }
-
 }

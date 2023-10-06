@@ -9,6 +9,10 @@ public class Kamikaze : Enemy
     public float distanceToStopChasing;
     bool _enemyPassed;
 
+    private void Awake()
+    {
+        SetLife(Fw_Pointer.EnemyKamikaze.maxLife);
+    }
 
     private void Start()
     {
@@ -33,7 +37,7 @@ public class Kamikaze : Enemy
 
         }
         else { _enemyPassed = true; }
-        transform.position += dir.normalized * _speed * Time.deltaTime;
+        transform.position += dir.normalized * Fw_Pointer.EnemyKamikaze.speed * Time.deltaTime;
     }
 
     private void OnDrawGizmos()
@@ -48,5 +52,6 @@ public class Kamikaze : Enemy
     private void OnDisable()
     {
         _enemyPassed = false;
+        currentLife = Fw_Pointer.EnemyKamikaze.maxLife;
     }
 }

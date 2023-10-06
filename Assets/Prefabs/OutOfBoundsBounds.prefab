@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4822707092496533948}
   - component: {fileID: 4822707092496533951}
   - component: {fileID: 4822707092496533950}
-  - component: {fileID: 4822707092496533949}
   m_Layer: 0
   m_Name: Top
   m_TagString: ResetTrigger
@@ -63,23 +62,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &4822707092496533949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4822707092496533923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c63126e7cccaad458ea593ac35bd495, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bulletSpeed: 0
-  maxLife: 0
-  currentLife: 0
-  _speed: 0
-  outOfScreen: 0
 --- !u!1 &4822707092707380657
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +73,6 @@ GameObject:
   - component: {fileID: 4822707092707380659}
   - component: {fileID: 4822707092707380658}
   - component: {fileID: 4822707092707380684}
-  - component: {fileID: 4822707092707380685}
   m_Layer: 0
   m_Name: Bottom
   m_TagString: ResetTrigger
@@ -143,23 +124,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &4822707092707380685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4822707092707380657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c63126e7cccaad458ea593ac35bd495, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bulletSpeed: 0
-  maxLife: 0
-  currentLife: 0
-  _speed: 0
-  outOfScreen: 0
 --- !u!1 &4822707093251631419
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +170,6 @@ GameObject:
   - component: {fileID: 4822707094265750563}
   - component: {fileID: 4822707094265750562}
   - component: {fileID: 4822707094265750561}
-  - component: {fileID: 4822707094265750560}
   m_Layer: 0
   m_Name: Right
   m_TagString: ResetTrigger
@@ -258,23 +221,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &4822707094265750560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4822707094265750567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c63126e7cccaad458ea593ac35bd495, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bulletSpeed: 0
-  maxLife: 0
-  currentLife: 0
-  _speed: 0
-  outOfScreen: 0
 --- !u!1 &4822707094349501604
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +232,6 @@ GameObject:
   - component: {fileID: 4822707094349501600}
   - component: {fileID: 4822707094349501607}
   - component: {fileID: 4822707094349501606}
-  - component: {fileID: 4822707094349501605}
   m_Layer: 0
   m_Name: Left
   m_TagString: ResetTrigger
@@ -338,20 +283,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &4822707094349501605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4822707094349501604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c63126e7cccaad458ea593ac35bd495, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bulletSpeed: 0
-  maxLife: 0
-  currentLife: 0
-  _speed: 0
-  outOfScreen: 0

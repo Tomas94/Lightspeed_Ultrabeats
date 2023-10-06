@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
         var x = pool.Get();
-        x.Initialize(pool, x._speed);
+        x.Initialize(pool);
         x.outOfScreen = false;
         x.transform.position = transform.position;
         x.transform.forward = Vector3.down;

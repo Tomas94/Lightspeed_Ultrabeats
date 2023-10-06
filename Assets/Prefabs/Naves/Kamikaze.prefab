@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1238862065299716720}
-  - component: {fileID: 4981766377601749055}
   - component: {fileID: 7988315272933434335}
   - component: {fileID: 7197376526891813337}
+  - component: {fileID: 4981766377601749055}
   m_Layer: 7
   m_Name: Kamikaze
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,23 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &4981766377601749055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1907981224515018954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76d3f81e5f9d2324288a48c1af770719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bulletSpeed: 0
-  maxLife: 5
-  currentLife: 0
-  _speed: 3
-  outOfScreen: 0
 --- !u!54 &7988315272933434335
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -82,6 +65,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 20, z: 3.65}
   m_Center: {x: 0, y: 1.9999995, z: 0}
+--- !u!114 &4981766377601749055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907981224515018954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d3f81e5f9d2324288a48c1af770719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLife: 0
+  outOfScreen: 0
+  player: {fileID: 0}
+  distanceToStopChasing: 0
 --- !u!1 &6947178796358248040
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +92,7 @@ GameObject:
   - component: {fileID: 8130469740990279424}
   - component: {fileID: 3078300992459054376}
   - component: {fileID: 3896774643774130057}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}

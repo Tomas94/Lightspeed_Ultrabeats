@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4230278944199305840}
   - component: {fileID: 108428180787110485}
   - component: {fileID: 3034150222911792927}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bombardero_Cuerpo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76919,9 +76919,9 @@ GameObject:
   - component: {fileID: 4245089331897765762}
   - component: {fileID: 2875669000711108705}
   - component: {fileID: 4953225565284886473}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bombardero_optimizado
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76984,7 +76984,7 @@ GameObject:
   - component: {fileID: 5637882145026174307}
   - component: {fileID: 8923956556952861414}
   - component: {fileID: 1195332523292758487}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81797,7 +81797,7 @@ GameObject:
   - component: {fileID: 4772012716502427065}
   - component: {fileID: 4403781629826897530}
   - component: {fileID: 4956679106172017636}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bombardero_Torreta
   m_TagString: Untagged
   m_Icon: {fileID: 0}

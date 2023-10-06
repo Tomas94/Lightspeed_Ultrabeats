@@ -66634,10 +66634,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6199369644093470875}
-  - component: {fileID: 920560028850962803}
-  - component: {fileID: 3587588331527480811}
   - component: {fileID: 3330718378526130766}
   - component: {fileID: 3330718378526130761}
+  - component: {fileID: 3587588331527480811}
+  - component: {fileID: 920560028850962803}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -66662,34 +66662,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &920560028850962803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6720291437263954465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df04676ddce1a948bfc6ac8e07b0998, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _screenBounds: {x: 0, y: 0}
---- !u!114 &3587588331527480811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6720291437263954465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ab59bedfb991d84eb3229d4f5acc219, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bulletSpeed: 5
-  maxLife: 5
-  currentLife: 0
 --- !u!54 &3330718378526130766
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -66719,3 +66691,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 20, z: 3.65}
   m_Center: {x: 0, y: 1.9999995, z: 0}
+--- !u!114 &3587588331527480811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6720291437263954465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab59bedfb991d84eb3229d4f5acc219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletSpeed: 5
+  maxLife: 5
+  currentLife: 0
+--- !u!114 &920560028850962803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6720291437263954465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df04676ddce1a948bfc6ac8e07b0998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  _screenBounds: {x: 0, y: 0}
+  _keyboardInputs: 0

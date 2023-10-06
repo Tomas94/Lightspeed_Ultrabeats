@@ -4,18 +4,30 @@ using UnityEngine;
 
 public class Caza : Enemy
 {
+
+    private void Awake()
+    {
+        SetLife(Fw_Pointer.EnemyCaza.maxLife);
+    }
+
     public override void Update()
     {
-        //Die();
         base.Update();
-        
-        transform.position += transform.forward * _speed * Time.deltaTime;
+        Move();
 
         if (Input.GetKeyDown(KeyCode.F))
         {
             Disparar();
         }
-
     }
 
+    public void Move()
+    {
+        transform.position += transform.forward * Fw_Pointer.EnemyCaza.speed * Time.deltaTime;
+    }
+
+    private void OnDisable()
+    {
+        currentLife = Fw_Pointer.EnemyCaza.maxLife;
+    }
 }

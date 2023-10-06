@@ -7,13 +7,12 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
 {
     ObjectPool<Enemy> _enemyPool;
 
-    public float _speed;
     [HideInInspector] public bool outOfScreen;
+    
 
-    public void Initialize(ObjectPool<Enemy> op, float speed)
+    public void Initialize(ObjectPool<Enemy> op)
     {
         _enemyPool = op;
-        _speed = speed;
     }
 
     public virtual void Update()
@@ -37,7 +36,6 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
     public void TurnOff(Enemy x)
     {
         x.gameObject.SetActive(false);
-        x.currentLife = maxLife;
     }
 
     public void TurnOn(Enemy x)
@@ -47,15 +45,25 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
 
     public override void Disparar()
     {
-        Debug.Log("se crea una bala");
         var x = OP_BulletManager._enemyBulletPool.Get();
-        x.Initialize(OP_BulletManager._enemyBulletPool, _bulletSpeed);
+        x.Initialize(OP_BulletManager._enemyBulletPool);
         x.transform.position = transform.position;
         x.transform.forward = transform.forward;
+    }
+
+    public void SetLife(float maxLife)
+    {
+        currentLife = maxLife;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("ResetTrigger")) outOfScreen = true;
+
+        if (other.CompareTag("Player"))
+        {
+            Player player = other.GetComponent<Player>();
+            player.TakeDamage(Fw_Pointer.AllEnemies.impactDamage);
+        }
     }
 }

@@ -5,9 +5,11 @@ using UnityEngine.EventSystems;
 
 public class MovementController : MonoBehaviour
 {
-    public  float speed;
+    public float speed;
     Vector2 _dragDirection;
-    [SerializeField] Vector2 _screenBounds;
+    Vector2 _screenBounds;
+
+    [Header("Cambio MovInput Keybord/Mobile")]
     public bool _keyboardInputs;
 
     private void Update()
@@ -23,7 +25,7 @@ public class MovementController : MonoBehaviour
         {
             MobileInputs();
         }
-        
+
     }
 
     void KeyboardInput()
@@ -32,6 +34,7 @@ public class MovementController : MonoBehaviour
         dir.x = Input.GetAxisRaw("Horizontal");
         dir.y = Input.GetAxisRaw("Vertical");
         transform.position += dir * speed * Time.deltaTime;
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, (_screenBounds.x * -1), _screenBounds.x), Mathf.Clamp(transform.position.y, (_screenBounds.y * -1), _screenBounds.y), 0);
     }
 
     void MobileInputs()
