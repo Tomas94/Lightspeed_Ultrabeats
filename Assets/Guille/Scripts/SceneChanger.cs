@@ -9,6 +9,7 @@ public class SceneChanger : MonoBehaviour
 
     public void PasarEscena()
     {
+        StartCoroutine(WaitXSeconds(5f));
         SceneManager.LoadScene(EscenaACargar);
     }
 
@@ -20,5 +21,10 @@ public class SceneChanger : MonoBehaviour
     public static void QuitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator WaitXSeconds(float time) 
+    {
+        yield return new WaitForSeconds(time);
     }
 }
