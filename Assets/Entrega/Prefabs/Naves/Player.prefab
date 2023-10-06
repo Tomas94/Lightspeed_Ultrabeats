@@ -66703,9 +66703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ab59bedfb991d84eb3229d4f5acc219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletSpeed: 5
-  maxLife: 5
   currentLife: 0
+  maxLife: 5
 --- !u!114 &920560028850962803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66718,6 +66717,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df04676ddce1a948bfc6ac8e07b0998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  _screenBounds: {x: 0, y: 0}
-  _keyboardInputs: 0
+  speed: 5
+  _keyboardInputs: 1
