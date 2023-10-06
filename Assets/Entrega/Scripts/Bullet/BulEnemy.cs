@@ -12,13 +12,10 @@ public class BulEnemy : Bullet
     public override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
-        
-        Debug.Log("la bala no hizo nada");
 
         if (_targetLayer == (_targetLayer | (1 << other.gameObject.layer)))
         {
-            other.GetComponent<Entity>().TakeDamage(Fw_Pointer.BulletPlayer.damage);
-            Debug.Log("la bala impacto");
+            other.GetComponent<Entity>().TakeDamage(Fw_Pointer.BulletCaza.damage);
             _objectPool.RefillStock(this);
         }
     }

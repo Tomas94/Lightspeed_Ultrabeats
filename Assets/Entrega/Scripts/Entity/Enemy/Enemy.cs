@@ -64,6 +64,7 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
         {
             Player player = other.GetComponent<Player>();
             player.TakeDamage(Fw_Pointer.AllEnemies.impactDamage);
+            RefillStock(this);
         }
     }
 }

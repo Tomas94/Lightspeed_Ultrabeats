@@ -10,15 +10,12 @@ public class BulPlayer : Bullet
     }
 
    public override void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("la bala no hizo nada");
-        
+    {  
         base.OnTriggerEnter(other);
         
         if (_targetLayer == (_targetLayer | (1 << other.gameObject.layer)))
         {
             other.GetComponent<Entity>().TakeDamage(Fw_Pointer.BulletPlayer.damage);
-            Debug.Log("la bala impacto");
             _objectPool.RefillStock(this);
         }
     }

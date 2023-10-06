@@ -31,5 +31,4 @@ public abstract class Bullet : MonoBehaviour, IPooleableObject<Bullet>
     {
         if (other.CompareTag("ResetTrigger")) _objectPool.RefillStock(this);
     }
-
 }

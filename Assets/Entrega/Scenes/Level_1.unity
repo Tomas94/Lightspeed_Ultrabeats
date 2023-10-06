@@ -374,7 +374,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-168996
+  m_Name: pb_Mesh-1396
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -562,9 +562,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4176338b134e24b8a4c4f258155471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerInitAmount: 1
+  _playerInitAmount: 4
   _playerBulletPrefab: {fileID: 2141315693212605237, guid: 7e7905fe380789d42b13b275541a4f2f, type: 3}
-  _enemyInitAmount: 1
+  _enemyInitAmount: 4
   _enemyBulletPrefab: {fileID: 1933284938995114721, guid: 32e24d464dc934444a9e7ac906381cb1, type: 3}
 --- !u!4 &1159346704
 Transform:
@@ -593,9 +593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5890d32b079a60b40be00f683ad752b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cazadorInitAmount: 1
+  _cazadorInitAmount: 2
   _cazadorPrefab: {fileID: 3788321647330859561, guid: f8ded45c189dd9240be5ec432bd0d90e, type: 3}
-  _kamikazeInitAmount: 1
+  _kamikazeInitAmount: 2
   _kamikazePrefab: {fileID: 4981766377601749055, guid: 4f6bc1ea8080e184e810fafb3b840328, type: 3}
 --- !u!1 &1309210628
 GameObject:
@@ -944,7 +944,7 @@ PrefabInstance:
       objectReference: {fileID: 1085668162}
     - target: {fileID: 7698633764079818828, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
       propertyPath: m_VersionIndex
-      value: 25
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8552211132254318729, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
       propertyPath: m_Mesh

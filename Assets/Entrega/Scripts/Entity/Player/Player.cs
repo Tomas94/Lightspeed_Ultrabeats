@@ -37,14 +37,4 @@ public class Player : Entity
         bala.transform.position = transform.position;
         bala.transform.forward = transform.forward;
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            Enemy enemy = other.GetComponent<Enemy>();
-            enemy.RefillStock(enemy);
-            //TakeDamage();
-        }
-    }
 }
