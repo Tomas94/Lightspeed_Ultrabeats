@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour, IPooleableObject<Bullet>
 {
     float _count;
     float _speed;
+    [SerializeField] LayerMask _targetLayer;
     ObjectPool<Bullet> _objectPool;
 
     public void Initialize(ObjectPool<Bullet> op, float speed)
@@ -35,4 +36,17 @@ public class Bullet : MonoBehaviour, IPooleableObject<Bullet>
     {
         x.gameObject.SetActive(true);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer != _targetLayer)
+        {
+            return;
+        }
+        else
+        {
+            other.GetComponent<Entity>().TakeDamage();
+        }
+    }
+
 }

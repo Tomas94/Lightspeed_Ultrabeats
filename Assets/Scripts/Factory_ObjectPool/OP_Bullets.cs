@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OP_Bullets : MonoBehaviour
+public class OP_Bullet : MonoBehaviour
 {
     [SerializeField] int _initialAmount;
     public Bullet _playerBulletPrefab;

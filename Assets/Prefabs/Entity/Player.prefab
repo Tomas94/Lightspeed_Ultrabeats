@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6760127317808688715}
   - component: {fileID: 6980327732936395475}
   - component: {fileID: 7738201086021547458}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df04676ddce1a948bfc6ac8e07b0998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _screenBounds: {x: 0, y: 0}
 --- !u!114 &6980327732936395475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,8 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ab59bedfb991d84eb3229d4f5acc219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletsOPool: {fileID: 0}
   _bulletSpeed: 5
+  maxLife: 3
+  currentLife: 0
 --- !u!136 &7738201086021547458
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -86,7 +88,7 @@ GameObject:
   - component: {fileID: 1111850795306428155}
   - component: {fileID: 2862381933845520305}
   - component: {fileID: 1629321291904891685}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

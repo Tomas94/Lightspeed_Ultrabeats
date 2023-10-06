@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Entity
 {
-    [SerializeField] OP_Bullets _bulletsOPool;
-    [SerializeField] float _bulletSpeed;
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -16,10 +13,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Disparar()
+    public override void Disparar()
     {
-        var x = _bulletsOPool._bulletPool?.Get();
-        x.Initialize(_bulletsOPool._bulletPool, _bulletSpeed);
+        var x = OP_BulletManager._playerBulletPool.Get();
+        x.Initialize(OP_BulletManager._playerBulletPool, _bulletSpeed);
         x.transform.position = transform.position;
         x.transform.forward = transform.forward;
     }

@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1491917858097784202}
-  - component: {fileID: 5519642158376394818}
   - component: {fileID: 2104041442949981634}
-  m_Layer: 0
+  - component: {fileID: 5521790934326070860}
+  m_Layer: 7
   m_Name: Caza enemigo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,23 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &5519642158376394818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2305715258486603568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd3ad80e4a8420144a6aa2e1c253078c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 0
-  _maxLife: 10
-  _currentLife: 0
-  _bulletsOPool: {fileID: 0}
-  _bulletSpeed: 7
 --- !u!136 &2104041442949981634
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -65,6 +48,23 @@ CapsuleCollider:
   m_Height: 4.89
   m_Direction: 0
   m_Center: {x: 0, y: 2.5, z: 0.5}
+--- !u!114 &5521790934326070860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2305715258486603568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c63126e7cccaad458ea593ac35bd495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletSpeed: 4
+  maxLife: 5
+  currentLife: 0
+  _speed: 3
+  outOfScreen: 0
 --- !u!1 &7093802937942132713
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 2072904124788626642}
   - component: {fileID: 3752413342335364504}
   - component: {fileID: 375762689424017676}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

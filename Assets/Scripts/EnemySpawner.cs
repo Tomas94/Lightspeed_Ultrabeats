@@ -4,25 +4,50 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-
-    [SerializeField] OP_Enemy _enemyOP;
+    //public List<OP_>
+    //[SerializeField] OP_Enemy _enemyOP;
+    //[SerializeField] OP_EnemyManager _enemy;
     [SerializeField] float _enemySpeed;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            SpawnEnemy();            
+            SpawnEnemy("caza");  
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SpawnEnemy("kamikaze");
         }
     }
 
-    public void SpawnEnemy()
+    public void SpawnEnemy(string enemy)
     {
-        var x = _enemyOP._EnemyPool?.Get();
-        x.Initialize(_enemyOP._EnemyPool, _enemySpeed);
+        ObjectPool<Enemy> pool;
+        //Enemy pool;
+        switch (enemy)
+        {
+            case "caza":
+                pool = OP_EnemyManager.Instance._cazadorPool;
+                break;
+            case "kamikaze":
+                pool = OP_EnemyManager.Instance._kamikazePool;
+                break;
+            default: 
+                return;
+        }
+
+        var x = pool.Get();
+        x.Initialize(pool, x._speed);
         x.outOfScreen = false;
         x.transform.position = transform.position;
         x.transform.forward = Vector3.down;
+
+        /*var x = _enemyOP._EnemyPool?.Get();
+        x.Initialize(_enemyOP._EnemyPool, _enemySpeed);
+        x.outOfScreen = false;
+        x.transform.position = transform.position;
+        x.transform.forward = Vector3.down;*/
     }
 
 }
