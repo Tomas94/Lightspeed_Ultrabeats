@@ -6,7 +6,6 @@ public class Kamikaze : Enemy
 {
     [SerializeField] Player player;
     Vector3 dir;
-    public float distanceToStopChasing;
     bool _enemyPassed;
 
     private void Awake()
@@ -18,7 +17,6 @@ public class Kamikaze : Enemy
     {
         player = FindObjectOfType<Player>();
         dir = player.transform.position - transform.position;
-        distanceToStopChasing = 1;
     }
 
     public override void Update()
@@ -31,7 +29,7 @@ public class Kamikaze : Enemy
     {
         if (player == null) return;
 
-        if (Vector3.Distance(player.transform.position, transform.position) > distanceToStopChasing && !_enemyPassed)
+        if (Vector3.Distance(player.transform.position, transform.position) > Fw_Pointer.EnemyKamikaze.stopChasingDistance && !_enemyPassed)
         {
             dir = player.transform.position - transform.position;
 
@@ -46,7 +44,7 @@ public class Kamikaze : Enemy
         Gizmos.DrawLine(transform.position, dir);
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, distanceToStopChasing);
+        Gizmos.DrawWireSphere(transform.position, Fw_Pointer.EnemyKamikaze.stopChasingDistance);
     }
 
     private void OnDisable()

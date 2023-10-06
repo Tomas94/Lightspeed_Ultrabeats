@@ -15,13 +15,13 @@ public static class Fw_Pointer
 
     public static readonly Fw_Enemy EnemyCaza = new Fw_Enemy
     {
-        speed = 1,
-        maxLife = 5,
+        speed = 2f,
+        maxLife = 3,
     };
     public static readonly Fw_Enemy EnemyKamikaze = new Fw_Enemy
     {
-        speed = 1,
-        maxLife = 5,
+        speed = 3,
+        maxLife = 1,
         stopChasingDistance = 2
     };
 
@@ -37,13 +37,13 @@ public static class Fw_Pointer
     public static readonly Fw_Bullets BulletPlayer = new Fw_Bullets
     {
         damage = 1,
-        speed = 5
+        speed = 7
     };
 
     public static readonly Fw_Bullets BulletCaza = new Fw_Bullets
     {
-        damage = 2,
-        speed = 2
+        damage = 1,
+        speed = 4
     };
 
     #endregion
