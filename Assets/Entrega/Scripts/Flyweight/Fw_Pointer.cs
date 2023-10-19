@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public static class Fw_Pointer
 {
-
     #region Flyweight Enemigos
 
-    public static readonly Fw_Enemy AllEnemies = new Fw_Enemy()
+    public static readonly FW_ImpactDamage AllEnemiesID = new FW_ImpactDamage()
     {
         impactDamage = 1
     };
@@ -18,10 +16,15 @@ public static class Fw_Pointer
         speed = 2f,
         maxLife = 3,
     };
+
     public static readonly Fw_Enemy EnemyKamikaze = new Fw_Enemy
     {
         speed = 3,
         maxLife = 1,
+    };
+
+    public static readonly FW_StopChasing EnemyKamikazeSC = new FW_StopChasing()
+    {
         stopChasingDistance = 2
     };
 
@@ -47,5 +50,4 @@ public static class Fw_Pointer
     };
 
     #endregion
-
 }

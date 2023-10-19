@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Kamikaze : Enemy
 {
-    [SerializeField] Player player;
+    Player player;
     Vector3 dir;
+
     bool _enemyPassed;
 
     private void Awake()
@@ -22,20 +23,31 @@ public class Kamikaze : Enemy
     public override void Update()
     {
         base.Update();
-        KamikazeAttack();
+        KamikazeAttackMovement();
     }
 
-    void KamikazeAttack()
+    void KamikazeAttackMovement()
     {
         if (player == null) return;
 
-        if (Vector3.Distance(player.transform.position, transform.position) > Fw_Pointer.EnemyKamikaze.stopChasingDistance && !_enemyPassed)
+        if (Vector3.Distance(player.transform.position, transform.position) > Fw_Pointer.EnemyKamikazeSC.stopChasingDistance && !_enemyPassed)
         {
             dir = player.transform.position - transform.position;
-
         }
         else { _enemyPassed = true; }
-        transform.position += dir.normalized * Fw_Pointer.EnemyKamikaze.speed * Time.deltaTime;
+
+        transform.position += Fw_Pointer.EnemyKamikaze.speed * Time.deltaTime * dir.normalized;
+    }
+
+    public override void TurnOn(Enemy x)
+    {
+        base.TurnOn(x);
+    }
+    
+    public override void TurnOff(Enemy x)
+    {
+        base.TurnOff(x);
+        ResetMaxLife(x, Fw_Pointer.EnemyKamikaze.maxLife);
     }
 
     private void OnDrawGizmos()
@@ -44,12 +56,11 @@ public class Kamikaze : Enemy
         Gizmos.DrawLine(transform.position, dir);
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, Fw_Pointer.EnemyKamikaze.stopChasingDistance);
+        Gizmos.DrawWireSphere(transform.position, Fw_Pointer.EnemyKamikazeSC.stopChasingDistance);
     }
 
     private void OnDisable()
     {
         _enemyPassed = false;
-        currentLife = Fw_Pointer.EnemyKamikaze.maxLife;
     }
 }

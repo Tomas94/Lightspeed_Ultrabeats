@@ -49,8 +49,4 @@ public class ObjectPool<T>
         _turnOff(Sample);
         _stock.Add(Sample);
     }
-
-
-
-
 }

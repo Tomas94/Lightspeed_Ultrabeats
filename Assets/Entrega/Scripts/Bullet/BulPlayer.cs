@@ -9,14 +9,9 @@ public class BulPlayer : Bullet
         BulletMovement(Fw_Pointer.BulletPlayer.speed);
     }
 
-   public override void OnTriggerEnter(Collider other)
-    {  
+    public override void OnTriggerEnter(Collider other)
+    {
         base.OnTriggerEnter(other);
-        
-        if (_targetLayer == (_targetLayer | (1 << other.gameObject.layer)))
-        {
-            other.GetComponent<Entity>().TakeDamage(Fw_Pointer.BulletPlayer.damage);
-            _objectPool.RefillStock(this);
-        }
+        OnEntityHit(other.gameObject, Fw_Pointer.BulletPlayer.damage);
     }
 }

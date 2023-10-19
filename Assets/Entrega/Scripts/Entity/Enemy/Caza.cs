@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Caza : Enemy
 {
-
     private void Awake()
     {
         SetLife(Fw_Pointer.EnemyCaza.maxLife);
@@ -23,11 +22,12 @@ public class Caza : Enemy
 
     public void Move()
     {
-        transform.position += transform.forward * Fw_Pointer.EnemyCaza.speed * Time.deltaTime;
+        transform.position += Fw_Pointer.EnemyCaza.speed * Time.deltaTime * transform.forward;
     }
-
-    private void OnDisable()
+   
+    public override void TurnOff(Enemy x)
     {
-        currentLife = Fw_Pointer.EnemyCaza.maxLife;
+        base.TurnOff(x);
+        ResetMaxLife(x, Fw_Pointer.EnemyCaza.maxLife);
     }
 }

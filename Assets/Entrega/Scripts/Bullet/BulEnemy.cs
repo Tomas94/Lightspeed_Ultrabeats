@@ -12,11 +12,6 @@ public class BulEnemy : Bullet
     public override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
-
-        if (_targetLayer == (_targetLayer | (1 << other.gameObject.layer)))
-        {
-            other.GetComponent<Entity>().TakeDamage(Fw_Pointer.BulletCaza.damage);
-            _objectPool.RefillStock(this);
-        }
+        OnEntityHit(other.gameObject, Fw_Pointer.BulletCaza.damage);
     }
 }

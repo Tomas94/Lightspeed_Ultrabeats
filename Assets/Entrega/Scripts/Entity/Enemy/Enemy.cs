@@ -9,7 +9,6 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
 
     [HideInInspector] public bool outOfScreen;
     
-
     public void Initialize(ObjectPool<Enemy> op)
     {
         _enemyPool = op;
@@ -20,6 +19,14 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
         Die();
     }
 
+    public override void Disparar()
+    {
+        var x = OP_BulletManager._enemyBulletPool.Get();
+        x.Initialize(OP_BulletManager._enemyBulletPool);
+        x.transform.position = transform.position;
+        x.transform.forward = transform.forward;
+    }
+    
     public override void Die()
     {
         if (currentLife <= 0 || outOfScreen)
@@ -28,33 +35,30 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
         }
     }
 
+    public virtual void TurnOn(Enemy x)
+    {
+        x.gameObject.SetActive(true);
+    }
+    
+    public virtual void TurnOff(Enemy x)
+    {
+        x.gameObject.SetActive(false);
+    }
+    
     public void RefillStock(Enemy enemy)
     {
         _enemyPool?.RefillStock(enemy);
     }
 
-    public void TurnOff(Enemy x)
-    {
-        x.gameObject.SetActive(false);
-    }
-
-    public void TurnOn(Enemy x)
-    {
-        x.gameObject.SetActive(true);
-    }
-
-    public override void Disparar()
-    {
-        var x = OP_BulletManager._enemyBulletPool.Get();
-        x.Initialize(OP_BulletManager._enemyBulletPool);
-        x.transform.position = transform.position;
-        x.transform.forward = transform.forward;
-    }
-
-    public void SetLife(float maxLife)
+    protected void SetLife(float maxLife)
     {
         currentLife = maxLife;
     }
+
+    protected void ResetMaxLife(Enemy enemy ,float maxLife)
+    {
+        enemy.currentLife = maxLife;
+    } 
 
     private void OnTriggerEnter(Collider other)
     {
@@ -63,7 +67,7 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
         if (other.CompareTag("Player"))
         {
             Player player = other.GetComponent<Player>();
-            player.TakeDamage(Fw_Pointer.AllEnemies.impactDamage);
+            player.TakeDamage(Fw_Pointer.AllEnemiesID.impactDamage);
             RefillStock(this);
         }
     }

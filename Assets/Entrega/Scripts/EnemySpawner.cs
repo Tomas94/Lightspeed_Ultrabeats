@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnEnemy(string enemy)
     {
         ObjectPool<Enemy> pool;
-        //Enemy pool;
+
         switch (enemy)
         {
             case "caza":
@@ -42,12 +42,5 @@ public class EnemySpawner : MonoBehaviour
         x.outOfScreen = false;
         x.transform.position = transform.position;
         x.transform.forward = Vector3.down;
-
-        /*var x = _enemyOP._EnemyPool?.Get();
-        x.Initialize(_enemyOP._EnemyPool, _enemySpeed);
-        x.outOfScreen = false;
-        x.transform.position = transform.position;
-        x.transform.forward = Vector3.down;*/
     }
-
 }
