@@ -42,7 +42,7 @@ public class MovementController : MonoBehaviour
                 _controlY = touchPos.y - transform.position.y;
                 break;
             case TouchPhase.Moved:
-                transform.position = new Vector2(touchPos.x - _controlX,transform.position.y /*touchPos.y - _controlY*/);
+                transform.position = new Vector2(touchPos.x - _controlX,touchPos.y - _controlY);
                 transform.position = new Vector3(Mathf.Clamp(transform.position.x, (_screenBounds.x * -1), _screenBounds.x), Mathf.Clamp(transform.position.y, (_screenBounds.y * -1), _screenBounds.y), 0);
                 break;
             case TouchPhase.Ended:

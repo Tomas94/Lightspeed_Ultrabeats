@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Player : Entity
 {
+    public InGameUI gameUI;
+    PU_Shield _shieldPU = new PU_Shield(7);
     public bool _isShielded;
+
     float _counter = 0;
     [SerializeField] float _fireRate = 0.3f;
-
+  
     [SerializeField] float _maxLife;
 
     private void Start()
@@ -18,19 +21,11 @@ public class Player : Entity
 
     void Update()
     {
-        //_isShielded = PU_Shield._isActive;
+        _isShielded = _shieldPU._isActive;
 
-        if (currentLife <= 0)
-        {
-            Die(0);
-        }
-
+        if (currentLife <= 0)Die(0);
+        
         ChargingShot();
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Disparar();
-        }
     }
 
     void ChargingShot()
@@ -57,5 +52,10 @@ public class Player : Entity
         bala.Initialize(OP_BulletManager._playerBulletPool);
         bala.transform.position = transform.position;
         bala.transform.forward = transform.forward;
+    }
+
+    public void ActivateShield()
+    {
+        if(gameUI.shieldFillCircle.fillAmount == 1) _shieldPU.Activate(gameUI.shieldFillCircle.fillAmount);
     }
 }

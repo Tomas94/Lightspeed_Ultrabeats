@@ -41,6 +41,7 @@ public class EnemySpawner : MonoBehaviour
         x.Initialize(pool);
         x.outOfScreen = false;
         x.transform.position = transform.position;
-        x.transform.forward = Vector3.down;
+        //x.transform.forward = Vector2.down;
+        x.transform.rotation = Quaternion.Euler(90,180,0);
     }
 }

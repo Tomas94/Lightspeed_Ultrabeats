@@ -9,8 +9,11 @@ public class SceneChanger : MonoBehaviour
 
     public void PasarEscena()
     {
+        if (GameManager.instance._gamestamina._currentStamina <= 0) return;
         StartCoroutine(WaitXSeconds(5f));
         SceneManager.LoadScene(EscenaACargar);
+        GameManager.instance.timer = 0;
+        GameManager.instance._levelScore.ResetScore();
     }
 
     public static void ResetGame()
@@ -21,6 +24,8 @@ public class SceneChanger : MonoBehaviour
     public static void ToMainMenu()
     {
         SceneManager.LoadScene(1);
+        GameManager.instance.timer = 0;
+        GameManager.instance._levelScore.ResetScore();
     }
 
     public static void QuitGame()

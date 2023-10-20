@@ -2,16 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PU_Shield : MonoBehaviour
+public class PU_Shield
 {
     public bool _isActive;
     float _activeTime;
 
-    public void Activate()
+    public PU_Shield(float activeTime)
+    {
+        _activeTime = activeTime;
+    }
+
+    public void Activate(float fillamount)
     {
         _isActive = true;
         if (_activeTime > 0) _activeTime -= Time.deltaTime;
-        else Deactivate();
+        else { Deactivate(); }
+        fillamount = 0;
     }
 
     public void Deactivate()

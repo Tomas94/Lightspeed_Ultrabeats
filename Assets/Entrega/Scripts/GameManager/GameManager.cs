@@ -10,21 +10,20 @@ public class GameManager : MonoBehaviour
     public UpgradePoints _gameUpgradePoints;
     [SerializeField] public Score _levelScore;
     public float timer = 0;
+    public int killcount = 0;
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            _gameCurrency = new Currency(100);
+            _gameCurrency = new Currency(0);
             _gamestamina = new Stamina(5);
             _gameUpgradePoints = new UpgradePoints(0);
             _levelScore = new Score();
             DontDestroyOnLoad(this);
         }
-        else Destroy(gameObject);
-
-        //_levelScore.ResetScore();
+        else Destroy(gameObject);     
     }
 
     private void Update()
@@ -33,7 +32,7 @@ public class GameManager : MonoBehaviour
         _levelScore.IncrementScore(timer);
         _levelScore.TotalScore();
 
-        if(Input.GetKeyDown(KeyCode.Escape))
+        /*if(Input.GetKeyDown(KeyCode.Escape))
         {
            SceneChanger.ResetGame();
         }
@@ -52,8 +51,6 @@ public class GameManager : MonoBehaviour
         {
             _gamestamina.RefillStamina();
             Debug.Log("current stamina: " + _gamestamina._currentStamina);
-        }
-    }
-
-    
+        }*/
+    }   
 }
