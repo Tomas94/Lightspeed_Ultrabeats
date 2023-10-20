@@ -933,7 +933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 920560028850962803, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
       propertyPath: _keyboardInputs
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3587588331527480811, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
       propertyPath: _maxLife
@@ -941,7 +941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3587588331527480811, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
       propertyPath: _fireRate
-      value: 0.8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6199369644093470875, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
       propertyPath: m_RootOrder
@@ -997,7 +997,7 @@ PrefabInstance:
       objectReference: {fileID: 1085668162}
     - target: {fileID: 7698633764079818828, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
       propertyPath: m_VersionIndex
-      value: 37
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 8552211132254318729, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
       propertyPath: m_Mesh
