@@ -18,6 +18,11 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public static void ToMainMenu()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public static void QuitGame()
     {
         Application.Quit();

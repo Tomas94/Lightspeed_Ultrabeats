@@ -25,7 +25,7 @@ public class Score
     public void TotalScore()
     {
         totalScore = timeScore + killScore;
-        Debug.Log("Puntaje Total: " + totalScore);
+        //Debug.Log("Puntaje Total: " + totalScore);
     }
 
     public void ResetScore()

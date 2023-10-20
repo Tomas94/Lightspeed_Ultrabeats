@@ -13,6 +13,7 @@ public class Currency : IResources
 
     public void SpentResource(int quantity)
     {
+        if (_actualCurrency < quantity) return;
         _actualCurrency -= quantity;
     }
 
@@ -20,7 +21,7 @@ public class Currency : IResources
     {
         var currencyGained = quantity * 0.8f * 0.7f;
 
-        _actualCurrency += currencyGained;
+        _actualCurrency += (int)currencyGained;
     }
 
     /*
