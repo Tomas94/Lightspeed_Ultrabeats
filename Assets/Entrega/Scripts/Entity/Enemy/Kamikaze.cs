@@ -20,9 +20,9 @@ public class Kamikaze : Enemy
         dir = player.transform.position - transform.position;
     }
 
-    public override void Update()
+    public void Update()
     {
-        base.Update();
+        if (currentLife <= 0) Die(Random.Range(20, 40));
         KamikazeAttackMovement();
     }
 

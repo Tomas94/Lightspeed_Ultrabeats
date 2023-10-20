@@ -12,6 +12,13 @@ public class BulEnemy : Bullet
     public override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
+        
+        if (other.GetComponent<Player>()._isShielded)
+        {
+            _objectPool.RefillStock(this);
+            return;
+        }
+
         OnEntityHit(other.gameObject, Fw_Pointer.BulletCaza.damage);
     }
 }

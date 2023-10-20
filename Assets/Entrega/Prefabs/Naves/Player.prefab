@@ -66704,7 +66704,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLife: 0
-  maxLife: 5
+  _isShielded: 0
+  _fireRate: 1
+  _maxLife: 3
 --- !u!114 &920560028850962803
 MonoBehaviour:
   m_ObjectHideFlags: 0

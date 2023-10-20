@@ -17,6 +17,11 @@ public static class Fw_Pointer
         maxLife = 3,
     };
 
+    public static readonly FW_FireRate EnemyCazaRate = new FW_FireRate()
+    {
+        rate = 1
+    };
+
     public static readonly Fw_Enemy EnemyKamikaze = new Fw_Enemy
     {
         speed = 3,

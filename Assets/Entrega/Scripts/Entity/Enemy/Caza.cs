@@ -4,19 +4,31 @@ using UnityEngine;
 
 public class Caza : Enemy
 {
+    float counter;
+
     private void Awake()
     {
         SetLife(Fw_Pointer.EnemyCaza.maxLife);
+        counter = 0;
     }
 
-    public override void Update()
+    public void Update()
     {
-        base.Update();
+        if (currentLife <= 0) Die(Random.Range(50, 60));
         Move();
+        ChargingShot();
+    }
 
-        if (Input.GetKeyDown(KeyCode.F))
+    void ChargingShot()
+    {
+        if (counter < Fw_Pointer.EnemyCazaRate.rate)
+        {
+            counter += Time.deltaTime;
+        }
+        else
         {
             Disparar();
+            counter = 0;
         }
     }
 

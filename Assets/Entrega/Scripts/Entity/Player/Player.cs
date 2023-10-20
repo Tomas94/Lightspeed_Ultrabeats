@@ -2,19 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class Player : Entity
 {
-    [SerializeField] float maxLife;
+    public bool _isShielded;
+    float _counter = 0;
+    [SerializeField] float _fireRate = 0.3f;
+
+    [SerializeField] float _maxLife;
 
     private void Start()
     {
-        currentLife = maxLife;
+        currentLife = _maxLife;
     }
 
     void Update()
     {
-        Die();
+        //_isShielded = PU_Shield._isActive;
+
+        if (currentLife <= 0)
+        {
+            Die(0);
+        }
+
+        ChargingShot();
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -22,12 +34,22 @@ public class Player : Entity
         }
     }
 
-    public override void Die()
+    void ChargingShot()
     {
-        if(currentLife<=0)
+        if (_counter <= _fireRate)
         {
-            SceneChanger.ResetGame();
+            _counter += Time.deltaTime;
         }
+        else
+        {
+            Disparar();
+            _counter = 0;
+        }
+    }
+
+    public override void Die(int deathpoints)
+    {
+        SceneChanger.ResetGame();
     }
 
     public override void Disparar()
