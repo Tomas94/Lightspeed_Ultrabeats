@@ -17,7 +17,7 @@ public class Victory : MonoBehaviour
         {
             GameManager.instance._gameCurrency.GainResource(GameManager.instance._levelScore.totalScore);
             GameManager.instance.killcount = 0;
-            SceneChanger.ToMainMenu();
+            SceneController.ToMainMenu();
         }
     }
 }

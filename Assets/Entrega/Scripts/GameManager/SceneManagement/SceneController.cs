@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneChanger : MonoBehaviour
+public class SceneController : MonoBehaviour
 {
-    public string EscenaACargar;
+    //public string escenaACargar;
 
-    public void PasarEscena()
+    public void PasarEscena(string EscenaACargar)
     {
         if (GameManager.instance._gamestamina._currentStamina <= 0) return;
         StartCoroutine(WaitXSeconds(5f));

@@ -43,7 +43,7 @@ public class Player : Entity
 
     public override void Die(int deathpoints)
     {
-        SceneChanger.ResetGame();
+        SceneController.ResetGame();
     }
 
     public override void Disparar()
