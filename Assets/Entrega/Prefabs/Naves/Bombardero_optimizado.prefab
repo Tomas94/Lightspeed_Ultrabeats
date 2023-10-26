@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 4245089331897765762}
   - component: {fileID: 2875669000711108705}
   - component: {fileID: 4953225565284886473}
+  - component: {fileID: 957442073}
   m_Layer: 7
   m_Name: Bombardero_optimizado
   m_TagString: Enemy
@@ -181,6 +182,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1070623, y: 7.568408, z: 2.995255}
   m_Center: {x: -0.057204604, y: 0.17179632, z: 0.019531608}
+--- !u!95 &957442073
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4518494583906690611}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f3e03d89354512841ac75513491ce1d7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5923741642387579154
 GameObject:
   m_ObjectHideFlags: 0
@@ -5102,7 +5123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2665258083032405395
 Transform:
   m_ObjectHideFlags: 0
@@ -9127,7 +9148,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     minVertexDistance: 1.2
-    textureMode: 3
+    textureMode: 1
     ribbonCount: 1
     shadowBias: 0.5
     worldSpace: 0
@@ -9140,13 +9161,13 @@ ParticleSystem:
     attachRibbonsToTransform: 0
     colorOverLifetime:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       minColor: {r: 1, g: 1, b: 1, a: 1}
       maxColor: {r: 0.9339623, g: 0.57560396, b: 0.4969384, a: 0.9372549}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.764151, g: 0.060555305, b: 0.09494512, a: 1}
+        key1: {r: 1, g: 0.21960783, b: 0.71525526, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -9162,7 +9183,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
+        atime1: 63993
         atime2: 0
         atime3: 0
         atime4: 0
