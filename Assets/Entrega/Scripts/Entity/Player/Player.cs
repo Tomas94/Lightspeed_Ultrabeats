@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player : Entity
 {
-    public InGameUI gameUI;
+    public InGameUI_Controller gameUI;
     PU_Shield _shieldPU = new PU_Shield(7);
     public bool _isShielded;
 
@@ -23,7 +20,7 @@ public class Player : Entity
     {
         _isShielded = _shieldPU._isActive;
 
-        if (currentLife <= 0)Die(0);
+        if (currentLife <= 0)   Die(0);
         
         ChargingShot();
     }
@@ -43,7 +40,7 @@ public class Player : Entity
 
     public override void Die(int deathpoints)
     {
-        SceneController.ResetGame();
+        SceneController.ToMainMenu();
     }
 
     public override void Disparar()

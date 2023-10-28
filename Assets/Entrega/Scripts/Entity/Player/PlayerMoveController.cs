@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class MovementController : MonoBehaviour
+public class PlayerMoveController : MonoBehaviour
 {
     /*[Header("Cambio MovInput Keybord/Mobile")]
     public bool _keyboardInputs;

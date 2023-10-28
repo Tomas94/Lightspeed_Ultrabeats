@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
-public class UI_Controller : MonoBehaviour
+public class UI_Windows_Controller : MonoBehaviour
 {
     public List<GameObject> canvasWindows = new List<GameObject>();
 

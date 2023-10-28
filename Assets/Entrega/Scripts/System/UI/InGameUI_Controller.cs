@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
-using UnityEngine.Events;
 
-public class InGameUI : MonoBehaviour
+public class InGameUI_Controller : MonoBehaviour
 {
     public Image shieldFillCircle;
     public Image ondasFillCircle;
@@ -20,8 +17,7 @@ public class InGameUI : MonoBehaviour
 
     void Update()
     {
-        score.text = GameManager.instance._levelScore.totalScore.ToString();
-       
+        score.text = GameManager.instance._levelScore.totalScore.ToString();  
     }
 
     public void ShieldChargeUP()

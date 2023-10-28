@@ -8,7 +8,6 @@ public class GameManagerController : MonoBehaviour
 
     private void Start()
     {
-        //gameManager = FindObjectOfType<GameManager>();
         gameManager = GameManager.instance;
     }
 

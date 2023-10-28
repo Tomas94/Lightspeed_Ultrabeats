@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BulPlayer : Bullet
+public class Bullet_Player : Bullet
 {
     protected void Update()
     {
