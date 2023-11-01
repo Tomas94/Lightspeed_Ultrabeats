@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class UpgradePoints : IResources
 {
-    float _actualUPs;
+    public int _actualUPs;
 
-    public UpgradePoints(float actualUP)
+    public UpgradePoints(int actualUP)
     {
         _actualUPs = actualUP;
     }
@@ -19,8 +15,10 @@ public class UpgradePoints : IResources
     public void GainResource(int quantity)
     {
         var pointsGained = quantity * 0.8f * 0.3f;
-        _actualUPs += pointsGained;
+        _actualUPs += (int)pointsGained;
     }
+
+}
 
     /*
     public void SpentUP(float points)
@@ -35,4 +33,3 @@ public class UpgradePoints : IResources
         _actualUpgradePoints += pointsGained;
     }
     */
-}

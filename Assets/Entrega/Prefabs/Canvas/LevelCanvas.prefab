@@ -197,9 +197,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4982911283759209159}
-        m_TargetAssemblyTypeName: UI_Controller, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UI_Windows_Controller, Assembly-CSharp
         m_MethodName: DeactivateAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -511,7 +523,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4982911283759209158}
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: ToMainMenu
         m_Mode: 1
@@ -612,7 +636,7 @@ GameObject:
   - component: {fileID: 4982911281770851606}
   - component: {fileID: 4982911281770851607}
   m_Layer: 5
-  m_Name: Ondas
+  m_Name: OndasFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -918,8 +942,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4982911283759209159}
-        m_TargetAssemblyTypeName: UI_Controller, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UI_Windows_Controller, Assembly-CSharp
         m_MethodName: ActivateWindow
         m_Mode: 2
         m_Arguments:
@@ -1705,7 +1741,7 @@ GameObject:
   - component: {fileID: 4982911283747274944}
   - component: {fileID: 4982911283747274945}
   m_Layer: 5
-  m_Name: Escudo
+  m_Name: EscudoFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1825,8 +1861,6 @@ GameObject:
   - component: {fileID: 4982911283759209154}
   - component: {fileID: 4982911283759209155}
   - component: {fileID: 4982911283759209156}
-  - component: {fileID: 4982911283759209159}
-  - component: {fileID: 4982911283759209158}
   m_Layer: 5
   m_Name: LevelCanvas
   m_TagString: Untagged
@@ -1917,32 +1951,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4982911283759209159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4982911283759209157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f65918b636b72a740b71c5113e3ad2ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvasWindows:
-  - {fileID: 3868695677632643975}
---- !u!114 &4982911283759209158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4982911283759209157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aace20bbf8d41894bb4e4a04ce888199, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4982911283788547085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,7 +2169,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 000000
+  m_text: 9999999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2277,6 +2285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5177402316072249501}
+  - component: {fileID: 595282180}
   m_Layer: 5
   m_Name: InGameUI
   m_TagString: Untagged
@@ -2308,6 +2317,22 @@ RectTransform:
   m_AnchoredPosition: {x: 4.970642, y: 1.895874}
   m_SizeDelta: {x: 1075.0165, y: 2094.0815}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &595282180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5177402316072249500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60199a112840fcc4a9261c54248b43fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldFillCircle: {fileID: 4982911283747274944}
+  ondasFillCircle: {fileID: 4982911281770851606}
+  lifeFillBar: {fileID: 4982911282919591381}
+  score: {fileID: 5177402315980076309}
 --- !u!1 &5177402316117766933
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class Currency : IResources
 {
-    public float _actualCurrency;
+    public int _actualCurrency;
 
-    public Currency(float actualCurrency)
+    public Currency(int actualCurrency)
     {
         _actualCurrency = actualCurrency;
     }

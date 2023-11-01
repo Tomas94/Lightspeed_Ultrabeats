@@ -10,14 +10,14 @@ public class MainMenu_Controller : MonoBehaviour
 
     private void Update()
     {
-        crediBeatsAmount.text = GameManager.instance._gameCurrency._actualCurrency.ToString();
-        staminaAmount.text = "SALTOS DISPONIBLES: " + GameManager.instance._gamestamina._currentStamina.ToString();
+        crediBeatsAmount.text = GameManager.Instance.currency.ToString();
+        staminaAmount.text = "SALTOS DISPONIBLES: " + GameManager.Instance.stamina.ToString();
         StaminaBarUpdate();
     }
 
     public void StaminaBarUpdate()
     {
-        switch (GameManager.instance._gamestamina._currentStamina)
+        switch (GameManager.Instance.stamina)
         {
             case 5:
                 staminaBar.fillAmount = 1;

@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class Stamina
 {
     int _maxStamina;
@@ -11,21 +7,6 @@ public class Stamina
     {
         _maxStamina = maxStamina;
         _currentStamina = _maxStamina;
-    }
-
-    public int MaxStamina
-    {
-        get
-        {
-            return _maxStamina;
-        }
-        set
-        {
-            if (_maxStamina != value)
-            {
-                _maxStamina = value;
-            }
-        }
     }
 
     public void ConsumeStamina()
