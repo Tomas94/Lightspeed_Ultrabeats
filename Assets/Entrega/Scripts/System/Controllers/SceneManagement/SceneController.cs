@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,6 +23,16 @@ public class SceneController : MonoBehaviour
     public static void QuitGame()
     {
         Application.Quit();
+    }
+
+    public static void Pause()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public static void Resume()
+    {
+        Time.timeScale = 1f;
     }
 
     IEnumerator StartLevel(float time, string EscenaACargar) 

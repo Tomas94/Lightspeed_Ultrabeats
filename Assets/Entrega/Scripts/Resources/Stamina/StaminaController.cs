@@ -3,14 +3,13 @@ using UnityEngine;
 
 public class StaminaController : MonoBehaviour
 {
-    Stamina _gameStamina;
 
     [SerializeField] int _maxStamina = 5;
-    bool _canConsume;
+    Stamina _gameStamina;
+    bool _canConsume = true;
 
     private void Awake()
     {
-        _canConsume = true;
         _gameStamina = new Stamina(_maxStamina);
     }
 
@@ -21,7 +20,7 @@ public class StaminaController : MonoBehaviour
         _gameStamina._currentStamina = GameManager.Instance.stamina;
     }
 
-    private void Update()
+    void Update()
     {
         if(Input.GetKeyUp(KeyCode.W))RechargeStamina();
     }
@@ -29,6 +28,7 @@ public class StaminaController : MonoBehaviour
     public void ConsumeStamina()
     {
         if (!_canConsume) return;
+
         _gameStamina.ConsumeStamina();
         UpdateStamina();
         StartCoroutine(ConsumeCD());

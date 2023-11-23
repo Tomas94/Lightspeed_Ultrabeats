@@ -13,6 +13,10 @@ public class GameManager : MonoBehaviour
     public int levelScore;
     public int killCount;
 
+    [Header("Configuration Values")]
+    public bool vibration;
+    [RangeAttribute(0f, 0.5f)] public float brigthnessValue;
+
     private void Awake()
     {
         if (Instance == null)
@@ -23,4 +27,15 @@ public class GameManager : MonoBehaviour
         }
         else Destroy(gameObject);
     }
+    private void Start()
+    {
+        LoadPlayerPreferencies();
+    }
+
+    void LoadPlayerPreferencies()
+    {
+        vibration = PlayerPrefs.GetInt("Vibration",0)==1;
+        brigthnessValue = PlayerPrefs.GetFloat("BrightnessValue", 0.25f);
+    }
+
 }
