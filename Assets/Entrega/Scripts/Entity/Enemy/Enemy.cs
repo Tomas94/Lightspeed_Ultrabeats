@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class Enemy : Entity, IPooleableObject<Enemy>
 {
+    public Action OnDesactivar;
     ObjectPool<Enemy> _enemyPool;
 
     [HideInInspector] public bool outOfScreen;
@@ -31,6 +34,7 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
     public void RefillStock(Enemy enemy)
     {
         _enemyPool?.RefillStock(enemy);
+        OnDesactivar?.Invoke();
     }
     
 
@@ -42,6 +46,7 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
     public virtual void TurnOff(Enemy x)
     {
         x.gameObject.SetActive(false);
+
     }
 
     protected void SetLife(float maxLife)

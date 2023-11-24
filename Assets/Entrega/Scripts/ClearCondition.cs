@@ -2,8 +2,20 @@ using UnityEngine;
 
 public class ClearCondition : MonoBehaviour
 {
-    public int completedWaves = 0;
+    [SerializeField] EnemyWaveSpawner enemWS;
+    public int completedWaves;
     public int wavesGoal;
+
+    private void Awake()
+    {
+        completedWaves = -1;
+        if (wavesGoal == 0) wavesGoal = Random.Range(5, 10);
+    }
+
+    private void Start()
+    {
+        enemWS.OnWaveCompleted += WavesCompleted;
+    }
 
     private void Update()
     {
@@ -23,4 +35,11 @@ public class ClearCondition : MonoBehaviour
             SceneManager.ToMainMenu();
         }
     }
+    
+    public void WavesCompleted()
+    {
+        completedWaves++;
+        Debug.Log("Empieza la Wave " + completedWaves);
+    }
+
 }

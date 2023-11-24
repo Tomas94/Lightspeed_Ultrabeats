@@ -15,7 +15,7 @@ public static class Fw_Pointer
 
     public static readonly FW_FireRate EnemyCazaRate = new FW_FireRate()
     {
-        rate = 1
+        rate = 2
     };
 
     public static readonly Fw_Enemy EnemyKamikaze = new Fw_Enemy
@@ -47,7 +47,7 @@ public static class Fw_Pointer
     public static readonly Fw_Bullets BulletCaza = new Fw_Bullets
     {
         damage = 1,
-        speed = 4
+        speed = 3
     };
 
     #endregion
