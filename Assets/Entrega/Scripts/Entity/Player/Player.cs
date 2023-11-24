@@ -40,7 +40,7 @@ public class Player : Entity
 
     public override void Die(int deathpoints)
     {
-        SceneController.ToMainMenu();
+        SceneManager.ToMainMenu();
     }
 
     public override void Disparar()

@@ -8,6 +8,11 @@ public class StaminaController : MonoBehaviour
     Stamina _gameStamina;
     bool _canConsume = true;
 
+    public int MaxStamina
+    {
+        get { return _maxStamina;}
+    }
+
     private void Awake()
     {
         _gameStamina = new Stamina(_maxStamina);

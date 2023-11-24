@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneController : MonoBehaviour
+public class SceneManager : MonoBehaviour
 {
     public void PlayLevel(string level)
     {
@@ -12,12 +12,12 @@ public class SceneController : MonoBehaviour
 
     public static void ResetGame()
     {
-        SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
     public static void ToMainMenu()
     {
-        SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
     public static void QuitGame()
@@ -38,6 +38,6 @@ public class SceneController : MonoBehaviour
     IEnumerator StartLevel(float time, string EscenaACargar) 
     {
         yield return new WaitForSeconds(time);
-        SceneManager.LoadScene(EscenaACargar);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(EscenaACargar);
     }
 }

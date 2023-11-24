@@ -17,13 +17,13 @@ public class Victory : MonoBehaviour
         {
             //GameManager.Instance._gameCurrency.GainResource(GameManager.Instance._levelScore.totalScore);
          //   GameManager.Instance.killcount = 0;
-            SceneController.ToMainMenu();
+            SceneManager.ToMainMenu();
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
             ScoreController.Instance._levelScore.SubmitScore();
-            SceneController.ToMainMenu();
+            SceneManager.ToMainMenu();
         }
     }
 }

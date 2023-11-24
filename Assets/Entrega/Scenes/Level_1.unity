@@ -427,13 +427,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498977616}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea46a7a670ad0a14996d963f80fa9db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _vibrationAllowed: {fileID: 0}
-  _brightnessBG: {fileID: 0}
+  _brightnessBG: {fileID: 1132242283}
   _brightnessSlider: {fileID: 0}
 --- !u!114 &595282180 stripped
 MonoBehaviour:
@@ -640,6 +640,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a98934bcaa735545b4ce12d6d4c22fc, type: 3}
+--- !u!114 &1132242283 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6456672256269224473, guid: 8ec37c11e8603e743acf1a69ab8faf65, type: 3}
+  m_PrefabInstance: {fileID: 1862018940}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1159346702
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +760,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0828291de7fdc344f9e91a90a17dce41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpeed: 3
+  _spawnPoints: []
+  _enemyTypes: []
 --- !u!1 &1737978309
 GameObject:
   m_ObjectHideFlags: 0

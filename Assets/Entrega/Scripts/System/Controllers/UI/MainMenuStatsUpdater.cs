@@ -2,22 +2,31 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class MainMenu_Controller : MonoBehaviour
+public class MainMenuStatsUpdater : MonoBehaviour
 {
+    StaminaController _staCtrl;
     public TextMeshProUGUI crediBeatsAmount;
     public TextMeshProUGUI staminaAmount;
     public Image staminaBar;
+
+    private void Start()
+    {
+        _staCtrl = GetComponent<StaminaController>();
+        StaminaBarUpdate();
+    }
 
     private void Update()
     {
         crediBeatsAmount.text = GameManager.Instance.currency.ToString();
         staminaAmount.text = "SALTOS DISPONIBLES: " + GameManager.Instance.stamina.ToString();
-        StaminaBarUpdate();
     }
 
     public void StaminaBarUpdate()
     {
-        switch (GameManager.Instance.stamina)
+        float updatedStaminaAmount = (float)GameManager.Instance.stamina / (float)_staCtrl.MaxStamina;
+        staminaBar.fillAmount = updatedStaminaAmount;
+        Debug.Log("current " + GameManager.Instance.stamina + "max  " + _staCtrl.MaxStamina + "= % " +  updatedStaminaAmount);
+        /*switch (GameManager.Instance.stamina)
         {
             case 5:
                 staminaBar.fillAmount = 1;
@@ -37,6 +46,6 @@ public class MainMenu_Controller : MonoBehaviour
             case 0:
                 staminaBar.fillAmount = 0;
                 break;
-        }
+        }*/
     }
 }
