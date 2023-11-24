@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
-        _spawnPoints = GetSpawnPoints();
+       
     }
 
     void Update()
@@ -26,21 +26,27 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    List<Transform> GetSpawnPoints()
+    List<Transform> GetSpawnPoints(Transform parent)
     {
         var allPoints = new List<Transform>();
-        allPoints.Add(this.GetComponentInChildren<Transform>());
+
+        foreach (Transform child in parent)
+        {
+            allPoints.Add(child);
+
+            allPoints.AddRange(GetSpawnPoints(child));
+        }
+
         return allPoints;
     }
 
 
 
-
-    public void CreateWave()
+    /*public void CreateWave()
     {
         int _enemiesAmount = Random.Range(0, 15);
         Debug.Log("cantidad de enemigos " + _enemiesAmount);
-        var _enemyWave = new Enemy[_enemiesAmount];
+        var _enemyWave = new List<Enemy>[_enemiesAmount];
 
         foreach (var enemy in _enemyWave)
         {
@@ -50,7 +56,30 @@ public class EnemySpawner : MonoBehaviour
             indice++;
         }
 
+    }*/
+    public void CreateWave()
+    {
+        _spawnPoints = GetSpawnPoints(this.transform);
+        
+        int _enemiesAmount = Random.Range(1, 14);
+        Debug.Log("Cantidad de enemigos: " + _enemiesAmount);
+
+        for (int i = 0; i < _enemiesAmount; i++)
+        {
+            // Obtener un índice de spawn aleatorio
+            int spawnIndex = Random.Range(0, _spawnPoints.Count);
+
+            // Obtener un tipo de enemigo aleatorio de la lista _enemyTypes
+            string randomEnemyType = _enemyTypes[Random.Range(0, _enemyTypes.Count)];
+
+            // Crear el enemigo en el punto de spawn aleatorio
+            SpawnEnemy(randomEnemyType, _spawnPoints[spawnIndex].position);
+            _spawnPoints.RemoveAt(spawnIndex);
+
+            //Debug.Log("Se creó el enemigo " + (i + 1) + " en el punto de spawn " + (spawnIndex + 1) + " y la ubicacion " + _spawnPoints[spawnIndex].position);
+        }
     }
+
 
     public void SpawnEnemy(string enemy, Vector3 pos)
     {
@@ -71,7 +100,7 @@ public class EnemySpawner : MonoBehaviour
         var x = pool.Get();
         x.Initialize(pool);
         x.outOfScreen = false;
-        x.transform.position = transform.position;
+        x.transform.position = pos;
         x.transform.forward = Vector3.down;
         x.transform.rotation = Quaternion.Euler(90,180,0);
     }
