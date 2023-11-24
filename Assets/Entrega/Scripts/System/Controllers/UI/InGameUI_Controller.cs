@@ -17,7 +17,7 @@ public class InGameUI_Controller : MonoBehaviour
 
     void Update()
     {
-        score.text = ScoreController.Instance._levelScore.totalScore.ToString();  
+        score.text = ScoreManager.Instance._levelScore.totalScore.ToString();
     }
 
     public void ShieldChargeUP()

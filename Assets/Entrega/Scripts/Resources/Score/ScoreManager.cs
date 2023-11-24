@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class ScoreController : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
-    public static ScoreController Instance;
+    public static ScoreManager Instance;
 
     public Score _levelScore = new Score(0);
     public float timer;
