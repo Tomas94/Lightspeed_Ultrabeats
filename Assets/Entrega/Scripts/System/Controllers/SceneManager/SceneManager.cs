@@ -30,6 +30,9 @@ public class SceneManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    public void Restart()
+    { UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name); }
+
     public static void Resume()
     {
         Time.timeScale = 1f;

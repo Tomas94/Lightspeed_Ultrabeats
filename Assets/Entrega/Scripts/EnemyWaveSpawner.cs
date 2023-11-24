@@ -6,32 +6,21 @@ using UnityEngine;
 public class EnemyWaveSpawner : MonoBehaviour
 {
     public Action OnWaveCompleted;
-    //[SerializeField] List<Transform> _spawnPoints;
     [SerializeField] List<string> _enemyTypes;
     [SerializeField] int _activeEnemies = 0;
 
-    void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            CreateWave();
-        }
-
-        if (_activeEnemies <= 0)
-        {
-            OnWaveCompleted?.Invoke();
-            CreateWave();
-        }
+        StartCoroutine(FirstWave());
     }
 
     public void CreateWave()
     {
-        int _enemiesAmount = UnityEngine.Random.Range(1, 5);
+        int _enemiesAmount = UnityEngine.Random.Range(1, 7);
         _activeEnemies = _enemiesAmount;
 
         List<Enemy> _enemiesSpawned = new List<Enemy>();
         List<Transform> _spawnPoints = GetSpawnPoints(this.transform);
-        Debug.Log("Puntos de Spawn: " + _spawnPoints.Count);
 
         Debug.Log("Cantidad de enemigos: " + _enemiesAmount);
 
@@ -47,23 +36,26 @@ public class EnemyWaveSpawner : MonoBehaviour
             Enemy enemigoNuevo = SpawnEnemy(randomEnemyType, _spawnPoints[spawnIndex].position);
             _enemiesSpawned.Add(enemigoNuevo);
             _spawnPoints.RemoveAt(spawnIndex);
-
-            Debug.Log("Se creo enemigo N° " + (i+1) + " que es un " + enemigoNuevo.name);
-
-            //Debug.Log("Se creó el enemigo " + (i + 1) + " en el punto de spawn " + (spawnIndex + 1) + " y la ubicacion " + _spawnPoints[spawnIndex].position);
         }
 
-        foreach (Enemy item in _enemiesSpawned)
+        Debug.Log("Cantidad de enemigos activados: " + _enemiesSpawned.Count);
+        
+        foreach (var item in _enemiesSpawned)
         {
-            if (item.OnDesactivar != null) return;
-            item.OnDesactivar += AllDesactivados;
-            Debug.Log("Suscrito");
+            if (item.OnDesactivar != null) continue;
+            item.OnDesactivar += WaveController;
         }
     }
 
-    void AllDesactivados()
+    void WaveController()
     {
         _activeEnemies -= 1;
+
+        if (_activeEnemies <= 0)
+        {
+            OnWaveCompleted?.Invoke();
+            CreateWave();
+        }
     }
 
     public Enemy SpawnEnemy(string enemy, Vector3 pos)
@@ -79,6 +71,7 @@ public class EnemyWaveSpawner : MonoBehaviour
                 pool = OP_EnemyManager.Instance._kamikazePool;
                 break;
             default:
+                Debug.Log("no pick enemigo");
                 return null;
         }
 
@@ -87,7 +80,7 @@ public class EnemyWaveSpawner : MonoBehaviour
         x.outOfScreen = false;
         x.transform.position = pos;
         x.transform.forward = Vector3.down;
-        x.transform.rotation = Quaternion.Euler(90, 180, 0);
+        //x.transform.rotation = Quaternion.Euler(90, 180, 0);
         return x;
     }
 
@@ -98,12 +91,14 @@ public class EnemyWaveSpawner : MonoBehaviour
         foreach (Transform child in parent)
         {
             allPoints.Add(child);
-
-            //allPoints.AddRange(GetSpawnPoints(child));
         }
 
         return allPoints;
     }
 
-
+    IEnumerator FirstWave()
+    {
+        yield return new WaitForSeconds(1f);
+        CreateWave();
+    }
 }

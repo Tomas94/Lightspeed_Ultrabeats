@@ -5,6 +5,9 @@ public class Player : Entity
     public InGameUI_Controller gameUI;
     PU_Shield _shieldPU = new PU_Shield(7);
     public bool _isShielded;
+    [SerializeField] GameObject _gameOverScreen;
+    
+
 
     float _counter = 0;
     [SerializeField] float _fireRate = 0.3f;
@@ -40,7 +43,11 @@ public class Player : Entity
 
     public override void Die(int deathpoints)
     {
-        SceneManager.ToMainMenu();
+        //SceneManager.ToMainMenu();
+        _gameOverScreen.SetActive(true);
+        SceneManager.Pause();
+        this.gameObject.SetActive(false);
+
     }
 
     public override void Disparar()

@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            stamina = -1;
+            stamina = 5;
             DontDestroyOnLoad(this);
         }
         else Destroy(gameObject);

@@ -5,10 +5,11 @@ public class ClearCondition : MonoBehaviour
     [SerializeField] EnemyWaveSpawner enemWS;
     public int completedWaves;
     public int wavesGoal;
-
+    [SerializeField] GameObject _victoryScreen;
+    [SerializeField] Player _player;
     private void Awake()
     {
-        completedWaves = -1;
+        completedWaves = 0;
         if (wavesGoal == 0) wavesGoal = Random.Range(5, 10);
     }
 
@@ -21,12 +22,13 @@ public class ClearCondition : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T)) completedWaves++;
 
-       // killCount = GameManager.Instance.killcount;
+        // killCount = GameManager.Instance.killcount;
 
         if (completedWaves >= wavesGoal)
         {
-            ScoreManager.Instance._levelScore.SubmitScore();
-            SceneManager.ToMainMenu();
+            VictoryScreen();
+            wavesGoal += 10;
+            //SceneManager.ToMainMenu();
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -35,7 +37,15 @@ public class ClearCondition : MonoBehaviour
             SceneManager.ToMainMenu();
         }
     }
-    
+
+    void VictoryScreen()
+    {
+        ScoreManager.Instance._levelScore.SubmitScore();
+        _victoryScreen.SetActive(true);
+        SceneManager.Pause();
+        _player.gameObject.SetActive(false);
+    }
+
     public void WavesCompleted()
     {
         completedWaves++;
