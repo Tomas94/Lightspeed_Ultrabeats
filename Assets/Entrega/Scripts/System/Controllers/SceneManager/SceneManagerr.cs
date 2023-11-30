@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneManager : MonoBehaviour
+public class SceneManagerr : MonoBehaviour
 {
     public void PlayLevel(string level)
     {
@@ -12,12 +12,12 @@ public class SceneManager : MonoBehaviour
 
     public static void ResetGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0);
     }
 
     public static void ToMainMenu()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1);
     }
 
     public static void QuitGame()
@@ -31,16 +31,18 @@ public class SceneManager : MonoBehaviour
     }
 
     public void Restart()
-    { UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name); }
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
     public static void Resume()
     {
         Time.timeScale = 1f;
     }
 
-    IEnumerator StartLevel(float time, string EscenaACargar) 
+    IEnumerator StartLevel(float time, string EscenaACargar)
     {
         yield return new WaitForSeconds(time);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(EscenaACargar);
+        SceneManager.LoadScene(EscenaACargar);
     }
 }

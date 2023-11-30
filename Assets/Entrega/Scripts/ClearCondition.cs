@@ -34,7 +34,7 @@ public class ClearCondition : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             ScoreManager.Instance._levelScore.SubmitScore();
-            SceneManager.ToMainMenu();
+            SceneManagerr.ToMainMenu();
         }
     }
 
@@ -42,7 +42,7 @@ public class ClearCondition : MonoBehaviour
     {
         ScoreManager.Instance._levelScore.SubmitScore();
         _victoryScreen.SetActive(true);
-        SceneManager.Pause();
+        SceneManagerr.Pause();
         _player.gameObject.SetActive(false);
     }
 

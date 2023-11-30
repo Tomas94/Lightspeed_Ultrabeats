@@ -45,7 +45,7 @@ public class Player : Entity
     {
         //SceneManager.ToMainMenu();
         _gameOverScreen.SetActive(true);
-        SceneManager.Pause();
+        SceneManagerr.Pause();
         this.gameObject.SetActive(false);
 
     }
