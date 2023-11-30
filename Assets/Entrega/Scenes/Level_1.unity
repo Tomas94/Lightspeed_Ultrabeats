@@ -421,6 +421,7 @@ GameObject:
   - component: {fileID: 212972374}
   - component: {fileID: 212972376}
   - component: {fileID: 212972375}
+  - component: {fileID: 212972377}
   m_Layer: 5
   m_Name: TotalPuntos
   m_TagString: Untagged
@@ -547,6 +548,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212972373}
   m_CullTransparentMesh: 1
+--- !u!114 &212972377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212972373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a0155c8d18aca48ba25f57b995f3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: IDPuntajeFinal
+  textUI: {fileID: 212972375}
 --- !u!1 &215030546 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3868695677632643975, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
@@ -564,6 +579,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d2928c54158ac34b978c93d558293d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &215030553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215030546}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a0155c8d18aca48ba25f57b995f3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 
+  textUI: {fileID: 0}
 --- !u!1 &266831674 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9212596837344065525, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
@@ -628,6 +657,7 @@ GameObject:
   - component: {fileID: 485300289}
   - component: {fileID: 485300288}
   - component: {fileID: 485300287}
+  - component: {fileID: 485300290}
   m_Layer: 5
   m_Name: ReiniciarNivelBoton
   m_TagString: Untagged
@@ -762,6 +792,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485300285}
   m_CullTransparentMesh: 1
+--- !u!114 &485300290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485300285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a0155c8d18aca48ba25f57b995f3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: IDReiniciar
+  textUI: {fileID: 1022669528}
 --- !u!1 &498977616
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,6 +965,7 @@ GameObject:
   - component: {fileID: 614667063}
   - component: {fileID: 614667065}
   - component: {fileID: 614667064}
+  - component: {fileID: 614667066}
   m_Layer: 5
   m_Name: Ganaste
   m_TagString: Untagged
@@ -1047,6 +1092,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614667062}
   m_CullTransparentMesh: 1
+--- !u!114 &614667066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614667062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a0155c8d18aca48ba25f57b995f3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: IDVictoria
+  textUI: {fileID: 614667064}
 --- !u!1 &668236935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,6 +1312,7 @@ GameObject:
   - component: {fileID: 731333050}
   - component: {fileID: 731333049}
   - component: {fileID: 731333048}
+  - component: {fileID: 731333051}
   m_Layer: 5
   m_Name: SalirnivelMuerteBoton
   m_TagString: Untagged
@@ -1387,6 +1447,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731333046}
   m_CullTransparentMesh: 1
+--- !u!114 &731333051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731333046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a0155c8d18aca48ba25f57b995f3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: IDMenu
+  textUI: {fileID: 1570981298}
 --- !u!1 &768439960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,6 +1999,7 @@ GameObject:
   - component: {fileID: 1011223128}
   - component: {fileID: 1011223130}
   - component: {fileID: 1011223129}
+  - component: {fileID: 1011223131}
   m_Layer: 5
   m_Name: Hasmuerto
   m_TagString: Untagged
@@ -2051,6 +2126,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011223127}
   m_CullTransparentMesh: 1
+--- !u!114 &1011223131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011223127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a0155c8d18aca48ba25f57b995f3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: IDDerrota
+  textUI: {fileID: 1011223129}
 --- !u!1 &1022669526
 GameObject:
   m_ObjectHideFlags: 0
@@ -2590,7 +2679,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1737978312}
   - component: {fileID: 1737978311}
-  - component: {fileID: 1737978310}
   - component: {fileID: 1737978313}
   m_Layer: 0
   m_Name: Main Camera
@@ -2599,14 +2687,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1737978310
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737978309}
-  m_Enabled: 1
 --- !u!20 &1737978311
 Camera:
   m_ObjectHideFlags: 0
@@ -3008,6 +3088,7 @@ GameObject:
   - component: {fileID: 2027099499}
   - component: {fileID: 2027099498}
   - component: {fileID: 2027099497}
+  - component: {fileID: 2027099500}
   m_Layer: 5
   m_Name: SalirnivelMuerteBoton
   m_TagString: Untagged
@@ -3142,6 +3223,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027099495}
   m_CullTransparentMesh: 1
+--- !u!114 &2027099500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027099495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a0155c8d18aca48ba25f57b995f3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: IDMenu
+  textUI: {fileID: 906006877}
 --- !u!1 &2064600643
 GameObject:
   m_ObjectHideFlags: 0
@@ -3154,6 +3249,7 @@ GameObject:
   - component: {fileID: 2064600647}
   - component: {fileID: 2064600646}
   - component: {fileID: 2064600645}
+  - component: {fileID: 2064600648}
   m_Layer: 5
   m_Name: ReiniciarNivelBoton
   m_TagString: Untagged
@@ -3288,6 +3384,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064600643}
   m_CullTransparentMesh: 1
+--- !u!114 &2064600648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064600643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a0155c8d18aca48ba25f57b995f3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: IDReiniciar
+  textUI: {fileID: 879080856}
 --- !u!1 &2113711653 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5596117288141540139, guid: 0a98934bcaa735545b4ce12d6d4c22fc, type: 3}
@@ -3305,6 +3415,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13e986a612257d40b2f108d18dc4287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2113711659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113711653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4757e5b5c074e44cbd0725f76842d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 10
+  data:
+  - language: 34
+    data:
+    - {fileID: 4900000, guid: 7216d77755a81b84db89ee2c317f5ede, type: 3}
+  - language: 10
+    data:
+    - {fileID: 4900000, guid: 2e769e57d0fbd3f4ab0d0c0f81798172, type: 3}
 --- !u!1 &2344198256223599557
 GameObject:
   m_ObjectHideFlags: 0

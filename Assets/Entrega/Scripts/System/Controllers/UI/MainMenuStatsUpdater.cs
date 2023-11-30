@@ -8,44 +8,31 @@ public class MainMenuStatsUpdater : MonoBehaviour
     public TextMeshProUGUI crediBeatsAmount;
     public TextMeshProUGUI staminaAmount;
     public Image staminaBar;
+    int _currentStm;
 
     private void Start()
     {
+        _currentStm = GameManager.Instance.stamina;
         _staCtrl = GetComponent<StaminaController>();
         StaminaBarUpdate();
+        staminaAmount.text += ": " + GameManager.Instance.stamina.ToString();
     }
 
     private void Update()
     {
         crediBeatsAmount.text = GameManager.Instance.currency.ToString();
-        staminaAmount.text = "SALTOS DISPONIBLES: " + GameManager.Instance.stamina.ToString();
+        if(_currentStm != GameManager.Instance.stamina)
+        {
+            _currentStm = GameManager.Instance.stamina;
+            staminaAmount.text.Replace(GameManager.Instance.stamina.ToString(), _currentStm.ToString());
+        }
+        
     }
 
     public void StaminaBarUpdate()
     {
         float updatedStaminaAmount = (float)GameManager.Instance.stamina / (float)_staCtrl.MaxStamina;
         staminaBar.fillAmount = updatedStaminaAmount;
-        Debug.Log("current " + GameManager.Instance.stamina + "max  " + _staCtrl.MaxStamina + "= % " +  updatedStaminaAmount);
-        /*switch (GameManager.Instance.stamina)
-        {
-            case 5:
-                staminaBar.fillAmount = 1;
-                break;
-            case 4:
-                staminaBar.fillAmount = 0.82f;
-                break;
-            case 3:
-                staminaBar.fillAmount = 0.61f;
-                break;
-            case 2:
-                staminaBar.fillAmount = 0.39f;
-                break;
-            case 1:
-                staminaBar.fillAmount = 0.18f;
-                break;
-            case 0:
-                staminaBar.fillAmount = 0;
-                break;
-        }*/
+
     }
 }
