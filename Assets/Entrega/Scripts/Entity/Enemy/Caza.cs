@@ -1,42 +1,34 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Caza : Enemy
 {
-    float counter;
-
     private void Awake()
     {
         SetLife(Fw_Pointer.EnemyCaza.maxLife);
-        counter = 0;
+    }
+
+    private void Start()
+    {
+        StartCoroutine(ChargeShot(Fw_Pointer.EnemyCazaRate.rate));
     }
 
     public void Update()
     {
-        if (currentLife <= 0) Die(Random.Range(50, 60));
         Move();
-        ChargingShot();
-    }
-
-    void ChargingShot()
-    {
-        if (counter < Fw_Pointer.EnemyCazaRate.rate)
-        {
-            counter += Time.deltaTime;
-        }
-        else
-        {
-            Disparar();
-            counter = 0;
-        }
     }
 
     public void Move()
     {
         transform.position += Fw_Pointer.EnemyCaza.speed * Time.deltaTime * transform.forward;
     }
-   
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+        if (currentLife <= 0) Die(Random.Range(50, 60));
+    }
+
     public override void TurnOff(Enemy x)
     {
         base.TurnOff(x);

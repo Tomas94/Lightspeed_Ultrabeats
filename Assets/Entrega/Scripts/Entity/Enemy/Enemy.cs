@@ -18,8 +18,8 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
 
     public override void Disparar()
     {
-        var x = OP_BulletManager._enemyBulletPool.Get();
-        x.Initialize(OP_BulletManager._enemyBulletPool);
+        var x = OP_BulletManager.instance.bulletPools[1].pool.Get();
+        x.Initialize(OP_BulletManager.instance.bulletPools[1].pool);
         x.transform.position = transform.position;
         x.transform.forward = transform.forward;
     }
@@ -27,7 +27,6 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
     public override void Die(int deathPoints)
     {
         ScoreManager.Instance._levelScore.IncrementScore(deathPoints);
-        //GameManager.Instance.killcount += 1;
         RefillStock(this);
     }
 

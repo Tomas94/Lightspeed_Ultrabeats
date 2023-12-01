@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class ObjectPool<T>
+public class ObjectPool<T> where T : MonoBehaviour
 {
     public delegate T FactoryMethod();
     FactoryMethod _factory;
+    GameObject _caja = new GameObject("Instancias de ");
 
     Action<T> _turnOn, _turnOff;
 
@@ -19,10 +21,11 @@ public class ObjectPool<T>
         for (int i = 0; i < warmup; i++)
         {
             var x = _factory();
-            
             _turnOff(x);
             _stock.Add(x);
+            x.transform.parent = _caja.transform;
         }
+        _caja.name += _stock[0].name;
     }
 
     public T Get()
@@ -36,6 +39,7 @@ public class ObjectPool<T>
         else
         {
             x = _factory();
+            x.transform.parent = _caja.transform;
         }
         _turnOn(x);
 

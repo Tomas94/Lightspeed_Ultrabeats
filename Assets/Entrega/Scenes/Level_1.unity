@@ -2451,10 +2451,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4176338b134e24b8a4c4f258155471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerInitAmount: 4
-  _playerBulletPrefab: {fileID: 2141315693212605237, guid: 7e7905fe380789d42b13b275541a4f2f, type: 3}
-  _enemyInitAmount: 4
-  _enemyBulletPrefab: {fileID: 1933284938995114721, guid: 32e24d464dc934444a9e7ac906381cb1, type: 3}
+  bulletPools:
+  - prefab: {fileID: 2141315693212605237, guid: 7e7905fe380789d42b13b275541a4f2f, type: 3}
+    initAmount: 7
+  - prefab: {fileID: 1933284938995114721, guid: 32e24d464dc934444a9e7ac906381cb1, type: 3}
+    initAmount: 10
 --- !u!4 &1159346704
 Transform:
   m_ObjectHideFlags: 0
@@ -2482,10 +2483,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5890d32b079a60b40be00f683ad752b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cazadorInitAmount: 10
-  _cazadorPrefab: {fileID: 3788321647330859561, guid: f8ded45c189dd9240be5ec432bd0d90e, type: 3}
-  _kamikazeInitAmount: 10
-  _kamikazePrefab: {fileID: 4981766377601749055, guid: 4f6bc1ea8080e184e810fafb3b840328, type: 3}
+  enemyPools:
+  - prefab: {fileID: 3788321647330859561, guid: f8ded45c189dd9240be5ec432bd0d90e, type: 3}
+    initAmount: 5
+  - prefab: {fileID: 4981766377601749055, guid: 4f6bc1ea8080e184e810fafb3b840328, type: 3}
+    initAmount: 5
 --- !u!1 &1570981296
 GameObject:
   m_ObjectHideFlags: 0
@@ -4098,7 +4100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3868695677632643975, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3868695677667079403, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -7,7 +7,7 @@ public class Kamikaze : Enemy
     Player player;
     Vector3 dir;
 
-    bool _enemyPassed;
+    [SerializeField] bool _enemyPassed;
 
     private void Awake()
     {
@@ -17,12 +17,10 @@ public class Kamikaze : Enemy
     private void Start()
     {
         player = FindObjectOfType<Player>();
-        dir = player.transform.position - transform.position;
     }
 
     public void Update()
     {
-        if (currentLife <= 0) Die(Random.Range(20, 40));
         KamikazeAttackMovement();
     }
 
@@ -30,24 +28,38 @@ public class Kamikaze : Enemy
     {
         if (player == null) return;
 
-        if (Vector3.Distance(player.transform.position, transform.position) > Fw_Pointer.EnemyKamikazeSC.stopChasingDistance && !_enemyPassed)
-        {
-            dir = player.transform.position - transform.position;
-        }
-        else { _enemyPassed = true; }
+        Vector3 playerPosition = player.transform.position;
+        float distanceToPlayer = Vector3.Distance(playerPosition, transform.position);
+
+        if (distanceToPlayer > Fw_Pointer.EnemyKamikazeSC.stopChasingDistance && !_enemyPassed)
+        { dir = playerPosition - transform.position; }
+        else _enemyPassed = true;
 
         transform.position += Fw_Pointer.EnemyKamikaze.speed * Time.deltaTime * dir.normalized;
     }
 
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+        if (currentLife <= 0) Die(Random.Range(20, 40));
+    }
+
+    #region TurnOn/Off
     public override void TurnOn(Enemy x)
     {
         base.TurnOn(x);
     }
-    
+
     public override void TurnOff(Enemy x)
     {
         base.TurnOff(x);
         ResetMaxLife(x, Fw_Pointer.EnemyKamikaze.maxLife);
+    }
+    #endregion
+
+    private void OnDisable()
+    {
+        _enemyPassed = false;
     }
 
     private void OnDrawGizmos()
@@ -57,10 +69,5 @@ public class Kamikaze : Enemy
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, Fw_Pointer.EnemyKamikazeSC.stopChasingDistance);
-    }
-
-    private void OnDisable()
-    {
-        _enemyPassed = false;
     }
 }

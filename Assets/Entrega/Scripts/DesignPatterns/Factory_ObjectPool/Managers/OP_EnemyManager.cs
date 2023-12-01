@@ -4,47 +4,29 @@ using UnityEngine;
 public class OP_EnemyManager : MonoBehaviour
 {
     public static OP_EnemyManager Instance;
-    public List<ObjectPool<Enemy>> enemyOPs = new List<ObjectPool<Enemy>>();
-
-    [Header("Caza")]
-
-    [SerializeField] int _cazadorInitAmount;
-    [SerializeField] Enemy _cazadorPrefab;
-    Factory<Enemy> _cazadorFactory;
-    public ObjectPool<Enemy> _cazadorPool;
-
-    [Header("Kamikaze")]
-    [SerializeField] int _kamikazeInitAmount;
-    [SerializeField] Enemy _kamikazePrefab;
-    Factory<Enemy> _kamikazeFactory;
-    public ObjectPool<Enemy> _kamikazePool;
-
+    public List<ObjectsPoolConstructor<Enemy>> enemyPools;
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);     
     }
 
-
-    private void Start()
+    private void Start() { enemyPools = CreateEnemyFactoryAndPool(enemyPools); }
+    
+    public List<ObjectsPoolConstructor<Enemy>> CreateEnemyFactoryAndPool(List<ObjectsPoolConstructor<Enemy>> pools)
     {
-        if (_cazadorPrefab != null)
-        {
-            _cazadorFactory = new Factory<Enemy>(_cazadorPrefab);
-            _cazadorPool = new ObjectPool<Enemy>(_cazadorFactory.GetObject, _cazadorPrefab.TurnOff, _cazadorPrefab.TurnOn, _cazadorInitAmount);
-        }
+        List<ObjectsPoolConstructor<Enemy>> updatedPools = new List<ObjectsPoolConstructor<Enemy>>();
 
-        if (_kamikazePrefab != null)
+        for (int i = 0; i < pools.Count; i++)
         {
-            _kamikazeFactory = new Factory<Enemy>(_kamikazePrefab);
-            _kamikazePool = new ObjectPool<Enemy>(_kamikazeFactory.GetObject, _kamikazePrefab.TurnOff, _kamikazePrefab.TurnOn, _kamikazeInitAmount);
+            ObjectsPoolConstructor<Enemy> currentPool = pools[i];
+
+            currentPool.factory = new Factory<Enemy>(currentPool.prefab);
+            currentPool.pool = new ObjectPool<Enemy>(currentPool.factory.GetObject, currentPool.prefab.TurnOff, currentPool.prefab.TurnOn, currentPool.initAmount);
+
+            updatedPools.Add(currentPool);
         }
+        return updatedPools;
     }
 }

@@ -39,7 +39,7 @@ public class EnemyWaveSpawner : MonoBehaviour
         }
 
         Debug.Log("Cantidad de enemigos activados: " + _enemiesSpawned.Count);
-        
+
         foreach (var item in _enemiesSpawned)
         {
             if (item.OnDesactivar != null) continue;
@@ -65,10 +65,10 @@ public class EnemyWaveSpawner : MonoBehaviour
         switch (enemy)
         {
             case "caza":
-                pool = OP_EnemyManager.Instance._cazadorPool;
+                pool = OP_EnemyManager.Instance.enemyPools[0].pool; 
                 break;
             case "kamikaze":
-                pool = OP_EnemyManager.Instance._kamikazePool;
+                pool = OP_EnemyManager.Instance.enemyPools[1].pool;
                 break;
             default:
                 Debug.Log("no pick enemigo");
@@ -80,7 +80,6 @@ public class EnemyWaveSpawner : MonoBehaviour
         x.outOfScreen = false;
         x.transform.position = pos;
         x.transform.forward = Vector3.down;
-        //x.transform.rotation = Quaternion.Euler(90, 180, 0);
         return x;
     }
 

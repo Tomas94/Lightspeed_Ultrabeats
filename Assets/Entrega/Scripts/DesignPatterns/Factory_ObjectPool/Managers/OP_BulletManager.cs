@@ -1,44 +1,34 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class OP_BulletManager : MonoBehaviour
 {
     public static OP_BulletManager instance;
 
-    [Header("PlayerOP")]
-    [SerializeField] int _playerInitAmount;
-    [SerializeField] Bullet _playerBulletPrefab;
-    Factory<Bullet> _playerBulletFactory;
-    public static ObjectPool<Bullet> _playerBulletPool;
-
-    [Header("EnemyOP")]
-    [SerializeField] int _enemyInitAmount;
-    [SerializeField] Bullet _enemyBulletPrefab;
-    Factory<Bullet> _enemyBulletFactory;
-    public static ObjectPool<Bullet> _enemyBulletPool;
+    public static OP_BulletManager Instance;
+    public List<ObjectsPoolConstructor<Bullet>> bulletPools;
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
 
-    private void Start()
+    private void Start() { bulletPools = CreateEnemyFactoryAndPool(bulletPools); }
+
+    public List<ObjectsPoolConstructor<Bullet>> CreateEnemyFactoryAndPool(List<ObjectsPoolConstructor<Bullet>> pools)
     {
-        if (_playerBulletPrefab != null)
+        List<ObjectsPoolConstructor<Bullet>> updatedPools = new List<ObjectsPoolConstructor<Bullet>>();
+
+        for (int i = 0; i < pools.Count; i++)
         {
-            _playerBulletFactory = new Factory<Bullet>(_playerBulletPrefab);
-            _playerBulletPool = new ObjectPool<Bullet>(_playerBulletFactory.GetObject, _playerBulletPrefab.TurnOff, _playerBulletPrefab.TurnOn, _playerInitAmount);
+            ObjectsPoolConstructor<Bullet> currentPool = pools[i];
+
+            currentPool.factory = new Factory<Bullet>(currentPool.prefab);
+            currentPool.pool = new ObjectPool<Bullet>(currentPool.factory.GetObject, currentPool.prefab.TurnOff, currentPool.prefab.TurnOn, currentPool.initAmount);
+
+            updatedPools.Add(currentPool);
         }
-        if (_enemyBulletPrefab != null)
-        {
-            _enemyBulletFactory = new Factory<Bullet>(_enemyBulletPrefab);
-            _enemyBulletPool = new ObjectPool<Bullet>(_enemyBulletFactory.GetObject, _enemyBulletPrefab.TurnOff, _enemyBulletPrefab.TurnOn, _enemyInitAmount);
-        }
+        return updatedPools;
     }
 }
