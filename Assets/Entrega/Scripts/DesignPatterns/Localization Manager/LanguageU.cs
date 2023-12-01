@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class LanguageU 
+public static class LanguageU
 {
     public static Dictionary<SystemLanguage, Dictionary<string, string>> LoadTranslate(DataLocalization[] data)
     {
@@ -26,10 +26,8 @@ public static class LanguageU
                         tempData.Add(c[0].Trim(), c[1].Trim());
                 }
             }
-
             tempDic.Add(data[i].language, tempData);
         }
-
         return tempDic;
     }
 }

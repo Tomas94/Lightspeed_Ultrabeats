@@ -1,8 +1,8 @@
-public class UpgradePoints : IResources
+public class UpgradePoints
 {
     public int _actualUPs;
 
-    public UpgradePoints(int actualUP)=> _actualUPs = actualUP;
+    public UpgradePoints(int actualUP) => _actualUPs = actualUP;
 
     public void SpentResource(int quantity)
     {
@@ -16,17 +16,3 @@ public class UpgradePoints : IResources
     }
 
 }
-
-    /*
-    public void SpentUP(float points)
-    {
-        _actualUpgradePoints -= points;
-    }
-
-    public void GainUP(float score)
-    {
-        var pointsGained = score * 0.8f * 0.3f;
-
-        _actualUpgradePoints += pointsGained;
-    }
-    */

@@ -5,8 +5,7 @@ using TMPro;
 public class MainMenuStatsUpdater : MonoBehaviour
 {
     StaminaController _staCtrl;
-    public TextMeshProUGUI crediBeatsAmount;
-    public TextMeshProUGUI staminaAmount;
+    public TextMeshProUGUI crediBeatsAmount, staminaAmount;
     public Image staminaBar;
     int _currentStm;
 
@@ -26,13 +25,11 @@ public class MainMenuStatsUpdater : MonoBehaviour
             _currentStm = GameManager.Instance.stamina;
             staminaAmount.text.Replace(GameManager.Instance.stamina.ToString(), _currentStm.ToString());
         }
-        
     }
 
     public void StaminaBarUpdate()
     {
         float updatedStaminaAmount = (float)GameManager.Instance.stamina / (float)_staCtrl.MaxStamina;
         staminaBar.fillAmount = updatedStaminaAmount;
-
     }
 }

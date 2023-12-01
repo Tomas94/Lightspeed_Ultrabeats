@@ -6,22 +6,14 @@ public class SaveSystem : MonoBehaviour
     public static SaveData _saveData = new SaveData();
     string path;
 
-    void Start()
-    {
-        path = Application.dataPath + "/SaveData.save";
-    }
+    void Start() { path = Application.dataPath + "/SaveData.save"; }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            SaveData();
-        }
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            LoadData();
-        }
-    }
+    /*void Update()
+     {
+         if (Input.GetKeyDown(KeyCode.M)) SaveData();
+         if (Input.GetKeyDown(KeyCode.N)) LoadData();
+     }
+    */
 
     public void SaveData()
     {

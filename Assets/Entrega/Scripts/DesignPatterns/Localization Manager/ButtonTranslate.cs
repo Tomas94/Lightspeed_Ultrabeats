@@ -12,9 +12,5 @@ public class ButtonTranslate : MonoBehaviour
         Translate();
     }
 
-    void Translate()
-    {
-        textUI.text = LocalizationManager.instance.GetTranslate(ID);
-    }
-
+    void Translate() => textUI.text = LocalizationManager.instance.GetTranslate(ID);
 }

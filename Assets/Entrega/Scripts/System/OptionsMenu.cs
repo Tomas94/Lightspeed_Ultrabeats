@@ -19,11 +19,7 @@ public class OptionsMenu : MonoBehaviour
         PlayerPrefs.SetInt("Vibration", _vibrationAllowed ? 1 : 0);
     }
 
-    public void Vibrate()
-    {
-        if (_vibrationAllowed) Handheld.Vibrate();
-        
-    }
+    public void Vibrate() { if (_vibrationAllowed) Handheld.Vibrate(); }
 
     public void BrightnessSet()
     {

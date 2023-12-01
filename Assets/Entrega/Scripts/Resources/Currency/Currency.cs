@@ -1,4 +1,4 @@
-public class Currency : IResources
+public class Currency
 {
     public int _actualCurrency;
 

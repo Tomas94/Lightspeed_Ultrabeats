@@ -5,13 +5,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("Resources")]
-    public int stamina;
-    public int currency;
-    public int upgradePoints;
+    public int stamina, currency, upgradePoints;
 
     [Header("Score Variables")]
-    public int levelScore;
-    public int killCount;
+    public int levelScore, killCount;
 
     [Header("Configuration Values")]
     public bool vibration;
@@ -27,15 +24,11 @@ public class GameManager : MonoBehaviour
         }
         else Destroy(gameObject);
     }
-    private void Start()
-    {
-        LoadPlayerPreferencies();
-    }
+    private void Start() { LoadPlayerPreferencies(); }
 
     void LoadPlayerPreferencies()
     {
-        vibration = PlayerPrefs.GetInt("Vibration",0)==1;
+        vibration = PlayerPrefs.GetInt("Vibration", 0) == 1;
         brigthnessValue = PlayerPrefs.GetFloat("BrightnessValue", 0.25f);
     }
-
 }

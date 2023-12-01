@@ -13,7 +13,6 @@ public class LocalizationManager : MonoBehaviour
 
     void Awake()
     {
-
         if (instance == null)
         {
             instance = this;
@@ -22,16 +21,6 @@ public class LocalizationManager : MonoBehaviour
         }
         else
             Destroy(this);
-
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-            ChangeLang(SystemLanguage.Spanish);
-
-        if (Input.GetKeyDown(KeyCode.E))
-            ChangeLang(SystemLanguage.English);
     }
 
     public void ChangeLang(SystemLanguage newLang)
@@ -39,7 +28,6 @@ public class LocalizationManager : MonoBehaviour
         if (language != newLang)
         {
             language = newLang;
-
             EventTranslate?.Invoke();
         }
     }

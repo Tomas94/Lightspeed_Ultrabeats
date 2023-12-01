@@ -7,22 +7,15 @@ public class ScreenManager : MonoBehaviour
     public static ScreenManager instance;
     public Stack<IScreen> _screens = new Stack<IScreen>();
 
-    void Awake()
-    {
-        instance = this;
-    }
+    void Awake() { instance = this; }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Escape))
-            DesactiveScreen();
-    }
+    void Update() { if (Input.GetKeyDown(KeyCode.Escape)) DesactiveScreen(); }
 
     public void ActiveScreen(IScreen screen)
     {
         screen.Activate();
 
-        if(_screens.Count > 0)
+        if (_screens.Count > 0)
             _screens.Peek().Desactivate();
 
         _screens.Push(screen);
@@ -30,11 +23,11 @@ public class ScreenManager : MonoBehaviour
 
     public void DesactiveScreen()
     {
-        if(_screens.Count > 0)
+        if (_screens.Count > 0)
         {
             _screens.Pop().Desactivate();
 
-            if(_screens.Count > 0)
+            if (_screens.Count > 0)
                 _screens.Peek().Activate();
         }
     }
