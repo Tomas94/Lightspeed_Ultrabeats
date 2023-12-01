@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32680222, g: 0.33326456, b: 0.3136305, a: 1}
+  m_IndirectSpecularColor: {r: 0.32486436, g: 0.33119228, b: 0.31231287, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4621,6 +4621,7 @@ GameObject:
   - component: {fileID: 493355513}
   - component: {fileID: 493355512}
   - component: {fileID: 493355511}
+  - component: {fileID: 493355514}
   m_Layer: 5
   m_Name: Boton+1
   m_TagString: Untagged
@@ -4731,6 +4732,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493355509}
   m_CullTransparentMesh: 1
+--- !u!114 &493355514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493355509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a0155c8d18aca48ba25f57b995f3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: IDEnergiaGratis
+  textUI: {fileID: 373933154}
 --- !u!1 &508507564
 GameObject:
   m_ObjectHideFlags: 0
@@ -8933,6 +8948,7 @@ GameObject:
   - component: {fileID: 876332938}
   - component: {fileID: 876332937}
   - component: {fileID: 876332936}
+  - component: {fileID: 876332939}
   m_Layer: 5
   m_Name: Mision1
   m_TagString: Untagged
@@ -9047,6 +9063,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876332934}
   m_CullTransparentMesh: 1
+--- !u!114 &876332939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876332934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a0155c8d18aca48ba25f57b995f3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: IDMision01
+  textUI: {fileID: 777814644}
 --- !u!1 &896333270
 GameObject:
   m_ObjectHideFlags: 0
@@ -14085,6 +14115,7 @@ GameObject:
   - component: {fileID: 1343691086}
   - component: {fileID: 1343691085}
   - component: {fileID: 1343691084}
+  - component: {fileID: 1343691087}
   m_Layer: 5
   m_Name: BotonRestaurar
   m_TagString: Untagged
@@ -14196,6 +14227,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343691082}
   m_CullTransparentMesh: 1
+--- !u!114 &1343691087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343691082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a0155c8d18aca48ba25f57b995f3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: IDRestaurarEnergia
+  textUI: {fileID: 2081556621}
 --- !u!1 &1379673626
 GameObject:
   m_ObjectHideFlags: 0

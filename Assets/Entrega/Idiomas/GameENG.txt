@@ -5,6 +5,7 @@
 "IDJugar" : "PLAY",
 "IDMisiones" : "MISSIONS",
 "IDMisionesDescripcion" : "Complete daily missions to get rewards!",
+"IDMision01" : "Destroy 20 enemies",
 "IDOpciones" : "OPTIONS",
 "IDIdioma" : "ENG",
 "IDControles" : "CONTROLS",
@@ -32,5 +33,8 @@
 "IDVictoria" : "VICTORY",
 "IDReiniciar" : "RESTART",
 "IDMenu" : "MENU",
-"IDPuntajeFinal" : "FINAL SCORE"
+"IDPuntajeFinal" : "FINAL SCORE",
+"IDEnergiaGratis" : "+1 FREE ENERGY",
+"IDRestaurarEnergia" : "RESTORE
+ENERGY",
 }

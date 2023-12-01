@@ -38,7 +38,7 @@ public class EnemyWaveSpawner : MonoBehaviour
             _spawnPoints.RemoveAt(spawnIndex);
         }
 
-        Debug.Log("Cantidad de enemigos activados: " + _enemiesSpawned.Count);
+        //Debug.Log("Cantidad de enemigos activados: " + _enemiesSpawned.Count);
 
         foreach (var item in _enemiesSpawned)
         {
@@ -62,18 +62,7 @@ public class EnemyWaveSpawner : MonoBehaviour
     {
         ObjectPool<Enemy> pool;
 
-        switch (enemy)
-        {
-            case "caza":
-                pool = OP_EnemyManager.Instance.enemyPools[0].pool; 
-                break;
-            case "kamikaze":
-                pool = OP_EnemyManager.Instance.enemyPools[1].pool;
-                break;
-            default:
-                Debug.Log("no pick enemigo");
-                return null;
-        }
+        pool = EnemyToSpawn(enemy);
 
         var x = pool.Get();
         x.Initialize(pool);
@@ -93,6 +82,22 @@ public class EnemyWaveSpawner : MonoBehaviour
         }
 
         return allPoints;
+    }
+
+    public ObjectPool<Enemy> EnemyToSpawn(string enemy)
+    {
+        ObjectPool<Enemy> pool;
+
+        switch (enemy)
+        {
+            case "caza":
+                return pool = OP_EnemyManager.Instance.enemyPools[0].pool;
+            case "kamikaze":
+                return pool = OP_EnemyManager.Instance.enemyPools[1].pool;
+            default:
+                Debug.Log("no pick enemigo");
+                return null;
+        }
     }
 
     IEnumerator FirstWave()

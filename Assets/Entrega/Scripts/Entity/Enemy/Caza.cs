@@ -1,8 +1,7 @@
-using System.Collections;
 using UnityEngine;
 
 public class Caza : Enemy
-{
+{    
     private void Awake()
     {
         SetLife(Fw_Pointer.EnemyCaza.maxLife);
@@ -10,7 +9,8 @@ public class Caza : Enemy
 
     private void Start()
     {
-        StartCoroutine(ChargeShot(Fw_Pointer.EnemyCazaRate.rate));
+        Debug.Log("en el start");
+        //StartCoroutine(ChargeShot(Fw_Pointer.EnemyCazaRate.rate));
     }
 
     public void Update()
@@ -26,9 +26,24 @@ public class Caza : Enemy
         if (currentLife <= 0) Die(Random.Range(50, 60));
     }
 
+    public override void TurnOn(Enemy x)
+    {
+        base.TurnOn(x);
+    }
+
     public override void TurnOff(Enemy x)
     {
         base.TurnOff(x);
+        StopAllCoroutines();
         ResetMaxLife(x, Fw_Pointer.EnemyCaza.maxLife);
+    }
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(ChargeShot(Fw_Pointer.EnemyCazaRate.rate));
     }
 }

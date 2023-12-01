@@ -5,6 +5,7 @@
 "IDJugar" : "JUGAR",
 "IDMisiones" : "MISIONES",
 "IDMisionesDescripcion" : "¡Completa misiones diarias para conseguir recompensas!",
+"IDMision01" : "Destruye 20 enemigos",
 "IDOpciones" : "OPCIONES",
 "IDIdioma" : "ESP",
 "IDControles" : "CONTROLES",
@@ -32,5 +33,8 @@
 "IDVictoria" : "VICTORIA",
 "IDReiniciar" : "REINICIAR",
 "IDMenu" : "MENU",
-"IDPuntajeFinal" : "PUNTAJE FINAL"
+"IDPuntajeFinal" : "PUNTAJE FINAL",
+"IDEnergiaGratis" : "+1 ENERGIA GRATIS",
+"IDRestaurarEnergia" : "RESTAURAR
+ENERGIA",
 }

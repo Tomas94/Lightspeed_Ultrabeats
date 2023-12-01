@@ -41,7 +41,8 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 0}
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Server
   - serializedVersion: 2
     name: Low
     pixelLightCount: 0
@@ -221,7 +222,8 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 11400000, guid: 372f8743188d8c04bbe2a1698bf08db6, type: 2}
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Standalone
   m_PerPlatformDefaultQuality:
     Android: 2
     GameCoreScarlett: 5
