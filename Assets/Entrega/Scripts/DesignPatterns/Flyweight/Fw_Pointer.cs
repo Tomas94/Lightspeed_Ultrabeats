@@ -37,7 +37,6 @@ public static class Fw_Pointer
     #endregion
 
     #region Flyweight Balas
-
     public static readonly Fw_Bullets BulletPlayer = new Fw_Bullets
     {
         damage = 1,
@@ -49,6 +48,5 @@ public static class Fw_Pointer
         damage = 1,
         speed = 3
     };
-
     #endregion
 }

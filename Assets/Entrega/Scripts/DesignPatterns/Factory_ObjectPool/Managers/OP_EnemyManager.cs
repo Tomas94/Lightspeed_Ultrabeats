@@ -4,23 +4,26 @@ using UnityEngine;
 public class OP_EnemyManager : MonoBehaviour
 {
     public static OP_EnemyManager Instance;
-    public List<ObjectsPoolConstructor<Enemy>> enemyPools;
+    public List<ObjectsPoolElements<Enemy>> enemyPools;
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
-        else Destroy(gameObject);     
+        else Destroy(gameObject);
     }
 
-    private void Start() { enemyPools = CreateEnemyFactoryAndPool(enemyPools); }
-    
-    public List<ObjectsPoolConstructor<Enemy>> CreateEnemyFactoryAndPool(List<ObjectsPoolConstructor<Enemy>> pools)
+    private void Start()
     {
-        List<ObjectsPoolConstructor<Enemy>> updatedPools = new List<ObjectsPoolConstructor<Enemy>>();
+        enemyPools = CreateEnemyFactoryAndPool(enemyPools);
+    }
+
+    public List<ObjectsPoolElements<Enemy>> CreateEnemyFactoryAndPool(List<ObjectsPoolElements<Enemy>> pools)
+    {
+        List<ObjectsPoolElements<Enemy>> updatedPools = new List<ObjectsPoolElements<Enemy>>();
 
         for (int i = 0; i < pools.Count; i++)
         {
-            ObjectsPoolConstructor<Enemy> currentPool = pools[i];
+            ObjectsPoolElements<Enemy> currentPool = pools[i];
 
             currentPool.factory = new Factory<Enemy>(currentPool.prefab);
             currentPool.pool = new ObjectPool<Enemy>(currentPool.factory.GetObject, currentPool.prefab.TurnOff, currentPool.prefab.TurnOn, currentPool.initAmount);

@@ -18,10 +18,7 @@ public class Caza : Enemy
         Move();
     }
 
-    public void Move()
-    {
-        transform.position += Fw_Pointer.EnemyCaza.speed * Time.deltaTime * transform.forward;
-    }
+    public void Move() => transform.position += Fw_Pointer.EnemyCaza.speed * Time.deltaTime * transform.forward;
 
     public override void TakeDamage(float damage)
     {

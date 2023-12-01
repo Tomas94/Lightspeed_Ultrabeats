@@ -22,8 +22,5 @@ public class CurrencyController : MonoBehaviour
         UpdateCurrency();
     }
 
-    void UpdateCurrency()
-    {
-        GameManager.Instance.currency = _gameCurrency._actualCurrency;
-    }
+    void UpdateCurrency() => GameManager.Instance.currency = _gameCurrency._actualCurrency;
 }

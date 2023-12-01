@@ -5,10 +5,7 @@ public class PU_Shield
     public bool _isActive;
     float _activeTime;
 
-    public PU_Shield(float activeTime)
-    {
-        _activeTime = activeTime;
-    }
+    public PU_Shield(float activeTime) => _activeTime = activeTime;
 
     public void Activate(float fillamount)
     {
@@ -18,8 +15,5 @@ public class PU_Shield
         fillamount = 0;
     }
 
-    public void Deactivate()
-    {
-        _isActive = false;
-    }
+    public void Deactivate() => _isActive = false;
 }

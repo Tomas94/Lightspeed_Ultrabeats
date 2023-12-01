@@ -2,10 +2,7 @@ public class UpgradePoints : IResources
 {
     public int _actualUPs;
 
-    public UpgradePoints(int actualUP)
-    {
-        _actualUPs = actualUP;
-    }
+    public UpgradePoints(int actualUP)=> _actualUPs = actualUP;
 
     public void SpentResource(int quantity)
     {

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Kamikaze : Enemy
@@ -44,30 +42,11 @@ public class Kamikaze : Enemy
         if (currentLife <= 0) Die(Random.Range(20, 40));
     }
 
-    #region TurnOn/Off
-    public override void TurnOn(Enemy x)
-    {
-        base.TurnOn(x);
-    }
-
     public override void TurnOff(Enemy x)
     {
         base.TurnOff(x);
         ResetMaxLife(x, Fw_Pointer.EnemyKamikaze.maxLife);
     }
-    #endregion
 
-    private void OnDisable()
-    {
-        _enemyPassed = false;
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, dir);
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, Fw_Pointer.EnemyKamikazeSC.stopChasingDistance);
-    }
+    private void OnDisable() => _enemyPassed = false;
 }

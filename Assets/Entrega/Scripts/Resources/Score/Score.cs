@@ -2,34 +2,20 @@ using UnityEngine;
 
 public class Score
 {
-    public int timeScore;
-    public int killScore;
-    public int totalScore;
+    public int timeScore, killScore, totalScore;
 
     public Score(int _initialScore)
     {
         totalScore = _initialScore;
     }
 
-    public void IncrementScore(float time)
-    {
-        timeScore = (int)time;
-    }
+    public void IncrementScore(float time) => timeScore = (int)time;
 
-    public void IncrementScore(int value)
-    {
-        killScore += value;
-    }
+    public void IncrementScore(int value) => killScore += value;
 
-    public void TotalScore()
-    {
-        totalScore = timeScore + killScore;
-    }
+    public void TotalScore() => totalScore = timeScore + killScore;
 
-    public void SubmitScore()
-    {
-        GameManager.Instance.levelScore = totalScore;
-    }
+    public void SubmitScore() => GameManager.Instance.levelScore = totalScore;
 
     public void ResetScore()
     {

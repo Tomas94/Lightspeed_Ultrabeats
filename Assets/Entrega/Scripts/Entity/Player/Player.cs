@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class Player : Entity
@@ -39,8 +38,8 @@ public class Player : Entity
 
     public override void Disparar()
     {
-        var bala = OP_BulletManager.instance.bulletPools[0].pool.Get();
-        bala.Initialize(OP_BulletManager.instance.bulletPools[0].pool);
+        var bala = OP_BulletManager.Instance.bulletPools[0].pool.Get();
+        bala.Initialize(OP_BulletManager.Instance.bulletPools[0].pool);
         bala.transform.position = transform.position;
         bala.transform.forward = transform.forward;
     }

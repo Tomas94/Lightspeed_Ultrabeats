@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public struct ObjectsPoolConstructor<T> where T : MonoBehaviour
+public struct ObjectsPoolElements<T> where T : MonoBehaviour
 {
     public T prefab;
     public int initAmount;

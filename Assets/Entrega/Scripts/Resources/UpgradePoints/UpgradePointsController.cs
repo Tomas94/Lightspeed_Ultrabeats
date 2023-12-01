@@ -21,8 +21,5 @@ public class UpgradePointsController : MonoBehaviour
         UpdateUpgradePoints();
     }
 
-    void UpdateUpgradePoints()
-    {
-        GameManager.Instance.upgradePoints = _gameUpgradePoints._actualUPs;
-    }
+    void UpdateUpgradePoints() => GameManager.Instance.upgradePoints = _gameUpgradePoints._actualUPs;
 }
