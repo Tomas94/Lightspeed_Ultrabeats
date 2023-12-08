@@ -22,7 +22,7 @@ public class SceneManagerr : MonoBehaviour
 
     public static void Resume() => Time.timeScale = 1f;
 
-    public void Restart() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    public static void Restart() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     public static void ToMainMenu() => SceneManager.LoadScene(1);
 

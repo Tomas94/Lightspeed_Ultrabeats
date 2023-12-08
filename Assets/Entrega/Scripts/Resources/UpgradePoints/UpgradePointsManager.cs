@@ -7,7 +7,7 @@ public class UpgradePointsManager : MonoBehaviour
 
     [SerializeField] int upgradePoints;
 
-    public int UpgradePoints { get { return upgradePoints; } }
+    public int UpgradePoints { get { return upgradePoints; } set { upgradePoints = value; } }
 
     private void Awake()
     {

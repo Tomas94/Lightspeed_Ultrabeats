@@ -7,7 +7,7 @@ public class CurrencyManager : MonoBehaviour
 
     [SerializeField] int currency;
 
-    public int Currency {  get { return currency; }}
+    public int Currency {  get { return currency; } set { currency = value; } }
 
     private void Awake()
     {

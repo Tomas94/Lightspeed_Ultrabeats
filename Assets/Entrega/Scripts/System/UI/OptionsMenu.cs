@@ -9,8 +9,8 @@ public class OptionsMenu : MonoBehaviour
 
     private void Start()
     {
-        _brightnessSlider.value = GameManager.Instance.brigthnessValue;
-        _vibrationAllowed.isOn = GameManager.Instance.vibration;
+       // _brightnessSlider.value = GameManager.Instance.brigthnessValue;
+        //_vibrationAllowed.isOn = GameManager.Instance.vibration;
     }
 
     public void VibrationSwapState()
@@ -24,7 +24,7 @@ public class OptionsMenu : MonoBehaviour
     public void BrightnessSet()
     {
         _brightnessBG.color = new Color(_brightnessBG.color.r, _brightnessBG.color.g, _brightnessBG.color.b, _brightnessSlider.value);
-        GameManager.Instance.brigthnessValue = _brightnessSlider.value;
+        //GameManager.Instance.brigthnessValue = _brightnessSlider.value;
         PlayerPrefs.SetFloat("BrightnessValue", _brightnessSlider.value);
     }
 }

@@ -203,14 +203,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9148992, g: 0.7761659, b: 0.9622642, a: 1}
+  m_Color: {r: 1, g: 0.9576613, b: 0.23113209, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5e338ff4e174d76479fe1e3a681a1a6c, type: 3}
+  m_Texture: {fileID: 2800000, guid: 5fea219231132a94fbe3a50e382908ef, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -295,7 +295,6 @@ GameObject:
   m_Component:
   - component: {fileID: 94803824}
   - component: {fileID: 94803827}
-  - component: {fileID: 94803828}
   m_Layer: 0
   m_Name: GameControllers
   m_TagString: Untagged
@@ -316,7 +315,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &94803827
 MonoBehaviour:
@@ -332,23 +331,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemWS: {fileID: 363209178}
   completedWaves: 0
-  wavesGoal: 3
+  wavesGoal: 15
   _victoryScreen: {fileID: 1638252561}
   _player: {fileID: 266831682}
---- !u!114 &94803828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 94803823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f74252a3085819542a7ed40c05097ebf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 0
-  multiplyer: 0
 --- !u!1 &129368741
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +501,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 2845eeb5012835c4bb972ddb3c875d82, type: 3}
     - target: {fileID: 6404224034917003288, guid: f511c61c3873fd9438b62727d06e8fd6, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6404224034917003288, guid: f511c61c3873fd9438b62727d06e8fd6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -734,6 +719,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d2928c54158ac34b978c93d558293d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &215030553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215030546}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a0155c8d18aca48ba25f57b995f3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 
+  textUI: {fileID: 0}
 --- !u!1 &266831674 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9212596837344065525, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
@@ -871,9 +870,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 595282180}
-        m_TargetAssemblyTypeName: InGameUI_Controller, Assembly-CSharp
-        m_MethodName: ResumeGame
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -883,16 +882,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 595282180}
-        m_TargetAssemblyTypeName: InGameUI_Controller, Assembly-CSharp
-        m_MethodName: RestartLevel
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level_1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &485300288
@@ -979,7 +978,7 @@ Transform:
   - {fileID: 5177402316193991225}
   - {fileID: 1862018941}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &498977618
 MonoBehaviour:
@@ -1519,6 +1518,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &729945709
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5596117288141540139, guid: 0a98934bcaa735545b4ce12d6d4c22fc, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596117288141540141, guid: 0a98934bcaa735545b4ce12d6d4c22fc, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596117288141540141, guid: 0a98934bcaa735545b4ce12d6d4c22fc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -190.1724
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596117288141540141, guid: 0a98934bcaa735545b4ce12d6d4c22fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -132.71632
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596117288141540141, guid: 0a98934bcaa735545b4ce12d6d4c22fc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.130168
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596117288141540141, guid: 0a98934bcaa735545b4ce12d6d4c22fc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596117288141540141, guid: 0a98934bcaa735545b4ce12d6d4c22fc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596117288141540141, guid: 0a98934bcaa735545b4ce12d6d4c22fc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596117288141540141, guid: 0a98934bcaa735545b4ce12d6d4c22fc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596117288141540141, guid: 0a98934bcaa735545b4ce12d6d4c22fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596117288141540141, guid: 0a98934bcaa735545b4ce12d6d4c22fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596117288141540141, guid: 0a98934bcaa735545b4ce12d6d4c22fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0a98934bcaa735545b4ce12d6d4c22fc, type: 3}
 --- !u!1 &731333046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,7 +1589,7 @@ GameObject:
   - component: {fileID: 731333048}
   - component: {fileID: 731333051}
   m_Layer: 5
-  m_Name: Volver Menu
+  m_Name: SalirnivelMuerteBoton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1604,9 +1660,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 595282180}
-        m_TargetAssemblyTypeName: InGameUI_Controller, Assembly-CSharp
-        m_MethodName: ResumeGame
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1616,8 +1672,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 595282180}
-        m_TargetAssemblyTypeName: InGameUI_Controller, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: ToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -2553,7 +2609,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1159346705
 MonoBehaviour:
@@ -3118,7 +3174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2232107733314740403, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2232107733314740403, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3311,7 +3367,7 @@ GameObject:
   - component: {fileID: 2027099497}
   - component: {fileID: 2027099500}
   m_Layer: 5
-  m_Name: Volver Al Menu
+  m_Name: SalirnivelMuerteBoton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3382,9 +3438,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 94803828}
-        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
-        m_MethodName: GainResources
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3394,20 +3450,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 595282180}
-        m_TargetAssemblyTypeName: InGameUI_Controller, Assembly-CSharp
-        m_MethodName: ResumeGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 595282180}
-        m_TargetAssemblyTypeName: InGameUI_Controller, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: ToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -3555,9 +3599,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 595282180}
-        m_TargetAssemblyTypeName: InGameUI_Controller, Assembly-CSharp
-        m_MethodName: ResumeGame
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3567,16 +3611,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 595282180}
-        m_TargetAssemblyTypeName: InGameUI_Controller, Assembly-CSharp
-        m_MethodName: RestartLevel
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level_1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2064600646
@@ -3861,7 +3905,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f5f9c3870ab60a24e88ef0650b68ab68, type: 2}
     - target: {fileID: 8399891359157710159, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8399891359157710159, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
       propertyPath: m_LocalPosition.x

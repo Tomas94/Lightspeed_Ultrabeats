@@ -13,8 +13,11 @@ public class ScoreManager : MonoBehaviour
 
     public int Score { get { return score; } }
 
-    private void Awake() => Initialize();
-
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        Initialize();
+    }
     private void Start() => StartCoroutine(TimeScore());
 
     private void Update() => score = _gameScore.TotalScore();
@@ -41,4 +44,11 @@ public class ScoreManager : MonoBehaviour
     {
         _gameScore.SubmitScore();
     }
+
+    public void GainResources()
+    {
+        CurrencyManager.instance.GainCurrency(score);
+        UpgradePointsManager.instance.GainUP(score);
+    }
+
 }

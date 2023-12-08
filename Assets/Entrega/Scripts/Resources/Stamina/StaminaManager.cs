@@ -10,7 +10,7 @@ public class StaminaManager : MonoBehaviour
     [SerializeField] int stamina;
     bool _canConsume;
 
-    public int Stamina { get { return stamina; } }
+    public int Stamina { get { return stamina; } set { stamina = value; } }
     public int MaxStamina { get { return _maxStamina; } }
 
     private void Awake()
@@ -30,7 +30,7 @@ public class StaminaManager : MonoBehaviour
     void Initialize()
     {
         _gameStamina = new Stamina(_maxStamina);
-        stamina = _gameStamina._maxStamina;
+        stamina = _gameStamina._currentStamina;
         _canConsume = true;
     }
 

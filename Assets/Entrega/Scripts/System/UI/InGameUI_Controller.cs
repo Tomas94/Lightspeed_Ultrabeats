@@ -18,4 +18,6 @@ public class InGameUI_Controller : MonoBehaviour
     public void ResumeGame() => SceneManagerr.Resume();
 
     public void ToMainMenu() => SceneManagerr.ToMainMenu();
+
+    public void RestartLevel() => SceneManagerr.Restart();
 }
