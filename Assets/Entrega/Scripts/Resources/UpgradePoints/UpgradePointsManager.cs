@@ -28,11 +28,11 @@ public class UpgradePointsManager : MonoBehaviour
 
     public void SpentUP(int value)
     {
-        upgradePoints = _gameUpgradePoints.SpentResource(value);
+        upgradePoints -= _gameUpgradePoints.SpentResource(value);
     }
 
     public void GainUP(int value)
     {
-        upgradePoints = _gameUpgradePoints.GainResource(value);
+        upgradePoints += _gameUpgradePoints.GainResource(value);
     }
 }

@@ -5,6 +5,7 @@ public class StaminaManager : MonoBehaviour
 {
     public static StaminaManager instance;
     Stamina _gameStamina;
+    public Timer _timer;
 
     [SerializeField] int _maxStamina;
     [SerializeField] int stamina;
@@ -25,7 +26,7 @@ public class StaminaManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Update() { if (Input.GetKeyUp(KeyCode.W)) RechargeStamina(); }
+    void Update() { if (_timer.remainingTime <= 0) RechargeStamina(); }
 
     void Initialize()
     {

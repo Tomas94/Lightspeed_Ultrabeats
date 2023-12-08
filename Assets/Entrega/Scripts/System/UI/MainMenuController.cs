@@ -71,6 +71,7 @@ public class MainMenuController : MonoBehaviour
 
     public void ResetData()
     {
+        GameManager.Instance.SavePlayerPrefs();
         GameManager.Instance.ResetProgress();
     }
 }

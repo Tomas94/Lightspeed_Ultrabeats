@@ -18,11 +18,11 @@ public class CurrencyManager : MonoBehaviour
 
     public void SpentCurrency(int value)
     {
-        currency = _gameCurrency.SpentResource(value);
+        currency -= _gameCurrency.SpentResource(value);
     }
 
     public void GainCurrency(int value)
     {
-        currency = _gameCurrency.GainResource(value);
+        currency += _gameCurrency.GainResource(value);
     }
 }
