@@ -12,12 +12,16 @@ public class NotificationManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != this && Instance != null) Destroy(gameObject);
+        if (Instance == null) Instance = this;
+        else Destroy(this);
+        DontDestroyOnLoad(this);
+        
+        /*if (Instance != this && Instance != null) Destroy(gameObject);
         else
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-        }
+        }*/
     }
 
     void Start()

@@ -331,11 +331,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemWS: {fileID: 363209178}
-  completedWaves: 0
-  wavesGoal: 5
   _victoryScreen: {fileID: 1638252561}
   _player: {fileID: 266831682}
   totalScore: {fileID: 2011242397}
+  completedWaves: 0
+  wavesGoal: 5
+  currentLevel: 1
 --- !u!114 &94803828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -997,6 +998,8 @@ MonoBehaviour:
   _vibrationAllowed: {fileID: 0}
   _brightnessBG: {fileID: 1132242283}
   _brightnessSlider: {fileID: 0}
+  audioMixer: {fileID: 0}
+  soundToggle: {fileID: 0}
 --- !u!1 &527246831
 GameObject:
   m_ObjectHideFlags: 0
