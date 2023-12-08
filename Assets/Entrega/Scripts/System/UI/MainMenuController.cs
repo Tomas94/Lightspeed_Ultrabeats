@@ -1,17 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-
-   [SerializeField] StaminaManager _staminaManager;
-   [SerializeField] CurrencyManager _currencyManager;
-   [SerializeField] UpgradePointsManager _upgradePointsManager;
-   [SerializeField] SceneManagerr _sceneManager;
+    StaminaManager _staminaManager;
+    CurrencyManager _currencyManager;
+    UpgradePointsManager _upgradePointsManager;
+    SceneManagerr _sceneManager;
 
     public TextMeshProUGUI crediBeatsAmount, staminaAmount;
     public Image staminaBar;
+
+    public bool itemPurchased = false;
 
     private void Awake()
     {
@@ -24,7 +26,8 @@ public class MainMenuController : MonoBehaviour
     private void Start()
     {
         StaminaBarUpdate();
-        //staminaAmount.text += ": " + GameManager.Instance.stamina.ToString();
+        staminaAmount.text += ": " + StaminaManager.instance.Stamina.ToString();
+        crediBeatsAmount.text = CurrencyManager.instance.Currency.ToString();
     }
 
     /*private void Update()
@@ -50,14 +53,23 @@ public class MainMenuController : MonoBehaviour
 
     public void BuyItem(int cost)
     {
+        if (CurrencyManager.instance.Currency < cost) return;
+        itemPurchased = true;
         _currencyManager.SpentCurrency(cost);
+        crediBeatsAmount.text = CurrencyManager.instance.Currency.ToString();
+    }
+
+    public void DisableItemPurchased(Button boton)
+    {
+        if (!itemPurchased) return;
+        boton.interactable = false;
     }
 
     public void BuyUpgrade(int cost)
     {
         _upgradePointsManager.SpentUP(cost);
     }
-    
+
     public void StaminaBarUpdate()
     {
         var updatedStaminaAmount = (float)_staminaManager.Stamina / (float)_staminaManager.MaxStamina;
@@ -66,12 +78,12 @@ public class MainMenuController : MonoBehaviour
 
     public void QuitGame()
     {
+        GameManager.Instance.SavePlayerPrefs();
         Application.Quit();
     }
 
     public void ResetData()
     {
-        GameManager.Instance.SavePlayerPrefs();
         GameManager.Instance.ResetProgress();
     }
 }

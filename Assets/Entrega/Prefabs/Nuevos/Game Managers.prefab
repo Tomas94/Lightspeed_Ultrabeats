@@ -50,11 +50,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26f6d3f63014b44aa39037990b6cdfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stamina: 0
-  currency: 0
-  upgradePoints: 0
+  skins:
+  - id: base
+    skin: {fileID: 2100000, guid: f5f9c3870ab60a24e88ef0650b68ab68, type: 2}
+  - id: floppa
+    skin: {fileID: 2100000, guid: fb719785c79dc6b44a05b9a29b3e465f, type: 2}
+  - id: princesa
+    skin: {fileID: 2100000, guid: eadd86e293c87a743ab7fd269fd77521, type: 2}
+  - id: semitono
+    skin: {fileID: 2100000, guid: dc4ab40b173ff584ca5fd3c12abd2438, type: 2}
+  skinavailable: 01000000
+  playerskin: {fileID: 2100000, guid: f5f9c3870ab60a24e88ef0650b68ab68, type: 2}
   vibration: 0
-  brigthnessValue: 0
 --- !u!114 &6656499441467533780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35eba38c2daa5274db03a787bbcf94db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxStamina: 0
+  _maxStamina: 5
   stamina: 0
 --- !u!114 &7831676277537419075
 MonoBehaviour:

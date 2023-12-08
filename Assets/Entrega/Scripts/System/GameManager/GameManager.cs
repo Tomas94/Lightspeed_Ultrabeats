@@ -1,8 +1,14 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
+    public List<SkinsStruct> skins = new List<SkinsStruct>();
+    public List<bool> skinavailable = new List<bool>();
+    public Material playerskin;
+
 
     [Header("Configuration Values")]
     public bool vibration;
@@ -17,13 +23,26 @@ public class GameManager : MonoBehaviour
         }
         else Destroy(gameObject);
     }
+
     private void Start() { LoadPlayerPreferencies(); }
 
+    public void ChangeSkin(string _id)
+    {
+        SkinsStruct valorencontrado = skins.Find(item => item.id == _id);
+
+        if (valorencontrado.id != null) playerskin = valorencontrado.skin;
+
+    }
+
+
+
+
+    #region PlayerPrefs
     public void LoadPlayerPreferencies()
     {
         vibration = PlayerPrefs.GetInt("Vibration", 0) == 1;
         //brigthnessValue = PlayerPrefs.GetFloat("BrightnessValue", 0.25f);
-        
+
         CurrencyManager.instance.Currency = PlayerPrefs.GetInt("currency", 0);
         StaminaManager.instance.Stamina = PlayerPrefs.GetInt("stamina");
         UpgradePointsManager.instance.UpgradePoints = PlayerPrefs.GetInt("upgradePoints", 0);
@@ -48,8 +67,8 @@ public class GameManager : MonoBehaviour
         //PlayerPrefs.SetString("skinsOwned",0);
         SceneManagerr.ResetGame();
     }
-    private void OnApplicationQuit()
-    {
-        SavePlayerPrefs();
-    }
+    #endregion
+
+    private void OnApplicationQuit() => SavePlayerPrefs();
+
 }

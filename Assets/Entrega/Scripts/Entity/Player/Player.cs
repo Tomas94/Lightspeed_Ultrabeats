@@ -5,15 +5,22 @@ public class Player : Entity
     [SerializeField] GameObject _gameOverScreen;
     
     public InGameUI_Controller gameUI;
-    PU_Shield _shieldPU = new PU_Shield(7);
+    PU_Shield _shieldPU = new PU_Shield(5);
 
     [SerializeField] float _fireRate = 0.3f;
     [SerializeField] float _maxLife;
     public bool _isShielded;
 
-    private void Start()
+    public float MaxLife { get { return _maxLife; } }
+
+    private void Awake()
     {
+        GetComponentInChildren<MeshRenderer>().material = GameManager.Instance.playerskin;
         currentLife = _maxLife;
+    }
+
+    private void Start()
+    {     
         StartCoroutine(ChargeShot(_fireRate));
     }
 
@@ -46,6 +53,6 @@ public class Player : Entity
 
     public void ActivateShield()
     {
-        if (gameUI.shieldFillCircle.fillAmount == 1) _shieldPU.Activate(gameUI.shieldFillCircle.fillAmount);
+        if (gameUI.shieldFillCircle.fillAmount == 1) StartCoroutine(_shieldPU.Activate());
     }
 }

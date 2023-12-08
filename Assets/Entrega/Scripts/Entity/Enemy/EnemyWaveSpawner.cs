@@ -8,6 +8,7 @@ public class EnemyWaveSpawner : MonoBehaviour
     public Action OnWaveCompleted;
     [SerializeField] List<string> _enemyTypes;
     [SerializeField] int _activeEnemies = 0;
+    [SerializeField] int _minSpawnEnemies, _maxSpawnEnemies;
 
     private void Start()
     {
@@ -16,7 +17,7 @@ public class EnemyWaveSpawner : MonoBehaviour
 
     public void CreateWave()
     {
-        int _enemiesAmount = UnityEngine.Random.Range(1, 7);
+        int _enemiesAmount = UnityEngine.Random.Range(_minSpawnEnemies, _maxSpawnEnemies);
         _activeEnemies = _enemiesAmount;
 
         List<Enemy> _enemiesSpawned = new List<Enemy>();

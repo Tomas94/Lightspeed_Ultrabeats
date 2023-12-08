@@ -803,25 +803,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6656499441467533780, guid: 5dcbcfe12a2c92b499f7996bfa57d8ae, type: 3}
-      propertyPath: _maxStamina
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7886577750135332676, guid: 5dcbcfe12a2c92b499f7996bfa57d8ae, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7886577750135332676, guid: 5dcbcfe12a2c92b499f7996bfa57d8ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1627.9167
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7886577750135332676, guid: 5dcbcfe12a2c92b499f7996bfa57d8ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1456.0686
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7886577750135332676, guid: 5dcbcfe12a2c92b499f7996bfa57d8ae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -30.375805
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7886577750135332676, guid: 5dcbcfe12a2c92b499f7996bfa57d8ae, type: 3}
       propertyPath: m_LocalRotation.w

@@ -22,17 +22,17 @@ public class UpgradePointsManager : MonoBehaviour
 
     void Initialize()
     {
-        _gameUpgradePoints = new UpgradePoints(0);
+        _gameUpgradePoints = new UpgradePoints(PlayerPrefs.GetInt("upgradePoints"));
         upgradePoints = _gameUpgradePoints.upgradePoints;
     }
 
     public void SpentUP(int value)
     {
-        upgradePoints -= _gameUpgradePoints.SpentResource(value);
+        upgradePoints = _gameUpgradePoints.SpentResource(value);
     }
 
     public void GainUP(int value)
     {
-        upgradePoints += _gameUpgradePoints.GainResource(value);
+        upgradePoints = _gameUpgradePoints.GainResource(value);
     }
 }

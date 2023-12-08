@@ -332,7 +332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemWS: {fileID: 363209178}
   completedWaves: 0
-  wavesGoal: 3
+  wavesGoal: 5
   _victoryScreen: {fileID: 1638252561}
   _player: {fileID: 266831682}
 --- !u!114 &94803828
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
-  multiplyer: 0
+  multiplyer: 1
 --- !u!1 &129368741
 GameObject:
   m_ObjectHideFlags: 0
@@ -3116,6 +3116,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
+      propertyPath: _maxSpawnEnemies
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
+      propertyPath: _minSpawnEnemies
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
+      propertyPath: _enemyTypes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2232107733314740403, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -4133,6 +4145,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 498977617}
     m_Modifications:
+    - target: {fileID: 595282180, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 266831682}
     - target: {fileID: 3868695677315620991, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4185,6 +4201,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: InGameUI_Controller, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 4982911281921144413, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4982911281979712265, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4217,10 +4237,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: ScreenController, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 4982911282488177612, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4982911282565254184, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a7b0a4f6d81a829448845f0a271498d4, type: 3}
+    - target: {fileID: 4982911282919591381, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982911283050031402, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4982911283759209153, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: m_Pivot.x
       value: 0

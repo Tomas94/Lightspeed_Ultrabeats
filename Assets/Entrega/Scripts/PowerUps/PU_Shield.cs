@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PU_Shield
@@ -7,13 +8,10 @@ public class PU_Shield
 
     public PU_Shield(float activeTime) => _activeTime = activeTime;
 
-    public void Activate(float fillamount)
+    public IEnumerator Activate()
     {
         _isActive = true;
-        if (_activeTime > 0) _activeTime -= Time.deltaTime;
-        else { Deactivate(); }
-        fillamount = 0;
+        yield return new WaitForSeconds(_activeTime);
+        _isActive = false;
     }
-
-    public void Deactivate() => _isActive = false;
 }

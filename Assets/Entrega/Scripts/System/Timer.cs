@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -10,7 +8,7 @@ public class Timer : MonoBehaviour
     public float remainingTime;
     public GameObject _timerCanvas;
 
-    void awake()
+    void Awake()
     {
         remainingTime = timeToRefill;
         //_timerCanvas.SetActive(true);
