@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32486436, g: 0.33119228, b: 0.31231287, a: 1}
+  m_IndirectSpecularColor: {r: 0.32680222, g: 0.33326456, b: 0.3136305, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22678,7 +22678,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5565260182744742285}
+        m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
+        m_MethodName: ToggleSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &2132216599
 GameObject:
@@ -22874,7 +22886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0.04462191, g: 0.029191881, b: 0.1509434, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -25943,13 +25955,13 @@ MonoBehaviour:
   m_HandleRect: {fileID: 5565260181739931260}
   m_Direction: 1
   m_MinValue: 0
-  m_MaxValue: 0.5
+  m_MaxValue: 0.7
   m_WholeNumbers: 0
-  m_Value: 0.248
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5565260182744742285}
         m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
         m_MethodName: BrightnessSet
         m_Mode: 1
@@ -25960,7 +25972,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &5565260181933770160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27968,6 +27980,8 @@ MonoBehaviour:
   _vibrationAllowed: {fileID: 5565260182383450856}
   _brightnessBG: {fileID: 5077528945309382511}
   _brightnessSlider: {fileID: 5565260181911566877}
+  audioMixer: {fileID: 24100000, guid: 586dc2d0cc4a95648a5d5d7308787c92, type: 2}
+  soundToggle: {fileID: 2119830215}
 --- !u!114 &5565260182744742286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28644,14 +28658,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2875223561996507610, guid: f511c61c3873fd9438b62727d06e8fd6, type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2875223561996507610, guid: f511c61c3873fd9438b62727d06e8fd6, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: cf56a86107defad4d8e58442e1f082de, type: 3}
     - target: {fileID: 6404224034917003288, guid: f511c61c3873fd9438b62727d06e8fd6, type: 3}
       propertyPath: m_RootOrder
       value: 1
