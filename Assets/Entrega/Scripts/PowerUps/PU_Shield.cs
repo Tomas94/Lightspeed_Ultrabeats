@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PU_Shield
 {
-    public bool _isActive;
+    public bool _isActive = false;
     float _activeTime;
 
     public PU_Shield(float activeTime) => _activeTime = activeTime;
@@ -14,4 +14,5 @@ public class PU_Shield
         yield return new WaitForSeconds(_activeTime);
         _isActive = false;
     }
+
 }

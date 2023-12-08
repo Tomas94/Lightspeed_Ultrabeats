@@ -6,7 +6,7 @@ public class Store : MonoBehaviour
 {
     public void BuyItem(int cost)
     {
-        _currencyManager.instance.SpentCurrency(cost);
+        CurrencyManager.instance.SpentCurrency(cost);
         //Debug.Log("Current Currency: " + GameManager.Instance.currency);
     }
 }

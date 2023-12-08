@@ -40,14 +40,14 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void SubmitScore()
+    public int SubmitScore()
     {
-        _gameScore.SubmitScore();
+        return _gameScore.SubmitScore();
     }
 
     public void GainResources()
     {
-        _currencyManager.instance.GainCurrency(score);
+        CurrencyManager.instance.GainCurrency(score);
         UpgradePointsManager.instance.GainUP(score);
     }
 

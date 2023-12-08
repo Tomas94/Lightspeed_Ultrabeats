@@ -1,15 +1,18 @@
 using UnityEngine;
+using System.Collections;
 
 public class Player : Entity
 {
     [SerializeField] GameObject _gameOverScreen;
-    
+    public Animator shield;
+
     public InGameUI_Controller gameUI;
     PU_Shield _shieldPU = new PU_Shield(5);
 
     [SerializeField] float _fireRate = 0.3f;
     [SerializeField] float _maxLife;
     public bool _isShielded;
+    public bool _charging;
 
     public float MaxLife { get { return _maxLife; } }
 
@@ -20,13 +23,22 @@ public class Player : Entity
     }
 
     private void Start()
-    {     
+    {
         StartCoroutine(ChargeShot(_fireRate));
+        StartCoroutine(RechargeShield());
     }
 
     void Update()
     {
-        _isShielded = _shieldPU._isActive; 
+        _isShielded = _shieldPU._isActive;
+        if (_isShielded == false && gameUI.shieldFillCircle.fillAmount < 1f)
+        {
+            if (!_charging)
+            {
+                StartCoroutine(RechargeShield());
+                shield.SetBool("IsActive", false);
+            }
+        }
     }
 
     public override void TakeDamage(float damage)
@@ -53,6 +65,25 @@ public class Player : Entity
 
     public void ActivateShield()
     {
-        if (gameUI.shieldFillCircle.fillAmount == 1) StartCoroutine(_shieldPU.Activate());
+        if (gameUI.shieldFillCircle.fillAmount == 1f)
+        {
+            gameUI.shieldFillCircle.fillAmount = 0;
+            StartCoroutine(_shieldPU.Activate());
+            shield.SetBool("IsActive", true);
+        }
+    }
+
+    public IEnumerator RechargeShield()
+    {
+        _charging = true;
+        var timer = 0f;
+        while (gameUI.shieldFillCircle.fillAmount < 1f)
+        {
+            Debug.Log("Cargando");
+            timer += Time.deltaTime;
+            gameUI.shieldFillCircle.fillAmount = timer / 15f;
+            yield return null;
+        }
+        _charging = false;
     }
 }

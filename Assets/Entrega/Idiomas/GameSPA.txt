@@ -23,7 +23,7 @@
 "IDEstadisticas" : "ESTADISTICAS",
 "IDSubirStat" : "AUMENTAR CON 10 PIEZAS",
 "IDVitalidad" : "VITALIDAD",
-"IDAtaque" : "DAÑO DE ATAQUE",
+"IDAtaque" : "PODER DE ATAQUE",
 "IDEscudo" : "DURACION ESCUDO",
 "IDOndas" : "DURACION ONDAS",
 "IDPiezasMejora" : "PIEZAS DE MEJORA",

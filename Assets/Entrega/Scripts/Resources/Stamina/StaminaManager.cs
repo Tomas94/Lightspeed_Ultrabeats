@@ -21,9 +21,9 @@ public class StaminaManager : MonoBehaviour
             instance = this;
             Initialize();
         }
-        else Destroy(gameObject);
+        else Destroy(this);
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this);
     }
 
     //void Update() { if (_timer.remainingTime <= 0) RechargeStamina(); }
@@ -48,6 +48,12 @@ public class StaminaManager : MonoBehaviour
         stamina = _gameStamina.RechargeStamina();
     }
 
+    public void PayForRecharge()
+    {
+        if (CurrencyManager.instance.Currency < 1500 || stamina >= MaxStamina) return;
+        RefillStamina();
+    }
+
     public void RefillStamina()
     {
         stamina = _gameStamina.RefillStamina();
@@ -58,5 +64,11 @@ public class StaminaManager : MonoBehaviour
         _canConsume = false;
         yield return new WaitForSeconds(3f);
         _canConsume = true;
+    }
+
+    public void SetStaminaValues(int value)
+    {
+        stamina = value;
+        _gameStamina._currentStamina = stamina;
     }
 }

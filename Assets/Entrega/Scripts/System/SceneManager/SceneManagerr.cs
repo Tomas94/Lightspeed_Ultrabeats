@@ -9,8 +9,8 @@ public class SceneManagerr : MonoBehaviour
     private void Awake()
     {
         if (instance == null) instance = this;
-        else Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
+        else Destroy(this);
+        DontDestroyOnLoad(this);
     }
 
     public void PlayLevel(string level)
