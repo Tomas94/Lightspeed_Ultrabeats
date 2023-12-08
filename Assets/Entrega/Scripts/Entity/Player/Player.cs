@@ -31,13 +31,13 @@ public class Player : Entity
     void Update()
     {
         _isShielded = _shieldPU._isActive;
-        if (!_isShielded && gameUI.shieldFillCircle.fillAmount < 0.9f)
+        if (_isShielded == false && gameUI.shieldFillCircle.fillAmount < 1f)
         {
             if (!_charging)
             {
                 StartCoroutine(RechargeShield());
-                shield.SetBool("IsActive", _isShielded);
-            }          
+                shield.SetBool("IsActive", false);
+            }
         }
     }
 
@@ -65,10 +65,11 @@ public class Player : Entity
 
     public void ActivateShield()
     {
-        if (gameUI.shieldFillCircle.fillAmount > 0.9f)
+        if (gameUI.shieldFillCircle.fillAmount == 1f)
         {
+            gameUI.shieldFillCircle.fillAmount = 0;
             StartCoroutine(_shieldPU.Activate());
-            shield.SetBool("IsActive", _isShielded);
+            shield.SetBool("IsActive", true);
         }
     }
 
@@ -76,10 +77,11 @@ public class Player : Entity
     {
         _charging = true;
         var timer = 0f;
-        while (gameUI.shieldFillCircle.fillAmount < 0.9f)
+        while (gameUI.shieldFillCircle.fillAmount < 1f)
         {
+            Debug.Log("Cargando");
             timer += Time.deltaTime;
-            gameUI.shieldFillCircle.fillAmount = timer / 10f;
+            gameUI.shieldFillCircle.fillAmount = timer / 15f;
             yield return null;
         }
         _charging = false;

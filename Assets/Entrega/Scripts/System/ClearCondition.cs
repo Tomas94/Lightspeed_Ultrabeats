@@ -8,7 +8,6 @@ public class ClearCondition : MonoBehaviour
     public int wavesGoal;
     [SerializeField] GameObject _victoryScreen;
     [SerializeField] Player _player;
-    [SerializeField] Player _player2;
     [SerializeField] TextMeshProUGUI totalScore;
     private void Awake()
     {
@@ -23,30 +22,15 @@ public class ClearCondition : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T)) completedWaves++;
+        if (completedWaves >= wavesGoal) VictoryScreen();
 
-        // killCount = GameManager.Instance.killcount;
-
-        if (completedWaves >= wavesGoal)
-        {
-            VictoryScreen();
-            wavesGoal += 10;
-            //SceneManager.ToMainMenu();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            ScoreManager.Instance.SubmitScore();
-            SceneManagerr.ToMainMenu();
-        }
     }
 
     void VictoryScreen()
     {
-        ScoreManager.Instance.SubmitScore();
         _victoryScreen.SetActive(true);
-        totalScore.text = ScoreManager.Instance.SubmitScore().ToString();
         SceneManagerr.Pause();
+        totalScore.text = ScoreManager.Instance.SubmitScore().ToString();
         _player.gameObject.SetActive(false);
     }
 

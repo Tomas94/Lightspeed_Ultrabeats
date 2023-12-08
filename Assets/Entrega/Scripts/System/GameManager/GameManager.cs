@@ -10,10 +10,9 @@ public class GameManager : MonoBehaviour
     public List<bool> skinavailable = new List<bool>();
     public Material playerskin;
     public int levelsUnlock = 1;
+    public int brightness;
+    public bool sound;
 
-
-    [Header("Configuration Values")]
-    public bool vibration;
     //[RangeAttribute(0f, 0.5f)] public float brigthnessValue;
 
     private void Awake()
