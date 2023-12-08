@@ -10,10 +10,8 @@ public class GameManager : MonoBehaviour
     public List<bool> skinavailable = new List<bool>();
     public Material playerskin;
     public int levelsUnlock = 1;
-    public int brightness;
     public bool sound;
-
-    //[RangeAttribute(0f, 0.5f)] public float brigthnessValue;
+    [RangeAttribute(0f, 0.7f)] public float brillo;
 
     private void Awake()
     {
@@ -39,8 +37,8 @@ public class GameManager : MonoBehaviour
     public void LoadPlayerPreferencies()
     {
         //vibration = PlayerPrefs.GetInt("Vibration", 0) == 1;
-        //brigthnessValue = PlayerPrefs.GetFloat("BrightnessValue", 0.25f);
 
+        brillo = PlayerPrefs.GetFloat("brillo", 0.35f);
         CurrencyManager.instance.SetCurrencyValues(PlayerPrefs.GetInt("currency", 0));
         StaminaManager.instance.SetStaminaValues(PlayerPrefs.GetInt("stamina",5));
         UpgradePointsManager.instance.SetUPValues(PlayerPrefs.GetInt("upgradePoints", 0));
@@ -50,6 +48,7 @@ public class GameManager : MonoBehaviour
 
     public void SavePlayerPrefs()
     {
+        PlayerPrefs.SetFloat("brillo", brillo);
         PlayerPrefs.SetInt("currency", CurrencyManager.instance.Currency);
         PlayerPrefs.SetInt("stamina", StaminaManager.instance.Stamina);
         PlayerPrefs.SetInt("upgradePoints", UpgradePointsManager.instance.UpgradePoints);
@@ -59,6 +58,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetProgress()
     {
+        PlayerPrefs.SetFloat("brillo", 0.35f);
         PlayerPrefs.SetInt("currency", 0);
         PlayerPrefs.SetInt("stamina", 5);
         PlayerPrefs.SetInt("upgradePoints", 0);

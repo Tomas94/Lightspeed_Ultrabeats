@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32680222, g: 0.33326456, b: 0.3136305, a: 1}
+  m_IndirectSpecularColor: {r: 0.32486436, g: 0.33119228, b: 0.31231287, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -27847,6 +27847,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a16617b6bfec8e46b3033475e1ae5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 575262129}
+  - {fileID: 376716512}
+  - {fileID: 70345165}
+  - {fileID: 1334093649}
   crediBeatsAmount: {fileID: 5565260182638080773}
   staminaAmount: {fileID: 779441351}
   upgradePointsAmount: {fileID: 1443610385}
