@@ -5,10 +5,13 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("Resources")]
-    public int stamina, currency, upgradePoints;
+    public int stamina;
+    public int currency;
+    public int upgradePoints;
 
     [Header("Score Variables")]
-    public int levelScore, killCount;
+    public int levelScore;
+    public int killCount;
 
     [Header("Configuration Values")]
     public bool vibration;

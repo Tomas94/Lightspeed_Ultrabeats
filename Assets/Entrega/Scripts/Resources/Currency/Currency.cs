@@ -1,18 +1,19 @@
 public class Currency
 {
-    public int _actualCurrency;
+    int currency;
 
-    public Currency(int actualCurrency) => _actualCurrency = actualCurrency;
+    public Currency(int _actualCurrency) => currency = _actualCurrency;
 
-    public void SpentResource(int quantity)
+    public int SpentResource(int quantity)
     {
-        if (_actualCurrency < quantity) return;
-        _actualCurrency -= quantity;
+        if (currency > quantity) currency -= quantity;            
+        return currency;
     }
 
-    public void GainResource(int quantity)
+    public int GainResource(int quantity)
     {
         var currencyGained = quantity * 0.8f * 0.7f;
-        _actualCurrency += (int)currencyGained;
+        currency += (int)currencyGained;
+        return currency;
     }
 }

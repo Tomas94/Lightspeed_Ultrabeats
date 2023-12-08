@@ -4,7 +4,7 @@ using TMPro;
 
 public class MainMenuStatsUpdater : MonoBehaviour
 {
-    StaminaController _staCtrl;
+    StaminaManager _staCtrl;
     public TextMeshProUGUI crediBeatsAmount, staminaAmount;
     public Image staminaBar;
     int _currentStm;
@@ -12,7 +12,7 @@ public class MainMenuStatsUpdater : MonoBehaviour
     private void Start()
     {
         _currentStm = GameManager.Instance.stamina;
-        _staCtrl = GetComponent<StaminaController>();
+        _staCtrl = GetComponent<StaminaManager>();
         StaminaBarUpdate();
         staminaAmount.text += ": " + GameManager.Instance.stamina.ToString();
     }
