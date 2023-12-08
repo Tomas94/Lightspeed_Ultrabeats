@@ -8,7 +8,6 @@ public class Timer : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float timeToRefill = 5;
     public float remainingTime;
-    public GameManager _gameManager;
     public GameObject _timerCanvas;
 
     void awake()
