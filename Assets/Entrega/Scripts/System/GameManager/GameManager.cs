@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     #region PlayerPrefs
     public void LoadPlayerPreferencies()
     {
-        vibration = PlayerPrefs.GetInt("Vibration", 0) == 1;
+        //vibration = PlayerPrefs.GetInt("Vibration", 0) == 1;
         //brigthnessValue = PlayerPrefs.GetFloat("BrightnessValue", 0.25f);
 
         CurrencyManager.instance.SetCurrencyValues(PlayerPrefs.GetInt("currency", 0));

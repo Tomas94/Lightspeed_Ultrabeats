@@ -20,7 +20,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void VibrationSwapState()
     {
-        GameManager.Instance.vibration = _vibrationAllowed.isOn;
+        //GameManager.Instance.vibration = _vibrationAllowed.isOn;
         PlayerPrefs.SetInt("Vibration", _vibrationAllowed ? 1 : 0);
     }
 
@@ -49,12 +49,12 @@ public class OptionsMenu : MonoBehaviour
     {
         float volume;
         audioMixer.GetFloat("Volume", out volume);
-        return volume > -80; // o cualquier otro valor que consideres como "activado"
+        return volume > -80;
     }
 
     private void SetSoundState(bool soundOn)
     {
-        float volume = soundOn ? 0.0f : -80.0f; // 0 para activado, -80 (u otro) para desactivado
+        float volume = soundOn ? 0.0f : -80.0f;
         SetVolume(volume);
     }
     #endregion
