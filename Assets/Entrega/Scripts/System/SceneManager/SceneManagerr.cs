@@ -4,9 +4,17 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerr : MonoBehaviour
 {
+    public static SceneManagerr instance;
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
+    }
+
     public void PlayLevel(string level)
     {
-        if (GameManager.Instance.stamina <= 0) return;
         StartCoroutine(StartLevel(.25f, level));
     }
 

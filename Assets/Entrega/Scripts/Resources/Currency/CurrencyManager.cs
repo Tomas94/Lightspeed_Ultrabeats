@@ -5,7 +5,7 @@ public class CurrencyManager : MonoBehaviour
     public static CurrencyManager instance;
     Currency _gameCurrency = new Currency(0);
 
-    int currency;
+    [SerializeField] int currency;
 
     public int Currency {  get { return currency; }}
 

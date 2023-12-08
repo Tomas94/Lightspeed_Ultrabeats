@@ -5,7 +5,7 @@ public class UpgradePointsManager : MonoBehaviour
     public static UpgradePointsManager instance;
     UpgradePoints _gameUpgradePoints;
 
-    int upgradePoints;
+    [SerializeField] int upgradePoints;
 
     public int UpgradePoints { get { return upgradePoints; } }
 

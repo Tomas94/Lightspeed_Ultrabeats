@@ -7,7 +7,7 @@ public class StaminaManager : MonoBehaviour
     Stamina _gameStamina;
 
     [SerializeField] int _maxStamina;
-    int stamina;
+    [SerializeField] int stamina;
     bool _canConsume;
 
     public int Stamina { get { return stamina; } }
