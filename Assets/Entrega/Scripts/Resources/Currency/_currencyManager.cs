@@ -1,9 +1,9 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CurrencyManager : MonoBehaviour
+public class _currencyManager : MonoBehaviour
 {
-    public static CurrencyManager instance;
+    public static _currencyManager instance;
     Currency _gameCurrency;
 
     [SerializeField] int currency;

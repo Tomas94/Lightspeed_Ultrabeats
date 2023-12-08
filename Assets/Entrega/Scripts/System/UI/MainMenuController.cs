@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
     StaminaManager _staminaManager;
-    CurrencyManager _currencyManager;
+    _currencyManager _currencyManager;
     UpgradePointsManager _upgradePointsManager;
     SceneManagerr _sceneManager;
 
@@ -18,7 +18,7 @@ public class MainMenuController : MonoBehaviour
     private void Awake()
     {
         _staminaManager = StaminaManager.instance;
-        _currencyManager = CurrencyManager.instance;
+        _currencyManager = _currencyManager.instance;
         _upgradePointsManager = UpgradePointsManager.instance;
         _sceneManager = SceneManagerr.instance;
     }
@@ -26,20 +26,9 @@ public class MainMenuController : MonoBehaviour
     private void Start()
     {
         StaminaBarUpdate();
-        staminaAmount.text += ": " + StaminaManager.instance.Stamina.ToString();
-        crediBeatsAmount.text = CurrencyManager.instance.Currency.ToString();
+        staminaAmount.text += ": " + _staminaManager.Stamina.ToString();
+        crediBeatsAmount.text = _currencyManager.Currency.ToString();
     }
-
-    /*private void Update()
-    {
-        crediBeatsAmount.text = GameManager.Instance.currency.ToString();
-        if (_currentStm != GameManager.Instance.stamina)
-        {
-            _currentStm = GameManager.Instance.stamina;
-            staminaAmount.text.Replace(GameManager.Instance.stamina.ToString(), _currentStm.ToString());
-        }
-    }*/
-
 
     public void TryPlayLevel(string levelName)
     {
@@ -51,12 +40,18 @@ public class MainMenuController : MonoBehaviour
         StaminaBarUpdate();
     }
 
+    #region Funciones Relacionadas a Compra de Objetos
     public void BuyItem(int cost)
     {
-        if (CurrencyManager.instance.Currency < cost) return;
+        if (_currencyManager.Currency < cost) return;
         itemPurchased = true;
         _currencyManager.SpentCurrency(cost);
-        crediBeatsAmount.text = CurrencyManager.instance.Currency.ToString();
+        crediBeatsAmount.text = _currencyManager.Currency.ToString();
+    }
+
+    public void BuyUpgrade(int cost)
+    {
+        _upgradePointsManager.SpentUP(cost);
     }
 
     public void DisableItemPurchased(Button boton)
@@ -64,10 +59,20 @@ public class MainMenuController : MonoBehaviour
         if (!itemPurchased) return;
         boton.interactable = false;
     }
+    #endregion
 
-    public void BuyUpgrade(int cost)
+    public void TryRefillStaminaPaid(int cost)
     {
-        _upgradePointsManager.SpentUP(cost);
+        if (_currencyManager.Currency < cost && _staminaManager.Stamina >= _staminaManager.MaxStamina) return;
+        _currencyManager.SpentCurrency(cost);
+        _staminaManager.RefillStamina();
+    }
+
+    public void TryBuyUpgradePieces(int cost)
+    {
+        if(_currencyManager.Currency < cost) return;
+        _currencyManager.SpentCurrency(cost);
+        _upgradePointsManager.GainUP(20);
     }
 
     public void StaminaBarUpdate()

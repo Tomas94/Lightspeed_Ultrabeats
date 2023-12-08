@@ -43,14 +43,14 @@ public class GameManager : MonoBehaviour
         vibration = PlayerPrefs.GetInt("Vibration", 0) == 1;
         //brigthnessValue = PlayerPrefs.GetFloat("BrightnessValue", 0.25f);
 
-        CurrencyManager.instance.Currency = PlayerPrefs.GetInt("currency", 0);
+        _currencyManager.instance.Currency = PlayerPrefs.GetInt("currency", 0);
         StaminaManager.instance.Stamina = PlayerPrefs.GetInt("stamina");
         UpgradePointsManager.instance.UpgradePoints = PlayerPrefs.GetInt("upgradePoints", 0);
     }
 
     public void SavePlayerPrefs()
     {
-        PlayerPrefs.SetInt("currency", CurrencyManager.instance.Currency);
+        PlayerPrefs.SetInt("currency", _currencyManager.instance.Currency);
         PlayerPrefs.SetInt("stamina", StaminaManager.instance.Stamina);
         PlayerPrefs.SetInt("upgradePoints", UpgradePointsManager.instance.UpgradePoints);
         //PlayerPrefs.SetInt("levelspassed",);
