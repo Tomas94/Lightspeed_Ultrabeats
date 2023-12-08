@@ -4,14 +4,11 @@ using TMPro;
 public class ClearCondition : MonoBehaviour
 {
     [SerializeField] EnemyWaveSpawner enemWS;
+    public int completedWaves;
+    public int wavesGoal;
     [SerializeField] GameObject _victoryScreen;
     [SerializeField] Player _player;
     [SerializeField] TextMeshProUGUI totalScore;
-
-    public int completedWaves;
-    public int wavesGoal;
-    public int currentLevel;
-
     private void Awake()
     {
         completedWaves = 0;
@@ -31,8 +28,6 @@ public class ClearCondition : MonoBehaviour
 
     void VictoryScreen()
     {
-        if (GameManager.Instance.levelsUnlock == currentLevel) GameManager.Instance.levelsUnlock += 1;
-        PlayerPrefs.Save();
         _victoryScreen.SetActive(true);
         SceneManagerr.Pause();
         totalScore.text = ScoreManager.Instance.SubmitScore().ToString();

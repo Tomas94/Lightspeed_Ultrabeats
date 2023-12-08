@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections.Generic;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -10,9 +9,7 @@ public class MainMenuController : MonoBehaviour
     UpgradePointsManager _upgradePointsManager;
     SceneManagerr _sceneManager;
 
-
-    public List<Toggle> levels;
-    public TextMeshProUGUI crediBeatsAmount, staminaAmount, upgradePointsAmount;
+    public TextMeshProUGUI crediBeatsAmount, staminaAmount,upgradePointsAmount;
     public Image staminaBar;
 
     public bool itemPurchased = false;
@@ -23,7 +20,6 @@ public class MainMenuController : MonoBehaviour
         _currencyManager = CurrencyManager.instance;
         _upgradePointsManager = UpgradePointsManager.instance;
         _sceneManager = SceneManagerr.instance;
-
     }
 
     private void Start()
@@ -31,45 +27,12 @@ public class MainMenuController : MonoBehaviour
         StaminaBarUpdate();
         staminaAmount.text += ": " + _staminaManager.Stamina.ToString();
         crediBeatsAmount.text = _currencyManager.Currency.ToString();
-        UpdateAvailableLevels();
-        SceneManagerr.Resume();
     }
 
     private void Update()
     {
-        UpdateAvailableLevels();
         crediBeatsAmount.text = _currencyManager.Currency.ToString();
         upgradePointsAmount.text = _upgradePointsManager.UpgradePoints.ToString();
-        StaminaBarUpdate();
-    }
-
-    public void UpdateAvailableLevels()
-    {
-        for (int i = 0; i < GameManager.Instance.levelsUnlock; i++)
-        {
-            Debug.Log("dentro del for con i = " + i);
-            levels[i].interactable = true;
-        }
-    }
-
-    public void PlayLevelSelected()
-    {
-        if (_staminaManager.Stamina <= 0) return;
-        _staminaManager.ConsumeStamina();
-        string levelName = "Level_";
-
-       for(int i = 0; i <levels.Count; i++)
-        {
-            if (levels[i].isOn)
-            {
-                levelName += (i+1).ToString();
-                continue;
-            }
-        }
-
-        Debug.Log("Consumio estamina");
-        _sceneManager.PlayLevel(levelName);
-        Debug.Log("Entró al nivel");
         StaminaBarUpdate();
     }
 
@@ -84,7 +47,7 @@ public class MainMenuController : MonoBehaviour
     }
 
     #region Funciones Relacionadas a Compra de Objetos
-
+    
     public void BuyItem(int cost)
     {
         if (CurrencyManager.instance.Currency < cost) return;
@@ -106,11 +69,11 @@ public class MainMenuController : MonoBehaviour
     #endregion
 
 
-    public void TryRefillStaminaPaid(int cost)
+    public void TryRefillStaminaPaid(int cost) 
     {
         if (_currencyManager.Currency < cost) return;
-        _staminaManager.PayForRecharge();
-
+       _staminaManager.PayForRecharge();
+    
     }
 
     public void BuyPoints(int amount)

@@ -14,7 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Entrega/Scenes/Level_1.unity
     guid: 32382bd344b17fd48a806c5e203d2704
-  - enabled: 1
-    path: Assets/Entrega/Scenes/Level_2.unity
-    guid: bc2b969f396ac4f4b8a0c904ffa90182
   m_configObjects: {}
