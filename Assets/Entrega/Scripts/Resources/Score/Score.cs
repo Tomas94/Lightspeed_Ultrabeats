@@ -9,18 +9,13 @@ public class Score
         totalScore = _initialScore;
     }
 
-    public void IncrementScore(float time) => timeScore = (int)time;
+    public int IncrementScore(float time) => timeScore = (int)time;
 
-    public void IncrementScore(int value) => killScore += value;
+    public int IncrementScore(int value) => killScore += value;
 
-    public void TotalScore() => totalScore = timeScore + killScore;
+    public int TotalScore() => totalScore = timeScore + killScore;
 
-    public void SubmitScore() => GameManager.Instance.levelScore = totalScore;
+    public int SubmitScore() => totalScore;
 
-    public void ResetScore()
-    {
-        timeScore = 0;
-        killScore = 0;
-        totalScore = 0;
-    }
+    public void ResetScore() => (timeScore, killScore, totalScore) = (0, 0, 0);
 }

@@ -1,6 +1,6 @@
 public class Stamina
 {
-    int _maxStamina;
+    public int _maxStamina;
     public int _currentStamina;
 
     public Stamina(int maxStamina)
@@ -9,18 +9,18 @@ public class Stamina
         _currentStamina = _maxStamina;
     }
 
-    public void ConsumeStamina()
+    public int ConsumeStamina()
     {
-        _currentStamina = _currentStamina <= 0 ? 0 : _currentStamina-1;
+        return _currentStamina = _currentStamina <= 0 ? 0 : _currentStamina-1;
     }
 
-    public void RechargeStamina()
+    public int RechargeStamina()
     {
-        _currentStamina = _currentStamina >= _maxStamina ? _maxStamina : _currentStamina+1;
+       return _currentStamina = _currentStamina >= _maxStamina ? _maxStamina : _currentStamina+1;
     }
 
-    public void RefillStamina()
+    public int RefillStamina()
     {
-        _currentStamina = _maxStamina;
+        return _currentStamina = _maxStamina;
     }
 }

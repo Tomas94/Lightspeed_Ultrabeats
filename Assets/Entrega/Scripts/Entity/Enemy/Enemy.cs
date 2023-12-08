@@ -20,7 +20,7 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
 
     public override void Die(int deathPoints)
     {
-        ScoreManager.Instance._levelScore.IncrementScore(deathPoints);
+        ScoreManager.Instance.IncrementKillScore(deathPoints);
         RefillStock(this);
     }
 

@@ -1,29 +1,44 @@
+using System.Collections;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
+    Score _gameScore;
 
-    public Score _levelScore = new Score(0);
-    public float timer;
-    public float multiplyer;
+    [SerializeField] float timer;
+    [SerializeField] float multiplyer;
+    int score;
+    bool _isPlaying;
 
-    private void Awake()
+    public int Score { get { return score; } }
+
+    private void Awake() => Initialize();
+
+    private void Start() => StartCoroutine(TimeScore());
+
+    private void Update() => score = _gameScore.TotalScore();
+
+    void Initialize()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        _gameScore = new Score(0);
+        score = _gameScore.totalScore;
     }
 
-    void Start()
+    public void IncrementKillScore(int killScore) => _gameScore.IncrementScore(killScore);
+
+    IEnumerator TimeScore()
     {
-        GameManager.Instance.levelScore = 0;
-        timer = 0;
+        while (_isPlaying)
+        {
+            timer += (Time.deltaTime * multiplyer);
+            _gameScore.IncrementScore(timer);
+            yield return null;
+        }
     }
 
-    private void Update()
+    public void SubmitScore()
     {
-        timer += (Time.deltaTime * multiplyer);
-        _levelScore.IncrementScore(timer);
-        _levelScore.TotalScore();
+        _gameScore.SubmitScore();
     }
 }

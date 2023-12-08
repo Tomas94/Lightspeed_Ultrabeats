@@ -9,7 +9,7 @@ public class InGameUI_Controller : MonoBehaviour
 
     void Start() { score.text = "0"; }
 
-    void Update() { score.text = ScoreManager.Instance._levelScore.totalScore.ToString(); }
+    void Update() { score.text = ScoreManager.Instance.Score.ToString(); }
 
     public void ShieldChargeUP() { if (shieldFillCircle.fillAmount < 1) shieldFillCircle.fillAmount += 0.1f; }
 }

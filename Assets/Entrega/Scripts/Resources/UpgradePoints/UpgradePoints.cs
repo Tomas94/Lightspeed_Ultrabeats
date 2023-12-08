@@ -1,18 +1,19 @@
 public class UpgradePoints
 {
-    public int _actualUPs;
+    public int upgradePoints;
 
-    public UpgradePoints(int actualUP) => _actualUPs = actualUP;
+    public UpgradePoints(int _actualUP) => upgradePoints = _actualUP;
 
-    public void SpentResource(int quantity)
+    public int SpentResource(int quantity)
     {
-        _actualUPs -= quantity;
+        if (upgradePoints > quantity) upgradePoints -= quantity;
+        return upgradePoints;
     }
 
-    public void GainResource(int quantity)
+    public int GainResource(int quantity)
     {
         var pointsGained = quantity * 0.8f * 0.3f;
-        _actualUPs += (int)pointsGained;
+        upgradePoints += (int)pointsGained;
+        return upgradePoints;
     }
-
 }
