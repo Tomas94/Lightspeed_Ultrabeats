@@ -58,8 +58,8 @@ Material:
     - _VertexFreq: 2
     m_Colors:
     - _ColorAtras: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorAtras2: {r: 0.011891598, g: 0.0018294767, b: 0, a: 1}
+    - _ColorAtras2: {r: 0.011891598, g: 0.0018294767, b: 0, a: 0.84313726}
     - _ColorFresnel1: {r: 658.5726, g: 4.374521, b: 566.2118, a: 1}
-    - _FrontColor: {r: 0, g: 11.838231, b: 143.74994, a: 1}
+    - _FrontColor: {r: 0, g: 11.838231, b: 143.74994, a: 0.8156863}
     - _VertexAmount: {r: 0.0005, g: 0.0005, b: 0.0005, a: 0}
   m_BuildTextureStacks: []
