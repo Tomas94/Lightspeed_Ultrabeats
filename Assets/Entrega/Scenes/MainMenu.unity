@@ -8006,8 +8006,8 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5565260182744742257}
         m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
-        m_MethodName: TryPlayLevel
-        m_Mode: 5
+        m_MethodName: PlayLevelSelected
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10324,16 +10324,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StaminaController, Assembly-CSharp
-        m_MethodName: RefillStamina
-        m_Mode: 1
+      - m_Target: {fileID: 459143181}
+        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
+        m_MethodName: showAd
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Rewarded_Android
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 5565260182744742257}
@@ -27847,6 +27847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a16617b6bfec8e46b3033475e1ae5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contadorTiempo: {fileID: 1637084351}
   levels:
   - {fileID: 575262129}
   - {fileID: 376716512}

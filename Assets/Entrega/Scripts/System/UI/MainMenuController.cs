@@ -9,7 +9,7 @@ public class MainMenuController : MonoBehaviour
     CurrencyManager _currencyManager;
     UpgradePointsManager _upgradePointsManager;
     SceneManagerr _sceneManager;
-
+    public TextMeshProUGUI contadorTiempo;
 
     public List<Toggle> levels;
     public TextMeshProUGUI crediBeatsAmount, staminaAmount, upgradePointsAmount;
@@ -41,6 +41,13 @@ public class MainMenuController : MonoBehaviour
         crediBeatsAmount.text = _currencyManager.Currency.ToString();
         upgradePointsAmount.text = _upgradePointsManager.UpgradePoints.ToString();
         StaminaBarUpdate();
+        
+        if (_staminaManager.Stamina == _staminaManager.MaxStamina)
+        {
+            contadorTiempo.text = "";
+            return;
+        }
+        contadorTiempo.text = Timer.instance.contador;
     }
 
     public void UpdateAvailableLevels()

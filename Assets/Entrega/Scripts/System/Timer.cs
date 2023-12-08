@@ -1,14 +1,17 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using System.Collections;
 
 public class Timer : MonoBehaviour
 {
     public static Timer instance;
 
-    [SerializeField] TextMeshProUGUI timerText;
+    public string contador;
     [SerializeField] float timeToRefill = 15;
     public float remainingTime;
-    public GameObject _timerCanvas;
+    public bool recharging = false;
+
 
     void Awake()
     {
@@ -17,30 +20,36 @@ public class Timer : MonoBehaviour
         DontDestroyOnLoad(this);
 
         remainingTime = timeToRefill;
-        //_timerCanvas.SetActive(true);
-        //    public GameObject _timerCanvas;
     }
 
     void Update()
     {
+        if (StaminaManager.instance.Stamina < StaminaManager.instance.MaxStamina && recharging == false)
+        {
+            StartCoroutine(RechargeStamina());
+        }
+
+
+        
+    }
+
+    IEnumerator RechargeStamina()
+    {
+        recharging = true;
         while (StaminaManager.instance.Stamina < StaminaManager.instance.MaxStamina)
         {
             remainingTime -= Time.deltaTime;
-            if(remainingTime <= 0)
+            if (remainingTime <= 0)
             {
                 StaminaManager.instance.RechargeStamina();
+                yield return new WaitForEndOfFrame();
                 remainingTime = timeToRefill;
             }
+            int minutes = Mathf.FloorToInt(remainingTime / 60);
+            int seconds = Mathf.FloorToInt(remainingTime % 60);
+            contador = string.Format("{0:00}:{1:00}", minutes, seconds);
+            yield return null;
         }
-        //_timerCanvas.SetActive(true);
-
-        //if (_gameManager.stamina == 5)
-        //{
-        //    _timerCanvas.SetActive(false);
-        //}
-
-        int minutes = Mathf.FloorToInt(remainingTime / 60);
-        int seconds = Mathf.FloorToInt(remainingTime % 60);
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        recharging = false;
     }
 }

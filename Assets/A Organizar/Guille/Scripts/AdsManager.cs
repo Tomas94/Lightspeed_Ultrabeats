@@ -49,7 +49,7 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
             if (showresult == ShowResult.Finished)
             {
                 Debug.Log("Consigue recompensas");
-                StaminaManager.instance.RechargeStamina();
+                StaminaManager.instance.RefillStamina();
             }
             else if (showresult == ShowResult.Skipped)
             {

@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     }
 
     #region PlayerPrefs
+
     public void LoadPlayerPreferencies()
     {
         //vibration = PlayerPrefs.GetInt("Vibration", 0) == 1;
@@ -42,7 +43,7 @@ public class GameManager : MonoBehaviour
         CurrencyManager.instance.SetCurrencyValues(PlayerPrefs.GetInt("currency", 0));
         StaminaManager.instance.SetStaminaValues(PlayerPrefs.GetInt("stamina",5));
         UpgradePointsManager.instance.SetUPValues(PlayerPrefs.GetInt("upgradePoints", 0));
-        levelsUnlock = PlayerPrefs.GetInt("levelsUnlockk", 1);
+        levelsUnlock = PlayerPrefs.GetInt("levelsUnlock", 1);
         skinavailable = LoadBooleanList();
     }
 

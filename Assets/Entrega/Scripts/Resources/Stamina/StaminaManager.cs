@@ -30,7 +30,7 @@ public class StaminaManager : MonoBehaviour
 
     void Initialize()
     {
-        _gameStamina = new Stamina(PlayerPrefs.GetInt("stamina"));
+        _gameStamina = new Stamina(5);
         stamina = _gameStamina._currentStamina;
         _canConsume = true;
     }
