@@ -65,4 +65,10 @@ public class StaminaManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
         _canConsume = true;
     }
+
+    public void SetStaminaValues(int value)
+    {
+        stamina = value;
+        _gameStamina._currentStamina = stamina;
+    }
 }

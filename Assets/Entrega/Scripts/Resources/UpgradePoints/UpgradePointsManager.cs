@@ -34,11 +34,22 @@ public class UpgradePointsManager : MonoBehaviour
     public void GainUPByAds(int quantity)
     {
         upgradePoints += _gameUpgradePoints.GainAdResources(quantity);
+    }
 
+    public void PayForPieces(int quantity)
+    {
+        if (CurrencyManager.instance.Currency < 450) return;
+        SetUPValues(upgradePoints + quantity);
     }
 
     public void GainUP(int value)
     {
         upgradePoints = _gameUpgradePoints.GainResource(value);
+    }
+
+    public void SetUPValues(int value)
+    {
+        upgradePoints = value;
+        _gameUpgradePoints.upgradePoints = upgradePoints;
     }
 }

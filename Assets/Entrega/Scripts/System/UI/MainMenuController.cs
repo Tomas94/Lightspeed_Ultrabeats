@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -10,7 +9,7 @@ public class MainMenuController : MonoBehaviour
     UpgradePointsManager _upgradePointsManager;
     SceneManagerr _sceneManager;
 
-    public TextMeshProUGUI crediBeatsAmount, staminaAmount;
+    public TextMeshProUGUI crediBeatsAmount, staminaAmount,upgradePointsAmount;
     public Image staminaBar;
 
     public bool itemPurchased = false;
@@ -33,6 +32,8 @@ public class MainMenuController : MonoBehaviour
     private void Update()
     {
         crediBeatsAmount.text = _currencyManager.Currency.ToString();
+        upgradePointsAmount.text = _upgradePointsManager.UpgradePoints.ToString();
+        StaminaBarUpdate();
     }
 
     public void TryPlayLevel(string levelName)
@@ -74,11 +75,23 @@ public class MainMenuController : MonoBehaviour
        _staminaManager.PayForRecharge();
     
     }
-    
+
+    public void BuyPoints(int amount)
+    {
+        if (_currencyManager.Currency < 450) return;
+        _upgradePointsManager.GainUPByAds(20);
+    }
+
+    public void GainUPAd()
+    {
+        _upgradePointsManager.GainUPByAds(5);
+    }
+
     public void StaminaBarUpdate()
     {
         var updatedStaminaAmount = (float)_staminaManager.Stamina / (float)_staminaManager.MaxStamina;
         staminaBar.fillAmount = updatedStaminaAmount;
+        staminaAmount.text = _staminaManager.Stamina.ToString();
     }
 
     public void QuitGame()

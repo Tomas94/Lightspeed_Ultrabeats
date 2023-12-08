@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class ClearCondition : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class ClearCondition : MonoBehaviour
     public int wavesGoal;
     [SerializeField] GameObject _victoryScreen;
     [SerializeField] Player _player;
+    [SerializeField] Player _player2;
+    [SerializeField] TextMeshProUGUI totalScore;
     private void Awake()
     {
         completedWaves = 0;
@@ -42,6 +45,7 @@ public class ClearCondition : MonoBehaviour
     {
         ScoreManager.Instance.SubmitScore();
         _victoryScreen.SetActive(true);
+        totalScore.text = ScoreManager.Instance.SubmitScore().ToString();
         SceneManagerr.Pause();
         _player.gameObject.SetActive(false);
     }

@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public List<SkinsStruct> skins = new List<SkinsStruct>();
     public List<bool> skinavailable = new List<bool>();
     public Material playerskin;
-    public int levelsUnlock;
+    public int levelsUnlock = 1;
 
 
     [Header("Configuration Values")]
@@ -36,21 +36,17 @@ public class GameManager : MonoBehaviour
 
     }
 
-
-
-
     #region PlayerPrefs
     public void LoadPlayerPreferencies()
     {
         vibration = PlayerPrefs.GetInt("Vibration", 0) == 1;
         //brigthnessValue = PlayerPrefs.GetFloat("BrightnessValue", 0.25f);
 
-        CurrencyManager.instance.Currency = PlayerPrefs.GetInt("currency", 0);
-        StaminaManager.instance.Stamina = PlayerPrefs.GetInt("stamina");
-        UpgradePointsManager.instance.UpgradePoints = PlayerPrefs.GetInt("upgradePoints", 0);
+        CurrencyManager.instance.SetCurrencyValues(PlayerPrefs.GetInt("currency", 0));
+        StaminaManager.instance.SetStaminaValues(PlayerPrefs.GetInt("stamina",5));
+        UpgradePointsManager.instance.SetUPValues(PlayerPrefs.GetInt("upgradePoints", 0));
         levelsUnlock = PlayerPrefs.GetInt("levelsUnlockk", 1);
         skinavailable = LoadBooleanList();
-
     }
 
     public void SavePlayerPrefs()
@@ -67,12 +63,12 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("currency", 0);
         PlayerPrefs.SetInt("stamina", 5);
         PlayerPrefs.SetInt("upgradePoints", 0);
-        LoadPlayerPreferencies();
-        PlayerPrefs.SetInt("levelsUnlock", 0);
+        PlayerPrefs.SetInt("levelsUnlock", 1);
 
         List<bool> resetList = new List<bool>() { true, false, false, false };
         SaveBooleanList(resetList);
 
+        LoadPlayerPreferencies();
         SceneManagerr.ResetGame();
     }
 
@@ -83,16 +79,13 @@ public class GameManager : MonoBehaviour
 
         // Guardar la cadena en PlayerPrefs
         PlayerPrefs.SetString("skinsUnlock", booleanListString);
-
-        // Guardar PlayerPrefs para asegurarse de que los datos se almacenan
-        PlayerPrefs.Save();
     }
 
     // Método para cargar la lista de booleanos desde PlayerPrefs
     private List<bool> LoadBooleanList()
     {
         // Obtener la cadena de PlayerPrefs
-        string loadedBooleanListString = PlayerPrefs.GetString("skinsUnlock", "true,false,false,false");
+        string loadedBooleanListString = PlayerPrefs.GetString("skinsUnlock", "1,0,0,0");
 
         // Dividir la cadena en un array de strings
         string[] booleanArrayString = loadedBooleanListString.Split(',');

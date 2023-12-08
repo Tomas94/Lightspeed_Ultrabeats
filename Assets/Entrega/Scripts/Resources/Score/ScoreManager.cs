@@ -40,9 +40,9 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void SubmitScore()
+    public int SubmitScore()
     {
-        _gameScore.SubmitScore();
+        return _gameScore.SubmitScore();
     }
 
     public void GainResources()

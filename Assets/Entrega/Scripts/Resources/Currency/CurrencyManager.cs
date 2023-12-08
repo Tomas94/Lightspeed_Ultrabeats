@@ -37,5 +37,9 @@ public class CurrencyManager : MonoBehaviour
         currency = _gameCurrency.GainResource(value);
     }
 
-
+    public void SetCurrencyValues(int value)
+    {
+        currency = value;
+        _gameCurrency.currency = currency;
+    }
 }
