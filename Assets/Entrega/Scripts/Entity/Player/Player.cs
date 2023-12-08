@@ -14,6 +14,12 @@ public class Player : Entity
     public bool _isShielded;
     public bool _charging;
 
+    [SerializeField] AudioClip _playerDisparoAC;
+    [SerializeField] AudioClip _playerShieldAC;
+    [SerializeField] AudioClip _playerShieldDEAC;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource _audioSourceShield;
+
     public float MaxLife { get { return _maxLife; } }
 
     private void Awake()
@@ -57,6 +63,7 @@ public class Player : Entity
 
     public override void Disparar()
     {
+        DisparoSonido();
         var bala = OP_BulletManager.Instance.bulletPools[0].pool.Get();
         bala.Initialize(OP_BulletManager.Instance.bulletPools[0].pool);
         bala.transform.position = transform.position;
@@ -69,12 +76,25 @@ public class Player : Entity
         {
             gameUI.shieldFillCircle.fillAmount = 0;
             StartCoroutine(_shieldPU.Activate());
+            _audioSourceShield.PlayOneShot(_playerShieldAC);
             shield.SetBool("IsActive", true);
         }
     }
 
+    public void DisparoSonido()
+    {
+        float randomPitch = Random.Range(0.7f, 1.2f);
+        float randomVolume = Random.Range(0.1f, 0.3f);
+
+        audioSource.pitch = randomPitch;
+        audioSource.volume = randomVolume;
+
+        audioSource.PlayOneShot(_playerDisparoAC);
+    }
+
     public IEnumerator RechargeShield()
     {
+        _audioSourceShield.PlayOneShot(_playerShieldDEAC);
         _charging = true;
         var timer = 0f;
         while (gameUI.shieldFillCircle.fillAmount < 1f)

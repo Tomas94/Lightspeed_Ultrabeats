@@ -4914,7 +4914,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 0.05
   simulationSpeed: 5.96
-  stopAction: 0
+  stopAction: 1
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -9837,6 +9837,7 @@ GameObject:
   - component: {fileID: 910830761053673373}
   - component: {fileID: 1392546748827185215}
   - component: {fileID: 3340686928111850663}
+  - component: {fileID: 2292588087104662676}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -9906,10 +9907,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLife: 0
   _gameOverScreen: {fileID: 0}
+  shield: {fileID: 0}
   gameUI: {fileID: 0}
   _fireRate: 1
   _maxLife: 3
   _isShielded: 0
+  _charging: 0
+  _playerDisparoAC: {fileID: 0}
+  _playerShieldAC: {fileID: 0}
+  _playerShieldDEAC: {fileID: 0}
+  audioSource: {fileID: 0}
+  _audioSourceShield: {fileID: 0}
 --- !u!114 &3340686928111850663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9922,6 +9930,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df04676ddce1a948bfc6ac8e07b0998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2292588087104662676
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9212596837344065525}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 884cf568bdae8d74ea4f4c1a00c8fb99, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &9183333426071491591
 PrefabInstance:
   m_ObjectHideFlags: 0

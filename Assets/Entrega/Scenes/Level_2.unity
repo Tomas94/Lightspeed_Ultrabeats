@@ -203,14 +203,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9148992, g: 0.7761659, b: 0.9622642, a: 1}
+  m_Color: {r: 1, g: 0.7882921, b: 0.3254717, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5e338ff4e174d76479fe1e3a681a1a6c, type: 3}
+  m_Texture: {fileID: 2800000, guid: 5fea219231132a94fbe3a50e382908ef, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -514,7 +514,7 @@ PrefabInstance:
     - target: {fileID: 2875223561996507610, guid: f511c61c3873fd9438b62727d06e8fd6, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 2845eeb5012835c4bb972ddb3c875d82, type: 3}
+      objectReference: {fileID: 8300000, guid: cf08b5f6cc62bea4f9bdfb70023b22af, type: 3}
     - target: {fileID: 6404224034917003288, guid: f511c61c3873fd9438b62727d06e8fd6, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -566,6 +566,16 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6404224034917003289, guid: f511c61c3873fd9438b62727d06e8fd6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f511c61c3873fd9438b62727d06e8fd6, type: 3}
+--- !u!82 &194531888 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2875223561996507610, guid: f511c61c3873fd9438b62727d06e8fd6, type: 3}
+  m_PrefabInstance: {fileID: 194531887}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &194531889 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3525684801190514447, guid: f511c61c3873fd9438b62727d06e8fd6, type: 3}
+  m_PrefabInstance: {fileID: 194531887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &212972373
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,6 +1007,8 @@ MonoBehaviour:
   _vibrationAllowed: {fileID: 0}
   _brightnessBG: {fileID: 1132242283}
   _brightnessSlider: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 586dc2d0cc4a95648a5d5d7308787c92, type: 2}
+  soundToggle: {fileID: 0}
 --- !u!1 &527246831
 GameObject:
   m_ObjectHideFlags: 0
@@ -3769,6 +3781,10 @@ PrefabInstance:
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1392546748827185215, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 194531889}
+    - target: {fileID: 1392546748827185215, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
       propertyPath: _victoryScreen
       value: 
       objectReference: {fileID: 1638252561}
@@ -3776,6 +3792,22 @@ PrefabInstance:
       propertyPath: _gameOverScreen
       value: 
       objectReference: {fileID: 903971380}
+    - target: {fileID: 1392546748827185215, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
+      propertyPath: _playerShieldAC
+      value: 
+      objectReference: {fileID: 8300000, guid: 4d00c87bd638f884eb312bd85672f7a4, type: 3}
+    - target: {fileID: 1392546748827185215, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
+      propertyPath: _playerDisparoAC
+      value: 
+      objectReference: {fileID: 8300000, guid: 4bf399531b9f14746abddac64d33574c, type: 3}
+    - target: {fileID: 1392546748827185215, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
+      propertyPath: _playerShieldDEAC
+      value: 
+      objectReference: {fileID: 8300000, guid: cf01678b4f1e3c14888b8136c30b380b, type: 3}
+    - target: {fileID: 1392546748827185215, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
+      propertyPath: _audioSourceShield
+      value: 
+      objectReference: {fileID: 194531888}
     - target: {fileID: 2059262894121428514, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
       propertyPath: m_IsActive
       value: 0
