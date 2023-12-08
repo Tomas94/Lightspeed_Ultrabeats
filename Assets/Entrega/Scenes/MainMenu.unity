@@ -14735,6 +14735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1241680905 stripped
+MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4014644920667858555, guid: 5dcbcfe12a2c92b499f7996bfa57d8ae, type: 3}
   m_PrefabInstance: {fileID: 2038822711}
   m_PrefabAsset: {fileID: 0}
