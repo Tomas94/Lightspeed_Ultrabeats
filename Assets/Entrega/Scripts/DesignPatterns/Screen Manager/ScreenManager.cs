@@ -7,7 +7,12 @@ public class ScreenManager : MonoBehaviour
     public static ScreenManager instance;
     public Stack<IScreen> _screens = new Stack<IScreen>();
 
-    void Awake() { instance = this; }
+    void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(this);
+        DontDestroyOnLoad(this);
+    }
 
     void Update() { if (Input.GetKeyDown(KeyCode.Escape)) DesactiveScreen(); }
 

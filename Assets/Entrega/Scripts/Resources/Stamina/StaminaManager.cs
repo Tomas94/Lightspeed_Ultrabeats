@@ -21,9 +21,9 @@ public class StaminaManager : MonoBehaviour
             instance = this;
             Initialize();
         }
-        else Destroy(gameObject);
+        else Destroy(this);
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this);
     }
 
     //void Update() { if (_timer.remainingTime <= 0) RechargeStamina(); }
@@ -46,6 +46,12 @@ public class StaminaManager : MonoBehaviour
     public void RechargeStamina()
     {
         stamina = _gameStamina.RechargeStamina();
+    }
+
+    public void PayForRecharge()
+    {
+        if (CurrencyManager.instance.Currency < 1500 || stamina >= MaxStamina) return;
+        RefillStamina();
     }
 
     public void RefillStamina()

@@ -9,7 +9,7 @@ public class OP_EnemyManager : MonoBehaviour
     private void Awake()
     {
         if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        else Destroy(this);
     }
 
     private void Start()

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
     public List<SkinsStruct> skins = new List<SkinsStruct>();
     public List<bool> skinavailable = new List<bool>();
     public Material playerskin;
+    public int levelsUnlock;
 
 
     [Header("Configuration Values")]
@@ -19,9 +21,9 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(this);
         }
-        else Destroy(gameObject);
+        else Destroy(this);
+        DontDestroyOnLoad(this);
     }
 
     private void Start() { LoadPlayerPreferencies(); }
@@ -43,18 +45,21 @@ public class GameManager : MonoBehaviour
         vibration = PlayerPrefs.GetInt("Vibration", 0) == 1;
         //brigthnessValue = PlayerPrefs.GetFloat("BrightnessValue", 0.25f);
 
-        _currencyManager.instance.Currency = PlayerPrefs.GetInt("currency", 0);
+        CurrencyManager.instance.Currency = PlayerPrefs.GetInt("currency", 0);
         StaminaManager.instance.Stamina = PlayerPrefs.GetInt("stamina");
         UpgradePointsManager.instance.UpgradePoints = PlayerPrefs.GetInt("upgradePoints", 0);
+        levelsUnlock = PlayerPrefs.GetInt("levelsUnlockk", 1);
+        skinavailable = LoadBooleanList();
+
     }
 
     public void SavePlayerPrefs()
     {
-        PlayerPrefs.SetInt("currency", _currencyManager.instance.Currency);
+        PlayerPrefs.SetInt("currency", CurrencyManager.instance.Currency);
         PlayerPrefs.SetInt("stamina", StaminaManager.instance.Stamina);
         PlayerPrefs.SetInt("upgradePoints", UpgradePointsManager.instance.UpgradePoints);
-        //PlayerPrefs.SetInt("levelspassed",);
-        //PlayerPrefs.SetString("skinsOwned",);
+        PlayerPrefs.SetInt("levelsUnlock", levelsUnlock);
+        SaveBooleanList(skinavailable);
     }
 
     public void ResetProgress()
@@ -63,10 +68,41 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("stamina", 5);
         PlayerPrefs.SetInt("upgradePoints", 0);
         LoadPlayerPreferencies();
-        //PlayerPrefs.SetInt("levelspassed",0);
-        //PlayerPrefs.SetString("skinsOwned",0);
+        PlayerPrefs.SetInt("levelsUnlock", 0);
+
+        List<bool> resetList = new List<bool>() { true, false, false, false };
+        SaveBooleanList(resetList);
+
         SceneManagerr.ResetGame();
     }
+
+    private void SaveBooleanList(List<bool> list)
+    {
+        // Convertir la lista de booleanos a una cadena de texto
+        string booleanListString = string.Join(",", list.Select(b => b ? "1" : "0").ToArray());
+
+        // Guardar la cadena en PlayerPrefs
+        PlayerPrefs.SetString("skinsUnlock", booleanListString);
+
+        // Guardar PlayerPrefs para asegurarse de que los datos se almacenan
+        PlayerPrefs.Save();
+    }
+
+    // Método para cargar la lista de booleanos desde PlayerPrefs
+    private List<bool> LoadBooleanList()
+    {
+        // Obtener la cadena de PlayerPrefs
+        string loadedBooleanListString = PlayerPrefs.GetString("skinsUnlock", "true,false,false,false");
+
+        // Dividir la cadena en un array de strings
+        string[] booleanArrayString = loadedBooleanListString.Split(',');
+
+        // Convertir el array de strings a un array de booleanos
+        List<bool> loadedBooleanList = booleanArrayString.Select(s => s == "1").ToList();
+
+        return loadedBooleanList;
+    }
+
     #endregion
 
     private void OnApplicationQuit() => SavePlayerPrefs();

@@ -6,8 +6,14 @@ public class UpgradePoints
 
     public int SpentResource(int quantity)
     {
-        if (upgradePoints > quantity) return upgradePoints;      
+        if (upgradePoints > quantity) return upgradePoints;
         upgradePoints -= quantity;
+        return upgradePoints;
+    }
+
+    public int GainAdResources(int quantity)
+    {
+        upgradePoints += quantity;
         return upgradePoints;
     }
 

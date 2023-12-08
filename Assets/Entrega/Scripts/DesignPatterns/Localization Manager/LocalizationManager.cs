@@ -17,10 +17,9 @@ public class LocalizationManager : MonoBehaviour
         {
             instance = this;
             _translate = LanguageU.LoadTranslate(data);
-            DontDestroyOnLoad(this);
         }
-        else
-            Destroy(this);
+        else Destroy(this);
+        DontDestroyOnLoad(this);
     }
 
     public void ChangeLang(SystemLanguage newLang)

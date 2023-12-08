@@ -1,9 +1,9 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class _currencyManager : MonoBehaviour
+public class CurrencyManager : MonoBehaviour
 {
-    public static _currencyManager instance;
+    public static CurrencyManager instance;
     Currency _gameCurrency;
 
     [SerializeField] int currency;
@@ -17,7 +17,7 @@ public class _currencyManager : MonoBehaviour
             instance = this;
             Initialize();
         }
-        else Destroy(gameObject);
+        else Destroy(this);
         DontDestroyOnLoad(this);
     }
 
@@ -36,4 +36,6 @@ public class _currencyManager : MonoBehaviour
     {
         currency = _gameCurrency.GainResource(value);
     }
+
+
 }

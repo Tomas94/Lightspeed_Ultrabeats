@@ -47,7 +47,7 @@ public class ScoreManager : MonoBehaviour
 
     public void GainResources()
     {
-        _currencyManager.instance.GainCurrency(score);
+        CurrencyManager.instance.GainCurrency(score);
         UpgradePointsManager.instance.GainUP(score);
     }
 

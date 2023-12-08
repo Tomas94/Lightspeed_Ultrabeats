@@ -16,8 +16,8 @@ public class UpgradePointsManager : MonoBehaviour
             instance = this;
             Initialize();
         }
-        else Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
+        else Destroy(this);
+        DontDestroyOnLoad(this);
     }
 
     void Initialize()
@@ -29,6 +29,12 @@ public class UpgradePointsManager : MonoBehaviour
     public void SpentUP(int value)
     {
         upgradePoints = _gameUpgradePoints.SpentResource(value);
+    }
+
+    public void GainUPByAds(int quantity)
+    {
+        upgradePoints += _gameUpgradePoints.GainAdResources(quantity);
+
     }
 
     public void GainUP(int value)
