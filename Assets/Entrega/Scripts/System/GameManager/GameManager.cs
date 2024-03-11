@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("currency", CurrencyManager.instance.Currency);
         PlayerPrefs.SetInt("stamina", StaminaManager.instance.Stamina);
         PlayerPrefs.SetInt("upgradePoints", UpgradePointsManager.instance.UpgradePoints);
-        PlayerPrefs.SetInt("levelsUnlock", levelsUnlock);
+        PlayerPrefs.SetInt("levelsUnlockk", levelsUnlock);
         SaveBooleanList(skinavailable);
     }
 
