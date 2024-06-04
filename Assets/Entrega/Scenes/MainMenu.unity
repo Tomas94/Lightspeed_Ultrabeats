@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32486436, g: 0.33119228, b: 0.31231287, a: 1}
+  m_IndirectSpecularColor: {r: 0.32680222, g: 0.33326456, b: 0.3136305, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -435,6 +435,18 @@ MonoBehaviour:
           m_StringArgument: princesa
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1649449350}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 07e665f84aab8ef44ad13d99f7dcc4f5, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &19240110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,7 +645,46 @@ MonoBehaviour:
   m_Group: {fileID: 543136320}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2103723954}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MISION 3
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 962511694}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "Ellos son cada vez mas, pero est\xE1s cada vez mas cerca
+            de la singularidad, puedes sentir su fuerza haciendose mas notoria mientras
+            mas te acercas."
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1789557362}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Recuerda mejorar tu nave con las piezas que consigues
+            tras terminar los niveles.
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &81188019
 GameObject:
@@ -2326,6 +2377,18 @@ MonoBehaviour:
           m_StringArgument: floppa
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1649449350}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 44b99e87d29df67438ad4cc2907fb9c9, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &195982208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3248,6 +3311,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: semitono
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1649449350}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 6b1b610daa0cff44fbd3709b4b7df884, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &231113617
@@ -5227,7 +5302,47 @@ MonoBehaviour:
   m_Group: {fileID: 543136320}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2103723954}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MISION 2
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 962511694}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Lograste pasar la primera oleada de enemigos, pero ahora
+            toda la flota sabe que estas aqui. Preparate para seguir luchando hasta
+            llegar a la singularidad.
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1789557362}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "Las ondas de destruccion masiva hacen da\xF1o a todos
+            los enemigos y los atraviesan, pero su duracion es corta y cuesta cargarlas,
+            usalas bien. "
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &386892412
 GameObject:
@@ -7739,7 +7854,47 @@ MonoBehaviour:
   m_Group: {fileID: 543136320}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2103723954}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MISION 1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 962511694}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Mientras atraviesas el cosmos y te acercas hacia la singularidad,
+            tu camino a casa, te topas con una gran barrera de enemigos justo en
+            frente.
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1789557362}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "El escudo te protege del da\xF1o, pero tambien puedes
+            usarlo para chocar y destruir enemigos con el escudo activo. Usalo precisamente
+            para no quedarte sin el en momentos inoportunos."
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &578758356
 GameObject:
@@ -13068,8 +13223,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mientras atraviesas el cosmos y te acercas hacia la Singularidad, te topas
-    con una gran barrera de enemigos justo en frente.
+  m_text: Mientras atraviesas el cosmos y te acercas hacia la singularidad, tu camino
+    a casa, te topas con una gran barrera de enemigos justo en frente.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cbb10c45d96d13846a23a332c3ee19ea, type: 2}
   m_sharedMaterial: {fileID: 2258515278017806724, guid: cbb10c45d96d13846a23a332c3ee19ea, type: 2}
@@ -16245,6 +16400,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1649449350}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 3261e01051cc4214fb6d145725de3413, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1250466109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17255,7 +17422,46 @@ MonoBehaviour:
   m_Group: {fileID: 543136320}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2103723954}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: FINAL
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 962511694}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "Est\xE1s dentro de la singularidad, justo al borde del
+            portal a casa, pero tus enemigos tienen un \xFAltimo plan para detener
+            tu avance, derr\xF3talos y vuelve a casa."
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1789557362}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "Destruye enemigos en lugar de dejarlos pasar, ademas
+            de dar puntos tambi\xE9n sueltan objetos \xFAtiles."
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &1343343430
 GameObject:
@@ -19927,8 +20133,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Las ondas de destrucci\xF3n masiva hacen da\xF1o a todos los enemigos
-    y los atraviesan, pero su duracion es corta y cuesta cargarlas, usalas bien."
+  m_text: "El escudo te protege del da\xF1o, pero tambien puedes usarlo para chocar
+    y destruir enemigos con el escudo activo. Usalo precisamente para no quedarte
+    sin el en momentos inoportunos."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cbb10c45d96d13846a23a332c3ee19ea, type: 2}
   m_sharedMaterial: {fileID: 2258515278017806724, guid: cbb10c45d96d13846a23a332c3ee19ea, type: 2}
@@ -24546,7 +24753,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Mant\xE9n y Arrastra en cualquier lugar para moverte."
+  m_text: Sostiene y Arrastra en cualquier lugar para moverte.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
