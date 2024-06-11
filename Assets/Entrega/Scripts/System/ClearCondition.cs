@@ -8,6 +8,9 @@ public class ClearCondition : MonoBehaviour
     [SerializeField] Player _player;
     [SerializeField] TextMeshProUGUI totalScore;
 
+    [SerializeField] AudioClip _playerWinSound;
+    [SerializeField] AudioSource audioSource;
+
     public int completedWaves;
     public int wavesGoal;
     public int currentLevel;
@@ -25,8 +28,10 @@ public class ClearCondition : MonoBehaviour
 
     private void Update()
     {
-        if (completedWaves >= wavesGoal) VictoryScreen();
-
+        if (completedWaves >= wavesGoal)
+        {
+            VictoryScreen();
+        }
     }
 
     void VictoryScreen()
@@ -37,6 +42,11 @@ public class ClearCondition : MonoBehaviour
         SceneManagerr.Pause();
         totalScore.text = ScoreManager.Instance.SubmitScore().ToString();
         _player.gameObject.SetActive(false);
+    }
+
+    public void PlayWinSound()
+    {
+        audioSource.PlayOneShot(_playerWinSound);
     }
 
     public void WavesCompleted()

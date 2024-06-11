@@ -9,7 +9,11 @@ public class InGameUI_Controller : MonoBehaviour
     public TextMeshProUGUI score;
     public Player player;
 
-    void Start() { score.text = "0"; }
+    void Start() 
+    {
+        score.text = "0";
+        SceneManagerr.Resume();
+    }
 
     void Update()
     {

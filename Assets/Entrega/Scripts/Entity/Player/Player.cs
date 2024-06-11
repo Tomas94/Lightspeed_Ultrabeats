@@ -17,6 +17,8 @@ public class Player : Entity
     [SerializeField] AudioClip _playerDisparoAC;
     [SerializeField] AudioClip _playerShieldAC;
     [SerializeField] AudioClip _playerShieldDEAC;
+    [SerializeField] AudioClip _playerShieldReady;
+    [SerializeField] AudioClip _playerDedSound;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioSource _audioSourceShield;
 
@@ -56,6 +58,7 @@ public class Player : Entity
 
     public override void Die(int deathpoints)
     {
+        _audioSourceShield.PlayOneShot(_playerDedSound);
         _gameOverScreen.SetActive(true);
         SceneManagerr.Pause();
         this.gameObject.SetActive(false);
@@ -105,5 +108,6 @@ public class Player : Entity
             yield return null;
         }
         _charging = false;
+        _audioSourceShield.PlayOneShot(_playerShieldReady);
     }
 }
