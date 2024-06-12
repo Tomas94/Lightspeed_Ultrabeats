@@ -45,7 +45,7 @@ Material:
     - _Vel: 1
     m_Colors:
     - _ColorAbajo: {r: 103.96829, g: 33.838737, b: 49.259903, a: 1}
-    - _ColorArriba: {r: 588.1334, g: 209.59169, b: 0, a: 1}
+    - _ColorArriba: {r: 73.51668, g: 26.558382, b: 0, a: 1}
     - _MovScale: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5243206847768153195
