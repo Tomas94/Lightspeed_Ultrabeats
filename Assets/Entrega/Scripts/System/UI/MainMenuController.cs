@@ -54,7 +54,7 @@ public class MainMenuController : MonoBehaviour
     {
         for (int i = 0; i < GameManager.Instance.levelsUnlock; i++)
         {
-            Debug.Log("dentro del for con i = " + i);
+            //Debug.Log("dentro del for con i = " + i);
             levels[i].interactable = true;
         }
     }
@@ -141,6 +141,7 @@ public class MainMenuController : MonoBehaviour
     public void QuitGame()
     {
         GameManager.Instance.SavePlayerPrefs();
+        Debug.Log("Saliendo del juego...");
         Application.Quit();
     }
 

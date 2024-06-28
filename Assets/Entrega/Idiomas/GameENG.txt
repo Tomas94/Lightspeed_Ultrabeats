@@ -1,40 +1,54 @@
 {
-"IDIniciar" : "START",
-"IDEnergia" : "ENERGY",
-"IDSaltosDisponibles" : "AVAILABLE JUMPS",
-"IDJugar" : "PLAY",
-"IDMisiones" : "MISSIONS",
-"IDMisionesDescripcion" : "Complete daily missions to get rewards!",
-"IDMision01" : "Destroy 20 enemies",
-"IDOpciones" : "OPTIONS",
-"IDIdioma" : "ENG",
-"IDControles" : "CONTROLS",
-"IDReiniciarProgreso" : "RESTART PROGRESS",
-"IDConfirmacion" : "SURE?",
-"IDIrreversible" : "IRREVERSIBLE PROCESS",
-"IDAfirmacion" : "YES",
-"IDCMovimiento" : "Hold and Drag anywhere to move.",
-"IDCPowerUps" : "Press the Power up icon once to use it.",
-"IDCCargarPU" : "Destroy enemies to charge your powers.",
-"IDCRecompensas" : "Earn points in runs to obtain rewards.",
-"IDTienda" : "STORE",
-"IDAspectos" : "SKINS",
-"IDPersonalizar" : "CUSTOMIZE",
-"IDEstadisticas" : "STATS",
-"IDSubirStat" : "UPGRADE COST 10 PARTS",
-"IDVitalidad" : "VITALITY",
-"IDAtaque" : "ATTACK DAMAGE",
-"IDEscudo" : "SHIELD DURATION",
-"IDOndas" : "WAVES DURATION",
-"IDPiezasMejora" : "UPGRADE PARTS",
-"IDSeleccionarAspecto" : "SELECT SKIN",
-"IDPausa" : "PAUSE",
-"IDDerrota" : "YOU DIED",
-"IDVictoria" : "VICTORY",
-"IDReiniciar" : "RESTART",
-"IDMenu" : "MENU",
-"IDPuntajeFinal" : "FINAL SCORE",
-"IDEnergiaGratis" : "+1 FREE ENERGY",
+"IDIniciar" : "START";
+"IDEnergia" : "ENERGY";
+"IDSaltosDisponibles" : "AVAILABLE JUMPS";
+"IDJugar" : "PLAY";
+"IDMisiones" : "MISSIONS";
+"IDMisionesDescripcion" : "Complete daily missions to get rewards!";
+"IDMision01" : "Destroy 20 enemies";
+"IDOpciones" : "OPTIONS";
+"IDIdioma" : "ENG";
+"IDControles" : "CONTROLS";
+"IDReiniciarProgreso" : "RESTART PROGRESS";
+"IDConfirmacion" : "SURE?";
+"IDIrreversible" : "IRREVERSIBLE PROCESS";
+"IDAfirmacion" : "YES";
+"IDCMovimiento" : "Hold and Drag anywhere to move.";
+"IDCPowerUps" : "Press the Power up icon once to use it.";
+"IDCCargarPU" : "Destroy enemies to charge your powers.";
+"IDCRecompensas" : "Earn points in runs to obtain rewards.";
+"IDTienda" : "STORE";
+"IDAspectos" : "SKINS";
+"IDPersonalizar" : "CUSTOMIZE";
+"IDEstadisticas" : "STATS";
+"IDSubirStat" : "UPGRADE COST 10 PARTS";
+"IDVitalidad" : "VITALITY";
+"IDAtaque" : "ATTACK DAMAGE";
+"IDEscudo" : "SHIELD DURATION";
+"IDOndas" : "WAVES DURATION";
+"IDPiezasMejora" : "UPGRADE PARTS";
+"IDSeleccionarAspecto" : "SELECT SKIN";
+"IDPausa" : "PAUSE";
+"IDDerrota" : "YOU DIED";
+"IDVictoria" : "VICTORY";
+"IDReiniciar" : "RESTART";
+"IDMenu" : "MENU";
+"IDPuntajeFinal" : "FINAL SCORE";
+"IDEnergiaGratis" : "+1 FREE ENERGY";
 "IDRestaurarEnergia" : "RESTORE
-ENERGY",
+ENERGY";
+"IDLevelSelect" : "SELECT LEVEL";
+"IDMisionInfo" : "MISSION INFO";
+"IDMissionOne" : "As you traverse the cosmos and approach the singularity, your path home, you encounter a large barrier of enemies right in front of you.";
+"IDMissionTwo" : "You managed to get through the first wave of enemies, but now the entire fleet knows you're here. Get ready to keep fighting until you reach the singularity.";
+"IDMissionThree" : "They are increasing in number, but you are getting closer to the singularity. You can feel its strength becoming more noticeable the closer you get.";
+"IDTipTitle" : "TIP";
+"IDTipOne" : "The shield protects you from damage, but you can also use it to ram and destroy enemies while it's active. Use it wisely to avoid running out of it at inconvenient times.";
+"IDTipTwo" : "The massive destruction waves damage all enemies and pierce through them, but their duration is short and they are costly to charge. Use them wisely.";
+"IDTipThree" : "Remember to upgrade your ship with the parts you collect after completing levels.";
+"IDExitConfirm" : "EXIT?";
+"IDYes" : "YES";
+"IDFree" : "FREE";
+"IDEquip" : "EQUIP";
+"IDMorePieces" : "BUY PIECES"
 }

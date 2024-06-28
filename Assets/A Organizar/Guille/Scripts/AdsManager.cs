@@ -60,11 +60,11 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
                 Debug.Log("No hay recompensas");
             }
         }
-        if (placementid == _upgradePointsId)
+        else if (placementid == _upgradePointsId)
         {
             if (showresult == ShowResult.Finished)
             {
-                Debug.Log("Consigue recompensas");
+                Debug.Log("Consigue recompensas de piezas");
                 UpgradePointsManager.instance.GainUPByAds(5);
             }
             else if (showresult == ShowResult.Skipped)

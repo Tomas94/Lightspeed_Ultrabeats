@@ -449,7 +449,7 @@ MonoBehaviour:
   audioSource: {fileID: 194531888}
   completedWaves: 0
   wavesGoal: 5
-  currentLevel: 0
+  currentLevel: 2
 --- !u!114 &94803828
 MonoBehaviour:
   m_ObjectHideFlags: 0

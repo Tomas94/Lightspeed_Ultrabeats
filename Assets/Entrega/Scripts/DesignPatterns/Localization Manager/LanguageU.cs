@@ -13,7 +13,7 @@ public static class LanguageU
 
             foreach (var item in data[i].data)
             {
-                var f = item.text.Split(',');
+                var f = item.text.Split(';');
 
                 foreach (var d in f)
                 {

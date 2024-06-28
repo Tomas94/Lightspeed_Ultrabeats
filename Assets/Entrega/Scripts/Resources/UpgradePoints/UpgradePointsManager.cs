@@ -33,7 +33,7 @@ public class UpgradePointsManager : MonoBehaviour
 
     public void GainUPByAds(int quantity)
     {
-        upgradePoints += _gameUpgradePoints.GainAdResources(quantity);
+        upgradePoints = _gameUpgradePoints.GainAdResources(quantity);
     }
 
     public void PayForPieces(int quantity)

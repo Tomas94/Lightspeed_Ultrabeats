@@ -1,40 +1,54 @@
 {
-"IDIniciar" : "INICIAR",
-"IDEnergia" : "ENERGIA",
-"IDSaltosDisponibles" : "SALTOS DISPONIBLES",
-"IDJugar" : "JUGAR",
-"IDMisiones" : "MISIONES",
-"IDMisionesDescripcion" : "¡Completa misiones diarias para conseguir recompensas!",
-"IDMision01" : "Destruye 20 enemigos",
-"IDOpciones" : "OPCIONES",
-"IDIdioma" : "ESP",
-"IDControles" : "CONTROLES",
-"IDReiniciarProgreso" : "REINICIAR PROGRESO",
-"IDConfirmacion" : "¿ESTAS SEGURO?",
-"IDIrreversible" : "PROCESO IRREVERSIBLE",
-"IDAfirmacion" : "SI",
-"IDCMovimiento" : "Mantén y Arrastra en cualquier lugar para moverte.",
-"IDCPowerUps" : "Presiona una vez los Power ups para usarlos.",
-"IDCCargarPU" : "Destruye enemigos para cargar tus poderes.",
-"IDCRecompensas" : "Consigue puntos en las partidas para ganar recompensas.",
-"IDTienda" : "TIENDA",
-"IDAspectos" : "ASPECTOS",
-"IDPersonalizar" : "PERSONALIZAR",
-"IDEstadisticas" : "ESTADISTICAS",
-"IDSubirStat" : "AUMENTAR CON 10 PIEZAS",
-"IDVitalidad" : "VITALIDAD",
-"IDAtaque" : "PODER DE ATAQUE",
-"IDEscudo" : "DURACION ESCUDO",
-"IDOndas" : "DURACION ONDAS",
-"IDPiezasMejora" : "PIEZAS DE MEJORA",
-"IDSeleccionarAspecto" : "SELECCIONAR ASPECTO",
-"IDPausa" : "PAUSA",
-"IDDerrota" : "HAS MUERTO",
-"IDVictoria" : "VICTORIA",
-"IDReiniciar" : "REINICIAR",
-"IDMenu" : "MENU",
-"IDPuntajeFinal" : "PUNTAJE FINAL",
-"IDEnergiaGratis" : "+1 ENERGIA GRATIS",
+"IDIniciar" : "INICIAR";
+"IDEnergia" : "ENERGIA";
+"IDSaltosDisponibles" : "SALTOS DISPONIBLES";
+"IDJugar" : "JUGAR";
+"IDMisiones" : "MISIONES";
+"IDMisionesDescripcion" : "Completa misiones diarias para conseguir recompensas!";
+"IDMision01" : "Destruye 20 enemigos";
+"IDOpciones" : "OPCIONES";
+"IDIdioma" : "ESP";
+"IDControles" : "CONTROLES";
+"IDReiniciarProgreso" : "REINICIAR PROGRESO";
+"IDConfirmacion" : "ESTAS SEGURO?";
+"IDIrreversible" : "PROCESO IRREVERSIBLE";
+"IDAfirmacion" : "SI";
+"IDCMovimiento" : "Manten y Arrastra en cualquier lugar para moverte.";
+"IDCPowerUps" : "Presiona una vez los Power ups para usarlos.";
+"IDCCargarPU" : "Destruye enemigos para cargar tus poderes.";
+"IDCRecompensas" : "Consigue puntos en las partidas para ganar recompensas.";
+"IDTienda" : "TIENDA";
+"IDAspectos" : "ASPECTOS";
+"IDPersonalizar" : "PERSONALIZAR";
+"IDEstadisticas" : "ESTADISTICAS";
+"IDSubirStat" : "AUMENTAR CON 10 PIEZAS";
+"IDVitalidad" : "VITALIDAD";
+"IDAtaque" : "PODER DE ATAQUE";
+"IDEscudo" : "DURACION ESCUDO";
+"IDOndas" : "DURACION ONDAS";
+"IDPiezasMejora" : "PIEZAS DE MEJORA";
+"IDSeleccionarAspecto" : "SELECCIONAR ASPECTO";
+"IDPausa" : "PAUSA";
+"IDDerrota" : "HAS MUERTO";
+"IDVictoria" : "VICTORIA";
+"IDReiniciar" : "REINICIAR";
+"IDMenu" : "MENU";
+"IDPuntajeFinal" : "PUNTAJE FINAL";
+"IDEnergiaGratis" : "+1 ENERGIA GRATIS";
 "IDRestaurarEnergia" : "RESTAURAR
-ENERGIA",
+ENERGIA";
+"IDLevelSelect" : "SELECCIONAR NIVEL";
+"IDMisionInfo" : "DETALLE DE MISION";
+"IDMissionOne" : "Mientras atraviesas el cosmos y te acercas hacia la singularidad, tu camino a casa, te topas con una gran barrera de enemigos justo en frente.";
+"IDMissionTwo" : "Lograste pasar la primera oleada de enemigos, pero ahora toda la flota sabe que estas aqui. Preparate para seguir luchando hasta llegar a la singularidad.";
+"IDMissionThree" : "Ellos son cada vez mas, pero estas cada vez mas cerca de la singularidad, puedes sentir su fuerza haciendose mas notoria mientras mas te acercas.";
+"IDTipTitle" : "CONSEJO";
+"IDTipOne" : "El escudo te protege, pero tambien puedes usarlo para chocar y destruir enemigos con el escudo activo. Usalo precisamente para no quedarte sin el en momentos inoportunos.";
+"IDTipTwo" : "Las ondas de destruccion masiva hieren a todos los enemigos y los atraviesan, pero su duracion es corta y cuesta cargarlas, usalas bien.";
+"IDTipThree" : "Recuerda mejorar tu nave con las piezas que consigues tras terminar los niveles.";
+"IDExitConfirm" : "SALIR?";
+"IDYes" : "SI";
+"IDFree" : "GRATIS";
+"IDEquip" : "EQUIPAR";
+"IDMorePieces" : "COMPRAR PIEZAS"
 }
