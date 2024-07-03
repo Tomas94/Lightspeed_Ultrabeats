@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public List<SkinsStruct> skins = new List<SkinsStruct>();
     public List<bool> skinavailable = new List<bool>();
     public Material playerskin;
-    public int levelsUnlock = 1;
+    public int levelsUnlock = 0;
     public bool sound;
     [RangeAttribute(0f, 0.7f)] public float brillo;
 
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         CurrencyManager.instance.SetCurrencyValues(PlayerPrefs.GetInt("currency", 0));
         StaminaManager.instance.SetStaminaValues(PlayerPrefs.GetInt("stamina",5));
         UpgradePointsManager.instance.SetUPValues(PlayerPrefs.GetInt("upgradePoints", 0));
-        levelsUnlock = PlayerPrefs.GetInt("levelsUnlock", 1);
+        levelsUnlock = PlayerPrefs.GetInt("levelsUnlock", 0);
         skinavailable = LoadBooleanList();
     }
 
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("currency", 0);
         PlayerPrefs.SetInt("stamina", 5);
         PlayerPrefs.SetInt("upgradePoints", 0);
-        PlayerPrefs.SetInt("levelsUnlock", 1);
+        PlayerPrefs.SetInt("levelsUnlock", 0);
 
         List<bool> resetList = new List<bool>() { true, false, false, false };
         SaveBooleanList(resetList);

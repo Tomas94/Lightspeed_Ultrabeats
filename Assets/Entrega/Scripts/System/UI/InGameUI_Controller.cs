@@ -12,7 +12,7 @@ public class InGameUI_Controller : MonoBehaviour
     void Start() 
     {
         score.text = "0";
-        SceneManagerr.Resume();
+        //SceneManagerr.Resume();
     }
 
     void Update()

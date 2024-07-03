@@ -17,6 +17,14 @@
 "IDCPowerUps" : "Press the Power up icon once to use it.";
 "IDCCargarPU" : "Destroy enemies to charge your powers.";
 "IDCRecompensas" : "Earn points in runs to obtain rewards.";
+"IDCLifeBar" : "Pay attention to your health bar.";
+"IDCObjetos": "Gain health and power from the items dropped by enemies.";
+"IDCDisparos" : "+ Shoots
+
+
+
+Power level ^";
+"IDCLifePU" : "+ life";
 "IDTienda" : "STORE";
 "IDAspectos" : "SKINS";
 "IDPersonalizar" : "CUSTOMIZE";

@@ -13,13 +13,16 @@ public class SceneManagerr : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    public void PlayLevel(string level)
+    public void PlayLevel(string level, float delay = 0.25f)
     {
-        StartCoroutine(StartLevel(.25f, level));
+        StartCoroutine(StartLevel(delay, level));
     }
 
-    public static void Pause() => Time.timeScale = 0f;
-
+    public static void Pause()
+    {
+        Time.timeScale = 0f;
+        Debug.Log("En Pausa");
+    }
     public static void Resume() => Time.timeScale = 1f;
 
     public static void Restart() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -29,7 +32,9 @@ public class SceneManagerr : MonoBehaviour
     public static void ResetGame() => SceneManager.LoadScene(0);
 
     public static void QuitGame() => Application.Quit();
-    
+
+    public static void CloseWindow(GameObject window) => window.SetActive(false);
+
     IEnumerator StartLevel(float time, string EscenaACargar)
     {
         yield return new WaitForSeconds(time);

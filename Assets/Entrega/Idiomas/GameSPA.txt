@@ -17,6 +17,14 @@
 "IDCPowerUps" : "Presiona una vez los Power ups para usarlos.";
 "IDCCargarPU" : "Destruye enemigos para cargar tus poderes.";
 "IDCRecompensas" : "Consigue puntos en las partidas para ganar recompensas.";
+"IDCLifeBar" : "Atento a tu barra de vida";
+"IDCObjetos" : "Obten vida y poder de los objetos que dejen los enemigos";
+"IDCDisparos" : "+ Disparos
+
+
+
+Nivel de poder ^";
+"IDCLifePU" : "+ Vida";
 "IDTienda" : "TIENDA";
 "IDAspectos" : "ASPECTOS";
 "IDPersonalizar" : "PERSONALIZAR";

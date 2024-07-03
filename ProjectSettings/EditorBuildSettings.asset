@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Entrega/Scenes/MainMenu.unity
     guid: 4b574adc5d424464b847372f0a870e4a
   - enabled: 1
+    path: Assets/Entrega/Scenes/Level_Tutorial.unity
+    guid: 4b69cfaee142c8041817c9bdee35b856
+  - enabled: 1
     path: Assets/Entrega/Scenes/Level_1.unity
     guid: 32382bd344b17fd48a806c5e203d2704
   - enabled: 1

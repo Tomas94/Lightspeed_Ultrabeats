@@ -62,7 +62,9 @@ MonoBehaviour:
     skin: {fileID: 2100000, guid: dc4ab40b173ff584ca5fd3c12abd2438, type: 2}
   skinavailable: 01000000
   playerskin: {fileID: 2100000, guid: f5f9c3870ab60a24e88ef0650b68ab68, type: 2}
-  vibration: 0
+  levelsUnlock: 0
+  sound: 0
+  brillo: 0
 --- !u!114 &6656499441467533780
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -883,7 +883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66351c3954015f4992de1c114032e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
   contador: 
   timeToRefill: 15
   remainingTime: 0
+  recharging: 0

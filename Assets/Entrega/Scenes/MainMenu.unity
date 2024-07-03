@@ -31553,6 +31553,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a16617b6bfec8e46b3033475e1ae5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _staminaManager: {fileID: 0}
+  _currencyManager: {fileID: 0}
+  _upgradePointsManager: {fileID: 0}
+  _sceneManager: {fileID: 0}
   contadorTiempo: {fileID: 1637084351}
   levels:
   - {fileID: 575262129}
@@ -31564,6 +31568,7 @@ MonoBehaviour:
   upgradePointsAmount: {fileID: 1443610385}
   staminaBar: {fileID: 5565260182422315215}
   itemPurchased: 0
+  tutorialPlayed: 0
 --- !u!223 &5565260182744742260
 Canvas:
   m_ObjectHideFlags: 0

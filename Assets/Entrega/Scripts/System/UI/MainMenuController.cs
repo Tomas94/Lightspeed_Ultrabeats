@@ -2,13 +2,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class MainMenuController : MonoBehaviour
 {
-    StaminaManager _staminaManager;
-    CurrencyManager _currencyManager;
-    UpgradePointsManager _upgradePointsManager;
-    SceneManagerr _sceneManager;
+    GameManager _gameManager;
+    [SerializeField] StaminaManager _staminaManager;
+    [SerializeField] CurrencyManager _currencyManager;
+    [SerializeField] UpgradePointsManager _upgradePointsManager;
+    [SerializeField] SceneManagerr _sceneManager;
     public TextMeshProUGUI contadorTiempo;
 
     public List<Toggle> levels;
@@ -16,6 +18,7 @@ public class MainMenuController : MonoBehaviour
     public Image staminaBar;
 
     public bool itemPurchased = false;
+    public bool tutorialPlayed = false;
 
     private void Awake()
     {
@@ -23,6 +26,7 @@ public class MainMenuController : MonoBehaviour
         _currencyManager = CurrencyManager.instance;
         _upgradePointsManager = UpgradePointsManager.instance;
         _sceneManager = SceneManagerr.instance;
+        _gameManager = GameManager.Instance;
 
     }
 
@@ -33,6 +37,8 @@ public class MainMenuController : MonoBehaviour
         crediBeatsAmount.text = _currencyManager.Currency.ToString();
         UpdateAvailableLevels();
         SceneManagerr.Resume();
+
+        if (_gameManager.levelsUnlock == 0) PlayTutorial();
     }
 
     private void Update()
@@ -41,13 +47,18 @@ public class MainMenuController : MonoBehaviour
         crediBeatsAmount.text = _currencyManager.Currency.ToString();
         upgradePointsAmount.text = _upgradePointsManager.UpgradePoints.ToString();
         StaminaBarUpdate();
-        
+
         if (_staminaManager.Stamina == _staminaManager.MaxStamina)
         {
             contadorTiempo.text = "";
             return;
         }
         contadorTiempo.text = Timer.instance.contador;
+    }
+
+    public void PlayTutorial()
+    {
+        _sceneManager.PlayLevel("Level_Tutorial", 0);
     }
 
     public void UpdateAvailableLevels()
@@ -65,11 +76,11 @@ public class MainMenuController : MonoBehaviour
         _staminaManager.ConsumeStamina();
         string levelName = "Level_";
 
-       for(int i = 0; i <levels.Count; i++)
+        for (int i = 0; i < levels.Count; i++)
         {
             if (levels[i].isOn)
             {
-                levelName += (i+1).ToString();
+                levelName += (i + 1).ToString();
                 continue;
             }
         }
