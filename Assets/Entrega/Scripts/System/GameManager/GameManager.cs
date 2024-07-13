@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public List<SkinsStruct> skins = new List<SkinsStruct>();
     public List<bool> skinavailable = new List<bool>();
     public Material playerskin;
-    public int levelsUnlock = 0;
+    public int levelsUnlock;
     public bool sound;
     [RangeAttribute(0f, 0.7f)] public float brillo;
 

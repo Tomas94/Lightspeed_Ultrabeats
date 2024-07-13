@@ -30,4 +30,9 @@ public class ScreenController : MonoBehaviour, IScreen
         foreach (var item in GetComponentsInChildren<Button>())
             item.interactable = false;
     }
+
+    public void CloseWindow(GameObject window)
+    {
+        ScreenManager.instance.CloseWindow(window);
+    }
 }

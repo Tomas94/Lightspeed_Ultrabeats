@@ -5,6 +5,7 @@ public class Player : Entity
 {
     [SerializeField] GameObject _gameOverScreen;
     public Animator shield;
+    [SerializeField] Renderer _mesh;
 
     public InGameUI_Controller gameUI;
     PU_Shield _shieldPU = new PU_Shield(5);
@@ -28,6 +29,7 @@ public class Player : Entity
     {
         GetComponentInChildren<MeshRenderer>().material = GameManager.Instance.playerskin;
         currentLife = _maxLife;
+        _mesh.material = GameManager.Instance.playerskin;
     }
 
     private void Start()

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+
 
 public class MainMenuController : MonoBehaviour
 {
@@ -17,7 +17,6 @@ public class MainMenuController : MonoBehaviour
     public TextMeshProUGUI crediBeatsAmount, staminaAmount, upgradePointsAmount;
     public Image staminaBar;
 
-    public bool itemPurchased = false;
     public bool tutorialPlayed = false;
 
     private void Awake()
@@ -38,7 +37,7 @@ public class MainMenuController : MonoBehaviour
         UpdateAvailableLevels();
         SceneManagerr.Resume();
 
-        if (_gameManager.levelsUnlock == 0) PlayTutorial();
+        //if (_gameManager.levelsUnlock == 0) PlayTutorial();
     }
 
     private void Update()
@@ -103,24 +102,11 @@ public class MainMenuController : MonoBehaviour
 
     #region Funciones Relacionadas a Compra de Objetos
 
-    public void BuyItem(int cost)
-    {
-        if (CurrencyManager.instance.Currency < cost) return;
-        itemPurchased = true;
-        _currencyManager.SpentCurrency(cost);
-        crediBeatsAmount.text = CurrencyManager.instance.Currency.ToString();
-    }
-
     public void BuyUpgrade(int cost)
     {
         _upgradePointsManager.SpentUP(cost);
     }
 
-    public void DisableItemPurchased(Button boton)
-    {
-        if (!itemPurchased) return;
-        boton.interactable = false;
-    }
     #endregion
 
 

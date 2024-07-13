@@ -36,4 +36,6 @@ public class ScreenManager : MonoBehaviour
                 _screens.Peek().Activate();
         }
     }
+
+    public void CloseWindow(GameObject window) => window.SetActive(false);
 }

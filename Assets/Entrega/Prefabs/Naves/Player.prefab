@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1723455683811591584
 Transform:
   m_ObjectHideFlags: 0
@@ -41,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059262894121428514}
   serializedVersion: 8
-  lengthInSec: 9.8
+  lengthInSec: 8.38
   simulationSpeed: 5.6
   stopAction: 1
   cullingMode: 0
@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 9.1
+      scalar: 8.9
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -223,7 +223,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.123938754, b: 0, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1364,7 +1364,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.764151, g: 0.060555305, b: 0.09494512, a: 1}
-        key1: {r: 1, g: 0.21960783, b: 0.71525526, a: 0.24313726}
+        key1: {r: 1, g: 0.21960783, b: 0.71525526, a: 0.6392157}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1380,7 +1380,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 62258
+        atime1: 65535
         atime2: 0
         atime3: 0
         atime4: 0
@@ -3991,7 +3991,7 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.61
+      scalar: 0.27
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4042,14 +4042,14 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     minVertexDistance: 1.2
-    textureMode: 0
+    textureMode: 3
     ribbonCount: 1
     shadowBias: 0.5
     worldSpace: 0
-    dieWithParticles: 1
+    dieWithParticles: 0
     sizeAffectsWidth: 0
-    sizeAffectsLifetime: 0
-    inheritParticleColor: 0
+    sizeAffectsLifetime: 1
+    inheritParticleColor: 1
     generateLightingData: 0
     splitSubEmitterRibbons: 0
     attachRibbonsToTransform: 0
@@ -4119,7 +4119,7 @@ ParticleSystem:
     widthOverTrail:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8.95
+      scalar: 1.8
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4173,7 +4173,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.08614932, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.1333535, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4819,8 +4819,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6bcdc70583cff8b41ab78b4483ce6643, type: 2}
   - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 436f5817f843dfd4fb821ddff593d1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4841,8 +4841,8 @@ ParticleSystemRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_RenderMode: 0
-  m_MeshDistribution: 1
+  m_RenderMode: 4
+  m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
@@ -10092,8 +10092,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 20, z: 3.65}
-  m_Center: {x: 0, y: 1.9999995, z: 0}
+  m_Size: {x: 2, y: 20, z: 3}
+  m_Center: {x: 0, y: 1.9999995, z: -0.7}
 --- !u!114 &1392546748827185215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10108,15 +10108,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLife: 0
   _gameOverScreen: {fileID: 0}
-  shield: {fileID: 0}
+  shield: {fileID: 4065397090895545123}
+  _mesh: {fileID: 5416530085110186152}
   gameUI: {fileID: 0}
-  _fireRate: 1
-  _maxLife: 3
+  _fireRate: 0.3
+  _maxLife: 7
   _isShielded: 0
   _charging: 0
-  _playerDisparoAC: {fileID: 0}
-  _playerShieldAC: {fileID: 0}
-  _playerShieldDEAC: {fileID: 0}
+  _playerDisparoAC: {fileID: 8300000, guid: 4bf399531b9f14746abddac64d33574c, type: 3}
+  _playerShieldAC: {fileID: 8300000, guid: 4d00c87bd638f884eb312bd85672f7a4, type: 3}
+  _playerShieldDEAC: {fileID: 8300000, guid: cf01678b4f1e3c14888b8136c30b380b, type: 3}
+  _playerShieldReady: {fileID: 8300000, guid: ee35845da80554f438ea2c31e154ab86, type: 3}
+  _playerDedSound: {fileID: 8300000, guid: 931c9bff9f1563143b2c5a7964cdaf8c, type: 3}
   audioSource: {fileID: 0}
   _audioSourceShield: {fileID: 0}
 --- !u!114 &3340686928111850663
@@ -10164,7 +10167,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3978440770032606524, guid: d6d59d4dec46af54daba582783b01e20, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978440770032606524, guid: d6d59d4dec46af54daba582783b01e20, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4358800962409318278, guid: d6d59d4dec46af54daba582783b01e20, type: 3}
       propertyPath: m_RootOrder
@@ -10212,6 +10219,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6d59d4dec46af54daba582783b01e20, type: 3}
+--- !u!95 &4065397090895545123 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5123671430810703652, guid: d6d59d4dec46af54daba582783b01e20, type: 3}
+  m_PrefabInstance: {fileID: 9183333426071491591}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4831328283075253121 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4358800962409318278, guid: d6d59d4dec46af54daba582783b01e20, type: 3}

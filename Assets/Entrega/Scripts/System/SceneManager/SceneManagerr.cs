@@ -33,8 +33,6 @@ public class SceneManagerr : MonoBehaviour
 
     public static void QuitGame() => Application.Quit();
 
-    public static void CloseWindow(GameObject window) => window.SetActive(false);
-
     IEnumerator StartLevel(float time, string EscenaACargar)
     {
         yield return new WaitForSeconds(time);

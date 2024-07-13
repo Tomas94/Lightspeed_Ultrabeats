@@ -22,7 +22,6 @@ public class SkinController : MonoBehaviour
 
     public void UnlockSkin(int id)
     {
-        if (!mainMenuController.itemPurchased && id != 0) return;
         Skins[id].SetActive(true);
         GameManager.Instance.skinavailable[id] = true;
     }
