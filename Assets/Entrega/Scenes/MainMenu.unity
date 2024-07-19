@@ -3224,7 +3224,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2724.0034, y: 705.8021}
+  m_SizeDelta: {x: 0.075805664, y: 705.8021}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &227151614
 MonoBehaviour:
@@ -12732,6 +12732,7 @@ GameObject:
   - component: {fileID: 906763730}
   - component: {fileID: 906763729}
   - component: {fileID: 906763732}
+  - component: {fileID: 906763733}
   m_Layer: 5
   m_Name: PersonalizarMenu
   m_TagString: Untagged
@@ -12840,6 +12841,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d2928c54158ac34b978c93d558293d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &906763733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906763727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c8c1948b194e5849b48acd968d4072d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitalityBar: 1
+  damageBar: 1
+  shieldBar: 1
+  waveBar: 1
+  _fillBars:
+  - {fileID: 1907935119}
+  - {fileID: 1868831835}
+  - {fileID: 1060921606}
+  - {fileID: 696007385}
 --- !u!1 &908505277
 GameObject:
   m_ObjectHideFlags: 0
@@ -13772,6 +13794,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 906763733}
+        m_TargetAssemblyTypeName: Upgrade_Store, Assembly-CSharp
+        m_MethodName: RefundUpgrade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: vitality
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &960722868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14682,6 +14716,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 906763733}
+        m_TargetAssemblyTypeName: Upgrade_Store, Assembly-CSharp
+        m_MethodName: CompleteBuyOperation
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: vitality
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1000527018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15075,6 +15121,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 906763733}
+        m_TargetAssemblyTypeName: Upgrade_Store, Assembly-CSharp
+        m_MethodName: RefundUpgrade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: shield
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1035146805
@@ -15715,6 +15773,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 906763733}
+        m_TargetAssemblyTypeName: Upgrade_Store, Assembly-CSharp
+        m_MethodName: RefundUpgrade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: damage
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1100697155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16047,6 +16117,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4014644920667858555, guid: 5dcbcfe12a2c92b499f7996bfa57d8ae, type: 3}
+      propertyPath: upgradePoints
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 7886577750135332676, guid: 5dcbcfe12a2c92b499f7996bfa57d8ae, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -17326,6 +17400,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 906763733}
+        m_TargetAssemblyTypeName: Upgrade_Store, Assembly-CSharp
+        m_MethodName: CompleteBuyOperation
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: wave
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1273193783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18071,6 +18157,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323925937}
   m_CullTransparentMesh: 1
+--- !u!1 &1328224807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7886577750135332677, guid: 5dcbcfe12a2c92b499f7996bfa57d8ae, type: 3}
+  m_PrefabInstance: {fileID: 1146164557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1328224818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328224807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e536de69c3fd74ca99b4cc6b1986fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1329929976
 GameObject:
   m_ObjectHideFlags: 0
@@ -18378,6 +18481,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 906763733}
+        m_TargetAssemblyTypeName: Upgrade_Store, Assembly-CSharp
+        m_MethodName: CompleteBuyOperation
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: shield
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1343343433
@@ -19329,7 +19444,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.29828152, y: 1}
+  m_AnchorMax: {x: 0.99993455, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -22537,6 +22652,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 906763733}
+        m_TargetAssemblyTypeName: Upgrade_Store, Assembly-CSharp
+        m_MethodName: CompleteBuyOperation
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: damage
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1926086669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22744,6 +22871,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 906763733}
+        m_TargetAssemblyTypeName: Upgrade_Store, Assembly-CSharp
+        m_MethodName: RefundUpgrade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: wave
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1987327120
@@ -23510,7 +23649,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1489329376}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.29828152
+  m_Size: 0.99993455
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -8,7 +8,7 @@ public class ExitApp : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            GameManager.Instance.SavePlayerPrefs();
+            GameManager.instance.SavePlayerPrefs();
             Application.Quit();
         }
     }

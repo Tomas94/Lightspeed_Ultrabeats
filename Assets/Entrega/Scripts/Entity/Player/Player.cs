@@ -8,7 +8,7 @@ public class Player : Entity
     [SerializeField] Renderer _mesh;
 
     public InGameUI_Controller gameUI;
-    PU_Shield _shieldPU = new PU_Shield(5);
+    PU_Shield _shieldPU;
 
     [SerializeField] float _fireRate = 0.3f;
     [SerializeField] float _maxLife;
@@ -23,13 +23,14 @@ public class Player : Entity
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioSource _audioSourceShield;
 
-    public float MaxLife { get { return _maxLife; } }
+    public float MaxLife { get { return _maxLife; } set { _maxLife = value; } }
 
     private void Awake()
     {
-        GetComponentInChildren<MeshRenderer>().material = GameManager.Instance.playerskin;
+        GetComponentInChildren<MeshRenderer>().material = GameManager.instance.playerskin;
+        GetPlayerStatistics();
         currentLife = _maxLife;
-        _mesh.material = GameManager.Instance.playerskin;
+        _mesh.material = GameManager.instance.playerskin;
     }
 
     private void Start()
@@ -96,6 +97,17 @@ public class Player : Entity
 
         audioSource.PlayOneShot(_playerDisparoAC);
     }
+
+    void GetPlayerStatistics()
+    {
+        Player_Stats_Manager stats = Player_Stats_Manager.instance;
+
+        _shieldPU = new PU_Shield(stats.ShieldDuration);
+        //_wavePU duration//
+        _fireRate = stats.FireRate;
+        MaxLife = stats.MaxLife;
+    }
+
 
     public IEnumerator RechargeShield()
     {

@@ -37,7 +37,7 @@ public class ClearCondition : MonoBehaviour
 
     void VictoryScreen()
     {
-        if (GameManager.Instance.levelsUnlock == currentLevel) GameManager.Instance.levelsUnlock += 1;
+        if (GameManager.instance.levelsUnlock == currentLevel) GameManager.instance.levelsUnlock += 1;
         PlayerPrefs.Save();
         _victoryScreen.SetActive(true);
         SceneManagerr.Pause();

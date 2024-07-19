@@ -11,18 +11,18 @@ public class SkinController : MonoBehaviour
     {
         for (int i = 0; i < Skins.Count; i++)
         {
-            if (GameManager.Instance.skinavailable[i]) Skins[i].SetActive(true); ;
+            if (GameManager.instance.skinavailable[i]) Skins[i].SetActive(true); ;
         }
     }
 
     public void EquipSkin(string id)
     {
-        GameManager.Instance.ChangeSkin(id);
+        GameManager.instance.ChangeSkin(id);
     }
 
     public void UnlockSkin(int id)
     {
         Skins[id].SetActive(true);
-        GameManager.Instance.skinavailable[id] = true;
+        GameManager.instance.skinavailable[id] = true;
     }
 }

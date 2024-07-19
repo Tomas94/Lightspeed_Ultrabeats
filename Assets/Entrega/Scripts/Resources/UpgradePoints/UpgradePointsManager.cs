@@ -47,6 +47,11 @@ public class UpgradePointsManager : MonoBehaviour
         upgradePoints = _gameUpgradePoints.GainResource(value);
     }
 
+    public void RefundUP(int value)
+    {
+        upgradePoints = _gameUpgradePoints.RefundResource(value);
+    }
+
     public void SetUPValues(int value)
     {
         upgradePoints = value;

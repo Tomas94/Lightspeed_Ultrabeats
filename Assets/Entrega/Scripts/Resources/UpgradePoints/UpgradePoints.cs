@@ -6,7 +6,6 @@ public class UpgradePoints
 
     public int SpentResource(int quantity)
     {
-        if (upgradePoints > quantity) return upgradePoints;
         upgradePoints -= quantity;
         return upgradePoints;
     }
@@ -21,6 +20,12 @@ public class UpgradePoints
     {
         var pointsGained = quantity * 0.8f * 0.3f;
         upgradePoints += (int)pointsGained;
+        return upgradePoints;
+    }
+
+    public int RefundResource(int quantity)
+    {
+        upgradePoints += quantity;
         return upgradePoints;
     }
 }

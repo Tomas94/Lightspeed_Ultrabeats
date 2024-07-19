@@ -10,6 +10,6 @@ public class Bullet_Player : Bullet
     public override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
-        OnEntityHit(other.gameObject, Fw_Pointer.BulletPlayer.damage);
+        OnEntityHit(other.gameObject, Fw_Pointer.BulletPlayer.damage + Player_Stats_Manager.instance.Damage);
     }
 }

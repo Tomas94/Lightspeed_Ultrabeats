@@ -25,7 +25,7 @@ public class MainMenuController : MonoBehaviour
         _currencyManager = CurrencyManager.instance;
         _upgradePointsManager = UpgradePointsManager.instance;
         _sceneManager = SceneManagerr.instance;
-        _gameManager = GameManager.Instance;
+        _gameManager = GameManager.instance;
 
     }
 
@@ -62,7 +62,7 @@ public class MainMenuController : MonoBehaviour
 
     public void UpdateAvailableLevels()
     {
-        for (int i = 0; i < GameManager.Instance.levelsUnlock; i++)
+        for (int i = 0; i < GameManager.instance.levelsUnlock; i++)
         {
             //Debug.Log("dentro del for con i = " + i);
             levels[i].interactable = true;
@@ -137,13 +137,13 @@ public class MainMenuController : MonoBehaviour
 
     public void QuitGame()
     {
-        GameManager.Instance.SavePlayerPrefs();
+        GameManager.instance.SavePlayerPrefs();
         Debug.Log("Saliendo del juego...");
         Application.Quit();
     }
 
     public void ResetData()
     {
-        GameManager.Instance.ResetProgress();
+        GameManager.instance.ResetProgress();
     }
 }

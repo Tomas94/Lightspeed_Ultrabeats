@@ -11,7 +11,7 @@ public class Store : MonoBehaviour
     [SerializeField] ScreenController _confirmWindow;
 
     [SerializeField] List<Button> _items = new List<Button>();
-    Dictionary<string, (int index, int price)> _storeItems = new Dictionary<string, (int, int)>();
+    Dictionary<string, (int index, int price)> _storeItems = new Dictionary<string, (int index, int price)>();
 
     string _selectedItem;
 
@@ -30,9 +30,9 @@ public class Store : MonoBehaviour
     public void CheckSkinPurchased()
     {
         Debug.Log("Entrando tienda");
-        for (int i = 1; i < GameManager.Instance.skinavailable.Count; i++)
+        for (int i = 1; i < GameManager.instance.skinavailable.Count; i++)
         {
-            if (GameManager.Instance.skinavailable[i] == true)
+            if (GameManager.instance.skinavailable[i] == true)
             {
                 _items[i - 1].interactable = false;
             }
