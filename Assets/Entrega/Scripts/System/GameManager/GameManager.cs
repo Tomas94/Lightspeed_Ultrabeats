@@ -65,10 +65,10 @@ public class GameManager : MonoBehaviour
         upgradeBarLevel["shield"] = PlayerPrefs.GetInt("shieldBar", 1);
         upgradeBarLevel["wave"] = PlayerPrefs.GetInt("waveBar", 1);
 
-        Player_Stats_Manager.instance.MaxLife = PlayerPrefs.GetFloat("maxLife", 5);
+        Player_Stats_Manager.instance.MaxLife = PlayerPrefs.GetFloat("maxLife", 7);
         Player_Stats_Manager.instance.Damage = PlayerPrefs.GetFloat("damage", 1);
         Player_Stats_Manager.instance.ShieldDuration = PlayerPrefs.GetFloat("shieldDuration", 5);
-        Player_Stats_Manager.instance.WaveDuration = PlayerPrefs.GetFloat("waveDuration", 2);
+        Player_Stats_Manager.instance.WaveDuration = PlayerPrefs.GetFloat("waveDuration", 8);
     }
 
     public void SavePlayerPrefs()
@@ -112,10 +112,10 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("shieldBar", 1);
         PlayerPrefs.SetInt("waveBar", 1);
 
-        PlayerPrefs.SetFloat("maxLife", 5);
+        PlayerPrefs.SetFloat("maxLife", 7);
         PlayerPrefs.SetFloat("damage", 1);
         PlayerPrefs.SetFloat("shieldDuration", 5);
-        PlayerPrefs.SetFloat("waveDuration", 2);
+        PlayerPrefs.SetFloat("waveDuration", 8);
 
         LoadPlayerPreferencies();
         SceneManagerr.ResetGame();

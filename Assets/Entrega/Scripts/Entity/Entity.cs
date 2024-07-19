@@ -20,5 +20,6 @@ public abstract class Entity : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         currentLife -= damage;
+        print("daño causado: " + damage);
     }
 }

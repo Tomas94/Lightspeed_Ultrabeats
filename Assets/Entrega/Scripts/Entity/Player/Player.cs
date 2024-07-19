@@ -116,7 +116,6 @@ public class Player : Entity
         var timer = 0f;
         while (gameUI.shieldFillCircle.fillAmount < 1f)
         {
-            Debug.Log("Cargando");
             timer += Time.deltaTime;
             gameUI.shieldFillCircle.fillAmount = timer / 15f;
             yield return null;

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Upgrade_Store : MonoBehaviour
 {
+    Player_Stats_Manager playerStats;
+
     [Range(0, 10)] public int vitalityBar;
     [Range(0, 10)] public int damageBar;
     [Range(0, 10)] public int shieldBar;
@@ -16,6 +18,7 @@ public class Upgrade_Store : MonoBehaviour
 
     void Start()
     {
+        playerStats = Player_Stats_Manager.instance;
         GetUpgradeLevel();
         SetBars();
         CreateUpgradeDictionary();
@@ -103,7 +106,7 @@ public class Upgrade_Store : MonoBehaviour
                 {
                     case "vitality":
                         vitalityBar = list_values[2];
-                        UpdateUpgradeLevel("vitality","-");
+                        UpdateUpgradeLevel("vitality", "-");
                         break;
                     case "damage":
                         damageBar = list_values[2];
@@ -138,10 +141,12 @@ public class Upgrade_Store : MonoBehaviour
         if (sign == "+")
         {
             GameManager.instance.upgradeBarLevel[stat]++;
-        }else if (sign == "-")
+            playerStats.LevelUpStat(stat);
+        }
+        else if (sign == "-")
         {
             GameManager.instance.upgradeBarLevel[stat]--;
-
+            playerStats.LevelDownStat(stat);
         }
     }
 }
