@@ -7,12 +7,6 @@ public class Caza : Enemy
         SetLife(Fw_Pointer.EnemyCaza.maxLife);
     }
 
-    private void Start()
-    {
-        Debug.Log("en el start");
-        //StartCoroutine(ChargeShot(Fw_Pointer.EnemyCazaRate.rate));
-    }
-
     public void Update()
     {
         Move();

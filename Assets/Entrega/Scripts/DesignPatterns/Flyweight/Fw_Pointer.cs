@@ -34,6 +34,12 @@ public static class Fw_Pointer
         speed = 1,
         maxLife = 5,
     };
+
+    public static readonly FW_FireRate EnemyBombarderoRate = new FW_FireRate()
+    {
+        rate = 3f,
+    };
+
     #endregion
 
     #region Flyweight Balas
@@ -47,6 +53,12 @@ public static class Fw_Pointer
     {
         damage = 1,
         speed = 3
+    };
+
+    public static readonly Fw_Bullets BulletBombardero = new Fw_Bullets
+    {
+        damage = 3,
+        speed = 2
     };
     #endregion
 }

@@ -5,7 +5,7 @@ public class Kamikaze : Enemy
     Player player;
     Vector3 dir;
 
-    [SerializeField] bool _enemyPassed;
+    [SerializeField] bool _playerPassed;
 
     private void Awake()
     {
@@ -29,9 +29,9 @@ public class Kamikaze : Enemy
         Vector3 playerPosition = player.transform.position;
         float distanceToPlayer = Vector3.Distance(playerPosition, transform.position);
 
-        if (distanceToPlayer > Fw_Pointer.EnemyKamikazeSC.stopChasingDistance && !_enemyPassed)
+        if (distanceToPlayer > Fw_Pointer.EnemyKamikazeSC.stopChasingDistance && !_playerPassed)
         { dir = playerPosition - transform.position; }
-        else _enemyPassed = true;
+        else _playerPassed = true;
 
         transform.position += Fw_Pointer.EnemyKamikaze.speed * Time.deltaTime * dir.normalized;
     }
@@ -48,5 +48,5 @@ public class Kamikaze : Enemy
         ResetMaxLife(x, Fw_Pointer.EnemyKamikaze.maxLife);
     }
 
-    private void OnDisable() => _enemyPassed = false;
+    private void OnDisable() => _playerPassed = false;
 }

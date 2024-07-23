@@ -24,6 +24,7 @@ public class ObjectPool<T> where T : MonoBehaviour
             _turnOff(x);
             _stock.Add(x);
             x.transform.parent = _caja.transform;
+            x.transform.forward = Vector3.down;
         }
         _caja.name += _stock[0].name;
     }

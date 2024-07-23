@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bullet_Enemy : Bullet
+public class Bullet_Enemy_Caza : Bullet
 {
     protected void Update()
     {
