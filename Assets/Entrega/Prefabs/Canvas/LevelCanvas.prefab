@@ -2253,9 +2253,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldFillCircle: {fileID: 4982911283747274944}
-  ondasFillCircle: {fileID: 4982911281770851606}
+  waveFillCircle: {fileID: 4982911281770851606}
   lifeFillBar: {fileID: 4982911282919591381}
   score: {fileID: 5177402315980076309}
+  player: {fileID: 0}
 --- !u!1 &5177402316117766933
 GameObject:
   m_ObjectHideFlags: 0

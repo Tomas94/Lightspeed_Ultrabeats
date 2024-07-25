@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7969597255390391666}
   - component: {fileID: 5295464823418001848}
   - component: {fileID: 794159194459154076}
+  - component: {fileID: 7319145011743582557}
   m_Layer: 0
   m_Name: UltraDisparo
   m_TagString: Untagged
@@ -192,3 +193,18 @@ TrailRenderer:
   m_MinVertexDistance: 0
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &7319145011743582557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5944110782739888237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702034c82754aae448dc3bbd0d0a875c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetLayer:
+    serializedVersion: 2
+    m_Bits: 128

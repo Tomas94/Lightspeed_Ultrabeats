@@ -38,6 +38,6 @@ public class Caza : Enemy
 
     private void OnEnable()
     {
-        StartCoroutine(ChargeShot(Fw_Pointer.EnemyCazaRate.rate));
+        StartCoroutine(ChargeShot(Fw_Pointer.EnemyCazaRate.rate,2));
     }
 }

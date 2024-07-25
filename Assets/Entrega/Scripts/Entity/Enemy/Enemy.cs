@@ -10,10 +10,10 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
 
     public void Initialize(ObjectPool<Enemy> op) => _enemyPool = op;
 
-    public override void Disparar()
+    public override void Disparar(int _bulletIndex)
     {
-        var x = OP_BulletManager.Instance.bulletPools[1].pool.Get();
-        x.Initialize(OP_BulletManager.Instance.bulletPools[1].pool);
+        var x = OP_BulletManager.Instance.bulletPools[_bulletIndex].pool.Get();
+        x.Initialize(OP_BulletManager.Instance.bulletPools[_bulletIndex].pool);
         x.transform.position = transform.position;
         x.transform.forward = transform.forward;
     }

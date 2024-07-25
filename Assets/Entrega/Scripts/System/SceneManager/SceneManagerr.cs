@@ -21,7 +21,7 @@ public class SceneManagerr : MonoBehaviour
     public static void Pause()
     {
         Time.timeScale = 0f;
-        Debug.Log("En Pausa");
+        //Debug.Log("En Pausa");
     }
     public static void Resume() => Time.timeScale = 1f;
 

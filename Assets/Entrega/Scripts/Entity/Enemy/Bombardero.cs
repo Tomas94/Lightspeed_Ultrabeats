@@ -24,11 +24,11 @@ public class Bombardero: Enemy
 
     public void Move() => transform.position += Fw_Pointer.EnemyBombardero.speed * Time.deltaTime * transform.forward;
 
-    public override void Disparar()
+    public override void Disparar(int _bulletIndex)
     {
         print("Disparando");
-        var x = OP_BulletManager.Instance.bulletPools[2].pool.Get();
-        x.Initialize(OP_BulletManager.Instance.bulletPools[2].pool);
+        var x = OP_BulletManager.Instance.bulletPools[_bulletIndex].pool.Get();
+        x.Initialize(OP_BulletManager.Instance.bulletPools[_bulletIndex].pool);
         x.transform.position = transform.position;
         dir = (player.transform.position - transform.position).normalized;
         x.transform.forward = dir;
@@ -62,6 +62,6 @@ public class Bombardero: Enemy
     private void OnEnable()
     {
         transform.forward = -transform.forward;
-        StartCoroutine(ChargeShot(Fw_Pointer.EnemyBombarderoRate.rate));
+        StartCoroutine(ChargeShot(Fw_Pointer.EnemyBombarderoRate.rate,3));
     }
 }

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2093411901703110570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2093411901703110580}
+  - component: {fileID: 2093411901703110571}
+  - component: {fileID: 2093411901703110581}
+  m_Layer: 0
+  m_Name: Object Pool Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2093411901703110580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093411901703110570}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.24840438, y: -0.19055197, z: -2.0342882}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2093411901703110571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093411901703110570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4176338b134e24b8a4c4f258155471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPools:
+  - prefab: {fileID: 2141315693212605237, guid: 7e7905fe380789d42b13b275541a4f2f, type: 3}
+    initAmount: 7
+  - prefab: {fileID: 7319145011743582557, guid: ba9db6515a2103646bf7e0ce35fa2db2, type: 3}
+    initAmount: 5
+  - prefab: {fileID: 1933284938995114721, guid: 32e24d464dc934444a9e7ac906381cb1, type: 3}
+    initAmount: 10
+  - prefab: {fileID: 3725476459320685601, guid: c20a85aedf16c704380051702fb19939, type: 3}
+    initAmount: 1
+--- !u!114 &2093411901703110581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093411901703110570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5890d32b079a60b40be00f683ad752b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPools:
+  - prefab: {fileID: 3788321647330859561, guid: f8ded45c189dd9240be5ec432bd0d90e, type: 3}
+    initAmount: 5
+  - prefab: {fileID: 4981766377601749055, guid: 4f6bc1ea8080e184e810fafb3b840328, type: 3}
+    initAmount: 1
+  - prefab: {fileID: -5486044840223465605, guid: 8cfebeadf7fe2f3429b2f255868ffca4, type: 3}
+    initAmount: 1

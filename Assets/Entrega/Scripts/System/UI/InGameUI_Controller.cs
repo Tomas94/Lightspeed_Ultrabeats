@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 
 public class InGameUI_Controller : MonoBehaviour
 {
-    public Image shieldFillCircle, ondasFillCircle, lifeFillBar;
+    public Image shieldFillCircle, waveFillCircle, lifeFillBar;
     public TextMeshProUGUI score;
     public Player player;
 

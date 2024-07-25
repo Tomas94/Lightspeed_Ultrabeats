@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("currency", CurrencyManager.instance.Currency);
         PlayerPrefs.SetInt("stamina", StaminaManager.instance.Stamina);
         PlayerPrefs.SetInt("upgradePoints", UpgradePointsManager.instance.UpgradePoints);
-        PlayerPrefs.SetInt("levelsUnlockk", levelsUnlock);
+        PlayerPrefs.SetInt("levelsUnlock", levelsUnlock);
         SaveBooleanList(skinavailable);
 
         //Stats jugador

@@ -49,6 +49,12 @@ public static class Fw_Pointer
         speed = 7
     };
 
+    public static readonly Fw_Bullets BulletWavePlayer = new Fw_Bullets
+    {
+        damage = 8,
+        speed = 10
+    };
+
     public static readonly Fw_Bullets BulletCaza = new Fw_Bullets
     {
         damage = 1,

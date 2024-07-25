@@ -37,7 +37,7 @@ public class MainMenuController : MonoBehaviour
         UpdateAvailableLevels();
         SceneManagerr.Resume();
 
-        //if (_gameManager.levelsUnlock == 0) PlayTutorial();
+        if (_gameManager.levelsUnlock == 0) PlayTutorial();
     }
 
     private void Update()

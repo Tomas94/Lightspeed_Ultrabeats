@@ -9,6 +9,7 @@ public class Player : Entity
 
     public InGameUI_Controller gameUI;
     PU_Shield _shieldPU;
+    PU_WaveShot _waveShotPU;
 
     [SerializeField] float _fireRate = 0.3f;
     [SerializeField] float _maxLife;
@@ -23,6 +24,8 @@ public class Player : Entity
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioSource _audioSourceShield;
 
+    Coroutine _chargeShot;
+
     public float MaxLife { get { return _maxLife; } set { _maxLife = value; } }
 
     private void Awake()
@@ -35,8 +38,9 @@ public class Player : Entity
 
     private void Start()
     {
-        StartCoroutine(ChargeShot(_fireRate));
+        _chargeShot = StartCoroutine(ChargeShot(_fireRate,0));
         StartCoroutine(RechargeShield());
+        StartCoroutine(RechargeWave());
     }
 
     void Update()
@@ -67,11 +71,11 @@ public class Player : Entity
         this.gameObject.SetActive(false);
     }
 
-    public override void Disparar()
+    public override void Disparar(int _bulletIndex)
     {
         DisparoSonido();
-        var bala = OP_BulletManager.Instance.bulletPools[0].pool.Get();
-        bala.Initialize(OP_BulletManager.Instance.bulletPools[0].pool);
+        var bala = OP_BulletManager.Instance.bulletPools[_bulletIndex].pool.Get();
+        bala.Initialize(OP_BulletManager.Instance.bulletPools[_bulletIndex].pool);
         bala.transform.position = transform.position;
         bala.transform.forward = transform.forward;
     }
@@ -84,6 +88,15 @@ public class Player : Entity
             StartCoroutine(_shieldPU.Activate());
             _audioSourceShield.PlayOneShot(_playerShieldAC);
             shield.SetBool("IsActive", true);
+        }
+    }
+
+    public void ActivateWaveAttack()
+    {
+        if(gameUI.waveFillCircle.fillAmount == 1f)
+        {
+            gameUI.waveFillCircle.fillAmount= 0;
+            StartCoroutine(_waveShotPU.Activate(this));
         }
     }
 
@@ -103,7 +116,7 @@ public class Player : Entity
         Player_Stats_Manager stats = Player_Stats_Manager.instance;
 
         _shieldPU = new PU_Shield(stats.ShieldDuration);
-        //_wavePU duration//
+        _waveShotPU = new PU_WaveShot(stats.WaveDuration);
         _fireRate = stats.FireRate;
         MaxLife = stats.MaxLife;
     }
@@ -118,6 +131,21 @@ public class Player : Entity
         {
             timer += Time.deltaTime;
             gameUI.shieldFillCircle.fillAmount = timer / 15f;
+            yield return null;
+        }
+        _charging = false;
+        _audioSourceShield.PlayOneShot(_playerShieldReady);
+    }
+
+    public IEnumerator RechargeWave()
+    {
+        _audioSourceShield.PlayOneShot(_playerShieldDEAC);
+        _charging = true;
+        var timer = 0f;
+        while (gameUI.waveFillCircle.fillAmount < 1f)
+        {
+            timer += Time.deltaTime;
+            gameUI.waveFillCircle.fillAmount = timer / 5f;
             yield return null;
         }
         _charging = false;
