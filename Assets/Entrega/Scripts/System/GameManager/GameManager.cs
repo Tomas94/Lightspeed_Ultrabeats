@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
     public List<SkinsStruct> skins = new List<SkinsStruct>();
     public List<bool> skinavailable = new List<bool>();
     public Material playerskin;
+    public int skinEquipped = 0;
     public int levelsUnlock;
     public bool sound;
+
 
     public Dictionary<string, int> upgradeBarLevel = new Dictionary<string, int>
     {
@@ -40,6 +42,22 @@ public class GameManager : MonoBehaviour
 
         if (valorencontrado.id != null) playerskin = valorencontrado.skin;
 
+        switch (_id)
+        {
+            case "floppa":
+                skinEquipped = 1;
+                break;
+            case "princesa":
+                skinEquipped = 2;
+                break;
+            case "semitono":
+                skinEquipped = 3;
+                break;
+            default:
+                skinEquipped = 0;
+                break;
+        }
+
     }
 
     #region PlayerPrefs
@@ -57,6 +75,7 @@ public class GameManager : MonoBehaviour
         UpgradePointsManager.instance.SetUPValues(PlayerPrefs.GetInt("upgradePoints", 0));
         levelsUnlock = PlayerPrefs.GetInt("levelsUnlock", 0);
         skinavailable = LoadBooleanList();
+        skinEquipped = PlayerPrefs.GetInt("menuSprite", 0);
 
         //Stats jugador
 
@@ -82,6 +101,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("upgradePoints", UpgradePointsManager.instance.UpgradePoints);
         PlayerPrefs.SetInt("levelsUnlock", levelsUnlock);
         SaveBooleanList(skinavailable);
+        PlayerPrefs.SetInt("menuSprite", skinEquipped);
 
         //Stats jugador
 
@@ -103,6 +123,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("stamina", 5);
         PlayerPrefs.SetInt("upgradePoints", 0);
         PlayerPrefs.SetInt("levelsUnlock", 0);
+
 
         List<bool> resetList = new List<bool>() { true, false, false, false };
         SaveBooleanList(resetList);

@@ -16,6 +16,8 @@ public class MainMenuController : MonoBehaviour
     public List<Toggle> levels;
     public TextMeshProUGUI crediBeatsAmount, staminaAmount, upgradePointsAmount;
     public Image staminaBar;
+    public Image menuSkinSelected;
+    public List<Sprite> skinSprites;
 
     public bool tutorialPlayed = false;
 
@@ -26,11 +28,12 @@ public class MainMenuController : MonoBehaviour
         _upgradePointsManager = UpgradePointsManager.instance;
         _sceneManager = SceneManagerr.instance;
         _gameManager = GameManager.instance;
-
+        
     }
 
     private void Start()
     {
+        SetMainMenuSkin();
         StaminaBarUpdate();
         staminaAmount.text += ": " + _staminaManager.Stamina.ToString();
         crediBeatsAmount.text = _currencyManager.Currency.ToString();
@@ -38,6 +41,26 @@ public class MainMenuController : MonoBehaviour
         SceneManagerr.Resume();
 
         if (_gameManager.levelsUnlock == 0) PlayTutorial();
+    }
+
+    void SetMainMenuSkin()
+    {
+        switch (GameManager.instance.skinEquipped)
+        {
+            case 1:
+                menuSkinSelected.sprite = skinSprites[1];
+                break;
+            case 2:
+                menuSkinSelected.sprite = skinSprites[2];
+                break;
+            case 3:
+                menuSkinSelected.sprite = skinSprites[3];
+                break;
+            default:
+                menuSkinSelected.sprite = skinSprites[0];
+                break;
+        }
+
     }
 
     private void Update()
