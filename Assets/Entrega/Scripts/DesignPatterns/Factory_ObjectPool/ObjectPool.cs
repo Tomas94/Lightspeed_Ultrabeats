@@ -12,6 +12,8 @@ public class ObjectPool<T> where T : MonoBehaviour
 
     List<T> _stock = new List<T>();
 
+    public List<T> Stock { get { return _stock; }}
+
     public ObjectPool(FactoryMethod method, Action<T> turnOff, Action<T> turnOn, int warmup = 5)
     {
         _factory = method;
@@ -24,7 +26,7 @@ public class ObjectPool<T> where T : MonoBehaviour
             _turnOff(x);
             _stock.Add(x);
             x.transform.parent = _caja.transform;
-            x.transform.forward = Vector3.down;
+            //x.transform.forward = Vector3.down;
         }
         _caja.name += _stock[0].name;
     }

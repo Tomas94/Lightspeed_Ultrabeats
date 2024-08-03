@@ -1,11 +1,10 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using Unity.VisualScripting;
 
 public class InGameUI_Controller : MonoBehaviour
 {
-    public Image shieldFillCircle, waveFillCircle, lifeFillBar;
+    public Image shieldFillCircle, waveFillCircle, lifeFillBar, carga1, carga2, carga3;
     public TextMeshProUGUI score;
     public Player player;
 

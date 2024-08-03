@@ -5,6 +5,7 @@ public class OP_EnemyManager : MonoBehaviour
 {
     public static OP_EnemyManager Instance;
     public List<ObjectsPoolElements<Enemy>> enemyPools;
+    public Player player;
 
     private void Awake()
     {
@@ -14,6 +15,7 @@ public class OP_EnemyManager : MonoBehaviour
 
     private void Start()
     {
+        player = FindObjectOfType<Player>();
         enemyPools = CreateEnemyFactoryAndPool(enemyPools);
     }
 

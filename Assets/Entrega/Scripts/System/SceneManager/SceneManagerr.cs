@@ -25,8 +25,11 @@ public class SceneManagerr : MonoBehaviour
     }
     public static void Resume() => Time.timeScale = 1f;
 
-    public static void Restart() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
+    public static void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if(Time.timeScale != 1) Resume();
+    }
     public static void ToMainMenu() => SceneManager.LoadScene(1);
 
     public static void ResetGame() => SceneManager.LoadScene(0);

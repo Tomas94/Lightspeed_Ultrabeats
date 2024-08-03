@@ -21,7 +21,7 @@ public static class Fw_Pointer
     public static readonly Fw_Enemy EnemyKamikaze = new Fw_Enemy
     {
         speed = 3,
-        maxLife = 1,
+        maxLife = 2,
     };
 
     public static readonly FW_StopChasing EnemyKamikazeSC = new FW_StopChasing()
@@ -31,8 +31,8 @@ public static class Fw_Pointer
 
     public static readonly Fw_Enemy EnemyBombardero = new Fw_Enemy
     {
-        speed = 1,
-        maxLife = 5,
+        speed = 1.3f,
+        maxLife = 40,
     };
 
     public static readonly FW_FireRate EnemyBombarderoRate = new FW_FireRate()
@@ -51,7 +51,7 @@ public static class Fw_Pointer
 
     public static readonly Fw_Bullets BulletWavePlayer = new Fw_Bullets
     {
-        damage = 8,
+        damage = 15,
         speed = 10
     };
 

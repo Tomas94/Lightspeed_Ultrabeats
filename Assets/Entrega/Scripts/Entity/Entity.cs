@@ -7,7 +7,7 @@ public abstract class Entity : MonoBehaviour
 
     public abstract void Disparar(int _bulletIndex);
     public abstract void Die(int deathpoints);
-    
+
     public virtual IEnumerator ChargeShot(float fireCD, int bulletIndex)
     {
         while (true)
@@ -20,6 +20,6 @@ public abstract class Entity : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         currentLife -= damage;
-        print("daño causado: " + damage);
+        //print("daño causado: " + damage);
     }
 }

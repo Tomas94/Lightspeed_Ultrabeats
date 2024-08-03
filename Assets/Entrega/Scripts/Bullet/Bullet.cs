@@ -7,7 +7,7 @@ public abstract class Bullet : MonoBehaviour, IPooleableObject<Bullet>
 
     public void Initialize(ObjectPool<Bullet> op) => _objectPool = op;
 
-    public void OnEntityHit(GameObject entity, float damage)
+    public virtual void OnEntityHit(GameObject entity, float damage)
     {
         var _entity = entity.GetComponent<Entity>();
 

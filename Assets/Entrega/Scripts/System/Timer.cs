@@ -28,9 +28,6 @@ public class Timer : MonoBehaviour
         {
             StartCoroutine(RechargeStamina());
         }
-
-
-        
     }
 
     IEnumerator RechargeStamina()

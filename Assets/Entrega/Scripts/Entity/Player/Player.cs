@@ -13,6 +13,8 @@ public class Player : Entity
 
     [SerializeField] float _fireRate = 0.3f;
     [SerializeField] float _maxLife;
+
+    public int shootLevel;
     public bool _isShielded;
     public bool _charging;
 
@@ -24,9 +26,11 @@ public class Player : Entity
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioSource _audioSourceShield;
 
-    Coroutine _chargeShot;
+    public Coroutine _chargeShot;
 
     public float MaxLife { get { return _maxLife; } set { _maxLife = value; } }
+    public float FireRate { get { return _fireRate; } }
+    public PU_Shield ShieldPU { get { return _shieldPU; } }
 
     private void Awake()
     {
@@ -38,9 +42,9 @@ public class Player : Entity
 
     private void Start()
     {
-        _chargeShot = StartCoroutine(ChargeShot(_fireRate,0));
+        _chargeShot = StartCoroutine(ChargeShot(_fireRate, 0));
         StartCoroutine(RechargeShield());
-        StartCoroutine(RechargeWave());
+        shootLevel = 0;
     }
 
     void Update()
@@ -77,6 +81,7 @@ public class Player : Entity
         var bala = OP_BulletManager.Instance.bulletPools[_bulletIndex].pool.Get();
         bala.Initialize(OP_BulletManager.Instance.bulletPools[_bulletIndex].pool);
         bala.transform.position = transform.position;
+        if (_bulletIndex == 2) return;
         bala.transform.forward = transform.forward;
     }
 
@@ -93,9 +98,9 @@ public class Player : Entity
 
     public void ActivateWaveAttack()
     {
-        if(gameUI.waveFillCircle.fillAmount == 1f)
+        if (gameUI.waveFillCircle.fillAmount >= 1f)
         {
-            gameUI.waveFillCircle.fillAmount= 0;
+            gameUI.waveFillCircle.fillAmount = 0;
             StartCoroutine(_waveShotPU.Activate(this));
         }
     }
@@ -137,18 +142,9 @@ public class Player : Entity
         _audioSourceShield.PlayOneShot(_playerShieldReady);
     }
 
-    public IEnumerator RechargeWave()
+    public void RechargeWaveAttack()
     {
-        _audioSourceShield.PlayOneShot(_playerShieldDEAC);
-        _charging = true;
-        var timer = 0f;
-        while (gameUI.waveFillCircle.fillAmount < 1f)
-        {
-            timer += Time.deltaTime;
-            gameUI.waveFillCircle.fillAmount = timer / 5f;
-            yield return null;
-        }
-        _charging = false;
-        _audioSourceShield.PlayOneShot(_playerShieldReady);
+        if (gameUI.waveFillCircle.fillAmount < 1f && !_waveShotPU._isActive) gameUI.waveFillCircle.fillAmount += 0.1f;
+        if(gameUI.waveFillCircle.fillAmount > 1f) gameUI.waveFillCircle.fillAmount = 1;
     }
 }

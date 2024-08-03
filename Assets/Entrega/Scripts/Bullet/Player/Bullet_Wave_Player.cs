@@ -12,6 +12,16 @@ public class Bullet_Wave_Player : Bullet
         transform.position += Vector3.up * speed * Time.deltaTime;
     }
 
+    public override void OnEntityHit(GameObject entity, float damage)
+    {
+        var _entity = entity.GetComponent<Entity>();
+
+        if (_entity == null) return;
+
+        if (_targetLayer == (_targetLayer | (1 << entity.gameObject.layer))) _entity.TakeDamage(damage);
+
+    }
+
     public override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
