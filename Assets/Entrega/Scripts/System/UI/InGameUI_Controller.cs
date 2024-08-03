@@ -1,16 +1,22 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class InGameUI_Controller : MonoBehaviour
 {
     public Image shieldFillCircle, waveFillCircle, lifeFillBar, carga1, carga2, carga3;
     public TextMeshProUGUI score;
     public Player player;
+    public List<Image> cargas = new List<Image>();
 
     void Start() 
     {
         score.text = "0";
+        cargas.Add(carga1);
+        cargas.Add(carga2);
+        cargas.Add(carga3);
+
         //SceneManagerr.Resume();
     }
 

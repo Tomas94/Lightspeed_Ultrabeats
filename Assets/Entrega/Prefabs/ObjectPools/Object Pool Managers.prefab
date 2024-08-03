@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2093411901703110580}
   - component: {fileID: 2093411901703110571}
   - component: {fileID: 2093411901703110581}
+  - component: {fileID: 1227548952}
   m_Layer: 0
   m_Name: Object Pool Managers
   m_TagString: Untagged
@@ -73,3 +74,21 @@ MonoBehaviour:
     initAmount: 1
   - prefab: {fileID: -5486044840223465605, guid: 8cfebeadf7fe2f3429b2f255868ffca4, type: 3}
     initAmount: 1
+  player: {fileID: 0}
+--- !u!114 &1227548952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093411901703110570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71cf762553b705147aab3cf969328d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickablePools:
+  - prefab: {fileID: -8321989709514583961, guid: ca15a0c742478bd499fe7e271be2fed5, type: 3}
+    initAmount: 3
+  - prefab: {fileID: 1904854931533210584, guid: 99b0f28570d4c334aa977687bdf53d00, type: 3}
+    initAmount: 3

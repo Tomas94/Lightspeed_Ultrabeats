@@ -6,10 +6,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance;
     Score _gameScore;
 
-    [SerializeField] float timer;
-    [SerializeField] float multiplyer;
-    int score;
-    bool _isPlaying;
+    [SerializeField] int score;
 
     public int Score { get { return score; } }
 
@@ -18,7 +15,6 @@ public class ScoreManager : MonoBehaviour
         if (Instance == null) Instance = this;
         Initialize();
     }
-    private void Start() => StartCoroutine(TimeScore());
 
     private void Update() => score = _gameScore.TotalScore();
 
@@ -29,16 +25,6 @@ public class ScoreManager : MonoBehaviour
     }
 
     public void IncrementKillScore(int killScore) => _gameScore.IncrementScore(killScore);
-
-    IEnumerator TimeScore()
-    {
-        while (_isPlaying)
-        {
-            timer += (Time.deltaTime * multiplyer);
-            _gameScore.IncrementScore(timer);
-            yield return null;
-        }
-    }
 
     public int SubmitScore()
     {

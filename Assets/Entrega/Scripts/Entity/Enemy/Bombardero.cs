@@ -2,20 +2,12 @@ using UnityEngine;
 
 public class Bombardero: Enemy
 {
-    Player player;
     Vector3 dir;
 
     private void Awake()
     {
         SetLife(Fw_Pointer.EnemyBombardero.maxLife);
     }
-
-    private void Start()
-    {
-        player = FindObjectOfType<Player>();
-        print("En start");
-    }
-
 
     public void Update()
     {
@@ -30,11 +22,10 @@ public class Bombardero: Enemy
         var x = OP_BulletManager.Instance.bulletPools[_bulletIndex].pool.Get();
         x.Initialize(OP_BulletManager.Instance.bulletPools[_bulletIndex].pool);
         x.transform.position = transform.position;
-        dir = (player.transform.position - transform.position).normalized;
+        dir = (_player.transform.position - transform.position).normalized;
         x.transform.forward = dir;
         print("terminand disparo");
     }
-
 
     public override void TakeDamage(float damage)
     {

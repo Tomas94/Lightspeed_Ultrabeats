@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetFloat("brillo", 0.35f);
         PlayerPrefs.SetInt("currency", 0);
         PlayerPrefs.SetInt("stamina", 5);
-        PlayerPrefs.SetInt("upgradePoints", 1000);
+        PlayerPrefs.SetInt("upgradePoints", 0);
         PlayerPrefs.SetInt("levelsUnlock", 0);
 
         List<bool> resetList = new List<bool>() { true, false, false, false };

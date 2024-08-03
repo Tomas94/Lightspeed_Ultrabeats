@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Player : Entity
 {
@@ -13,6 +14,8 @@ public class Player : Entity
 
     [SerializeField] float _fireRate = 0.3f;
     [SerializeField] float _maxLife;
+
+    public List<Transform> cannons = new List<Transform>();
 
     public int shootLevel;
     public bool _isShielded;
@@ -64,6 +67,8 @@ public class Player : Entity
     {
         if (_isShielded) return;
         base.TakeDamage(damage);
+        shootLevel = 0;
+        ResetPowerBar();
         if (currentLife <= 0) Die(0);
     }
 
@@ -78,11 +83,26 @@ public class Player : Entity
     public override void Disparar(int _bulletIndex)
     {
         DisparoSonido();
-        var bala = OP_BulletManager.Instance.bulletPools[_bulletIndex].pool.Get();
-        bala.Initialize(OP_BulletManager.Instance.bulletPools[_bulletIndex].pool);
-        bala.transform.position = transform.position;
-        if (_bulletIndex == 2) return;
-        bala.transform.forward = transform.forward;
+
+        if (_bulletIndex == 0)
+        {
+            for (int i = 0; i <= shootLevel; i++)
+            {
+                var bala = OP_BulletManager.Instance.bulletPools[_bulletIndex].pool.Get();
+                bala.Initialize(OP_BulletManager.Instance.bulletPools[_bulletIndex].pool);
+                bala.transform.position = cannons[i].position;
+                //if (_bulletIndex >= 2) return;
+                bala.transform.forward = transform.forward;
+            }
+        }
+        else
+        {
+            var bala = OP_BulletManager.Instance.bulletPools[_bulletIndex].pool.Get();
+            bala.Initialize(OP_BulletManager.Instance.bulletPools[_bulletIndex].pool);
+            bala.transform.position = transform.position;
+            //if (_bulletIndex >= 2) return;
+            bala.transform.forward = transform.forward;
+        }
     }
 
     public void ActivateShield()
@@ -126,6 +146,13 @@ public class Player : Entity
         MaxLife = stats.MaxLife;
     }
 
+    void ResetPowerBar()
+    {
+        foreach (var bar in gameUI.cargas)
+        {
+            bar.enabled = false;
+        }
+    }
 
     public IEnumerator RechargeShield()
     {

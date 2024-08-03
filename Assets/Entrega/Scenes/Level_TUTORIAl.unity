@@ -337,7 +337,7 @@ MonoBehaviour:
   _playerWinSound: {fileID: 8300000, guid: a2c61751275d3bb4fa22a0a7d05f0a66, type: 3}
   audioSource: {fileID: 194531888}
   completedWaves: 0
-  wavesGoal: 2
+  wavesGoal: 3
   currentLevel: 0
 --- !u!114 &94803828
 MonoBehaviour:
@@ -351,8 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74252a3085819542a7ed40c05097ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
-  multiplyer: 1
+  score: 0
 --- !u!1 &110047867
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +518,6 @@ GameObject:
   - component: {fileID: 129368742}
   - component: {fileID: 129368744}
   - component: {fileID: 129368743}
-  - component: {fileID: 129368745}
   m_Layer: 5
   m_Name: PausaMsg
   m_TagString: Untagged
@@ -644,20 +642,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129368741}
   m_CullTransparentMesh: 1
---- !u!114 &129368745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129368741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47a0155c8d18aca48ba25f57b995f3de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: IDPausa
-  textUI: {fileID: 129368743}
 --- !u!82 &144029267 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 3525684801190514447, guid: f511c61c3873fd9438b62727d06e8fd6, type: 3}
@@ -1261,7 +1245,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2093411901703110570, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: m_Name
-      value: Object Pool Managers (1)
+      value: Object Pool Managers
       objectReference: {fileID: 0}
     - target: {fileID: 2093411901703110580, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: m_RootOrder
@@ -4866,7 +4850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: _maxSpawnEnemies
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: _minSpawnEnemies
@@ -5675,7 +5659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2065180571
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5926,7 +5910,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &215900724502553698
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5942,7 +5926,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215900724502553701}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -6018,7 +6002,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215900724643861336}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -6312,7 +6296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &215900724880205600
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6429,11 +6413,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 215900724880205614}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 266831682}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: ActivateWaveAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &215900725019381298
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6830,7 +6826,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215900725232983650}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -7043,7 +7039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &215900725756863263
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7665,10 +7661,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldFillCircle: {fileID: 215900725112064760}
-  waveFillCircle: {fileID: 0}
+  waveFillCircle: {fileID: 215900724880205614}
   lifeFillBar: {fileID: 215900725894596589}
+  carga1: {fileID: 215900724502553699}
+  carga2: {fileID: 215900724643861318}
+  carga3: {fileID: 215900725232983648}
   score: {fileID: 323092269}
   player: {fileID: 266831682}
+  cargas: []
 --- !u!114 &8244276453037115810
 MonoBehaviour:
   m_ObjectHideFlags: 0

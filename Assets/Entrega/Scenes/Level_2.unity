@@ -462,8 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74252a3085819542a7ed40c05097ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
-  multiplyer: 1
+  score: 0
 --- !u!1 &129368741
 GameObject:
   m_ObjectHideFlags: 0
@@ -3415,7 +3414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: _maxSpawnEnemies
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: _minSpawnEnemies
@@ -4519,10 +4518,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 498977617}
     m_Modifications:
+    - target: {fileID: 129368742, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 595282180, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 266831682}
+    - target: {fileID: 653135081, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 903971381, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1638252562, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117675266, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3868695677315620991, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3

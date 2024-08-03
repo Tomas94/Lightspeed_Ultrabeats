@@ -38,5 +38,9 @@ public abstract class Pickable : MonoBehaviour, IPooleableObject<Pickable>
         {
            PickUp(player);
         }
+        if (other.gameObject.CompareTag("ResetTrigger"))
+        {
+            RefillStock(this);
+        }
     }
 }

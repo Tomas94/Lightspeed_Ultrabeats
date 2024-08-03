@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Kamikaze : Enemy
 {
-    Player player;
     Vector3 dir;
 
     [SerializeField] bool _playerPassed;
@@ -12,11 +11,6 @@ public class Kamikaze : Enemy
         SetLife(Fw_Pointer.EnemyKamikaze.maxLife);
     }
 
-    private void Start()
-    {
-        player = FindObjectOfType<Player>();
-    }
-
     public void Update()
     {
         KamikazeAttackMovement();
@@ -24,9 +18,9 @@ public class Kamikaze : Enemy
 
     void KamikazeAttackMovement()
     {
-        if (player == null) return;
+        if (_player == null) return;
 
-        Vector3 playerPosition = player.transform.position;
+        Vector3 playerPosition = _player.transform.position;
         float distanceToPlayer = Vector3.Distance(playerPosition, transform.position);
 
         if (distanceToPlayer > Fw_Pointer.EnemyKamikazeSC.stopChasingDistance && !_playerPassed)

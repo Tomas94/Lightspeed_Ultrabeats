@@ -216,7 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569ca3ef9ead2744bb8809e45b86e940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLife: 20
+  currentLife: 40
+  _player: {fileID: 0}
   outOfScreen: 0
 --- !u!1 &4522132464327106607
 GameObject:

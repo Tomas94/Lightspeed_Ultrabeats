@@ -9763,11 +9763,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d3f81e5f9d2324288a48c1af770719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLife: 0
+  currentLife: 1
+  _player: {fileID: 0}
   outOfScreen: 0
-  _enemyDedSound: {fileID: 8300000, guid: b052fb5f6e061d34483f4b993cbc8b02, type: 3}
-  audioSource: {fileID: 0}
-  _enemyPassed: 0
+  _playerPassed: 0
 --- !u!1 &6947178796358248040
 GameObject:
   m_ObjectHideFlags: 0
