@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public List<SkinsStruct> skins = new List<SkinsStruct>();
     public List<bool> skinavailable = new List<bool>();
     public Material playerskin;
-    public int skinEquipped = 0;
+    public int skinEquipped;
     public int levelsUnlock;
     public bool sound;
 
@@ -127,6 +127,7 @@ public class GameManager : MonoBehaviour
 
         List<bool> resetList = new List<bool>() { true, false, false, false };
         SaveBooleanList(resetList);
+        PlayerPrefs.SetInt("menuSprite", 0);
 
         PlayerPrefs.SetInt("maxLifeBar", 1);
         PlayerPrefs.SetInt("damageBar", 1);
