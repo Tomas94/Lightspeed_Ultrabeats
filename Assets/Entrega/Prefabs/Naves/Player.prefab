@@ -10282,6 +10282,8 @@ MonoBehaviour:
   _isShielded: 0
   _charging: 0
   _playerDisparoAC: {fileID: 8300000, guid: 4bf399531b9f14746abddac64d33574c, type: 3}
+  _playerMEGADisparoAC: {fileID: 8300000, guid: f20d6905fab274945bc1d70371d2335a, type: 3}
+  _playerTKDamageAC: {fileID: 8300000, guid: 46fa4bffc1f65a64996cd30daf2c57fd, type: 3}
   _playerShieldAC: {fileID: 8300000, guid: 4d00c87bd638f884eb312bd85672f7a4, type: 3}
   _playerShieldDEAC: {fileID: 8300000, guid: cf01678b4f1e3c14888b8136c30b380b, type: 3}
   _playerShieldReady: {fileID: 8300000, guid: ee35845da80554f438ea2c31e154ab86, type: 3}

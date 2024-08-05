@@ -3885,6 +3885,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: cf01678b4f1e3c14888b8136c30b380b, type: 3}
     - target: {fileID: 1392546748827185215, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
+      propertyPath: _playerTKDamageAC
+      value: 
+      objectReference: {fileID: 8300000, guid: 46fa4bffc1f65a64996cd30daf2c57fd, type: 3}
+    - target: {fileID: 1392546748827185215, guid: c703d96f4dc2c4940bce7d3661510fb1, type: 3}
       propertyPath: _audioSourceShield
       value: 
       objectReference: {fileID: 194531888}
@@ -4225,6 +4229,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 11.03
       objectReference: {fileID: 0}
+    - target: {fileID: 4822707092707380659, guid: cec10e695792cff4f947e58a28bb67da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.73
+      objectReference: {fileID: 0}
     - target: {fileID: 4822707093251631412, guid: cec10e695792cff4f947e58a28bb67da, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -4461,7 +4469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4982911281921144413, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4982911281979712265, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -4545,7 +4553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4982911282488177612, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4982911282565254184, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: m_Sprite
@@ -4557,7 +4565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4982911283050031402, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4982911283747274944, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: m_FillAmount

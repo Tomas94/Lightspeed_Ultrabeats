@@ -22,6 +22,8 @@ public class Player : Entity
     public bool _charging;
 
     [SerializeField] AudioClip _playerDisparoAC;
+    [SerializeField] AudioClip _playerMEGADisparoAC;
+    [SerializeField] AudioClip _playerTKDamageAC;
     [SerializeField] AudioClip _playerShieldAC;
     [SerializeField] AudioClip _playerShieldDEAC;
     [SerializeField] AudioClip _playerShieldReady;
@@ -68,6 +70,7 @@ public class Player : Entity
         if (_isShielded) return;
         base.TakeDamage(damage);
         shootLevel = 0;
+        audioSource.PlayOneShot(_playerTKDamageAC);
         ResetPowerBar();
         if (currentLife <= 0) Die(0);
     }
@@ -102,6 +105,7 @@ public class Player : Entity
             if (_bulletIndex == 1)
             {
                 bala.transform.localRotation = new Quaternion(0, 0, -90,-90);
+                audioSource.PlayOneShot(_playerMEGADisparoAC);
                 return;
             }
             bala.transform.forward = transform.forward;

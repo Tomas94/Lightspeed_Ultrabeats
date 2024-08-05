@@ -29,5 +29,4 @@ public class PowerModule : Pickable
         print(_player.shootLevel);
         RefillStock(this);
     }
-    
 }
