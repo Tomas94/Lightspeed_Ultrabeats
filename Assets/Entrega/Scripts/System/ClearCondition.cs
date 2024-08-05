@@ -23,6 +23,7 @@ public class ClearCondition : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
         enemWS.OnWaveCompleted += WavesCompleted;
         if (currentLevel == 0) SceneManagerr.Pause();
     }

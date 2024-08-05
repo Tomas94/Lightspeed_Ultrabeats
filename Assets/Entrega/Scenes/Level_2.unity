@@ -4684,7 +4684,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4982911281770851607, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982911281770851607, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 266831682}
+    - target: {fileID: 4982911281770851607, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ActivateWaveAttack
       objectReference: {fileID: 0}
     - target: {fileID: 4982911281921144413, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: m_IsActive
@@ -4932,7 +4940,7 @@ PrefabInstance:
       objectReference: {fileID: 2258515278017806724, guid: cbb10c45d96d13846a23a332c3ee19ea, type: 2}
     - target: {fileID: 5177402316380122530, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c1eabc931968e04891a3c5092f34a2f, type: 3}
