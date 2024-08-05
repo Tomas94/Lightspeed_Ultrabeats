@@ -9766,6 +9766,7 @@ MonoBehaviour:
   currentLife: 1
   _player: {fileID: 0}
   outOfScreen: 0
+  variant: 1
   _playerPassed: 0
 --- !u!1 &7207308853422560222
 GameObject:

@@ -33,7 +33,7 @@ Nivel de poder ^";
 "IDVitalidad" : "VITALIDAD";
 "IDAtaque" : "PODER DE ATAQUE";
 "IDEscudo" : "DURACION ESCUDO";
-"IDOndas" : "DURACION ONDAS";
+"IDOndas" : "ONDAS DE MEGA DISPARO";
 "IDPiezasMejora" : "PIEZAS DE MEJORA";
 "IDSeleccionarAspecto" : "SELECCIONAR ASPECTO";
 "IDPausa" : "PAUSA";

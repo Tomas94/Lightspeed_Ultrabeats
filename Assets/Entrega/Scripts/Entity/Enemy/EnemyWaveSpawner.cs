@@ -97,6 +97,8 @@ public class EnemyWaveSpawner : MonoBehaviour
                 return pool = OP_EnemyManager.Instance.enemyPools[1].pool;
             case "bombardero":
                 return pool = OP_EnemyManager.Instance.enemyPools[2].pool;
+            case "kamikazeV2":
+                return pool = OP_EnemyManager.Instance.enemyPools[3].pool;
             default:
                 Debug.Log("no pick enemigo");
                 return null;

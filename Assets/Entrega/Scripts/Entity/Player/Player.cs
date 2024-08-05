@@ -91,7 +91,6 @@ public class Player : Entity
                 var bala = OP_BulletManager.Instance.bulletPools[_bulletIndex].pool.Get();
                 bala.Initialize(OP_BulletManager.Instance.bulletPools[_bulletIndex].pool);
                 bala.transform.position = cannons[i].position;
-                //if (_bulletIndex >= 2) return;
                 bala.transform.forward = transform.forward;
             }
         }
@@ -100,7 +99,11 @@ public class Player : Entity
             var bala = OP_BulletManager.Instance.bulletPools[_bulletIndex].pool.Get();
             bala.Initialize(OP_BulletManager.Instance.bulletPools[_bulletIndex].pool);
             bala.transform.position = transform.position;
-            //if (_bulletIndex >= 2) return;
+            if (_bulletIndex == 1)
+            {
+                bala.transform.localRotation = new Quaternion(0, 0, -90,-90);
+                return;
+            }
             bala.transform.forward = transform.forward;
         }
     }

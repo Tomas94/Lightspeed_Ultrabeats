@@ -33,7 +33,7 @@ Power level ^";
 "IDVitalidad" : "VITALITY";
 "IDAtaque" : "ATTACK DAMAGE";
 "IDEscudo" : "SHIELD DURATION";
-"IDOndas" : "WAVES DURATION";
+"IDOndas" : "MEGA SHOT WAVES";
 "IDPiezasMejora" : "UPGRADE PARTS";
 "IDSeleccionarAspecto" : "SELECT SKIN";
 "IDPausa" : "PAUSE";

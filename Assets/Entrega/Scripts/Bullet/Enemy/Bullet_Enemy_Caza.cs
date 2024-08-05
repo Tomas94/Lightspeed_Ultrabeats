@@ -10,6 +10,6 @@ public class Bullet_Enemy_Caza : Bullet
     public override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
-        OnEntityHit(other.gameObject, Fw_Pointer.BulletCaza.damage);
+        OnEntityHit(other.gameObject, Fw_Pointer.BulletCaza.damage + (Fw_Pointer.BulletCaza.damage * OP_EnemyManager.Instance._enemyStatsMultiplyer * 0.5f));
     }
 }

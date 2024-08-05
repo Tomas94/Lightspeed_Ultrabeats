@@ -4,11 +4,6 @@ public class Bombardero: Enemy
 {
     Vector3 dir;
 
-    private void Awake()
-    {
-        SetLife(Fw_Pointer.EnemyBombardero.maxLife);
-    }
-
     public void Update()
     {
        Move();
@@ -53,6 +48,8 @@ public class Bombardero: Enemy
     private void OnEnable()
     {
         transform.forward = -transform.forward;
+        _lifeModifyer = 0.3f;
+        SetLife(Fw_Pointer.EnemyBombardero.maxLife + (Fw_Pointer.EnemyBombardero.maxLife * OP_EnemyManager.Instance._enemyStatsMultiplyer * _lifeModifyer));
         StartCoroutine(ChargeShot(Fw_Pointer.EnemyBombarderoRate.rate,3));
     }
 }

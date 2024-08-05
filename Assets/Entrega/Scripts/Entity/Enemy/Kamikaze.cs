@@ -3,13 +3,9 @@ using UnityEngine;
 public class Kamikaze : Enemy
 {
     Vector3 dir;
+    public bool variant;
 
     [SerializeField] bool _playerPassed;
-
-    private void Awake()
-    {
-        SetLife(Fw_Pointer.EnemyKamikaze.maxLife);
-    }
 
     public void Update()
     {
@@ -27,7 +23,14 @@ public class Kamikaze : Enemy
         { dir = playerPosition - transform.position; }
         else _playerPassed = true;
 
-        transform.position += Fw_Pointer.EnemyKamikaze.speed * Time.deltaTime * dir.normalized;
+        if (variant)
+        {
+            transform.position += Fw_Pointer.EnemyKamikaze.speed * 2 * Time.deltaTime * dir.normalized;
+        }
+        else
+        {
+            transform.position += Fw_Pointer.EnemyKamikaze.speed * Time.deltaTime * dir.normalized;
+        }
     }
 
     public override void TakeDamage(float damage)
@@ -43,4 +46,11 @@ public class Kamikaze : Enemy
     }
 
     private void OnDisable() => _playerPassed = false;
+
+    private void OnEnable()
+    {
+        if (variant) _lifeModifyer = 0.5f;
+        else _lifeModifyer = 0.8f;
+        SetLife(Fw_Pointer.EnemyKamikaze.maxLife + (Fw_Pointer.EnemyKamikaze.maxLife * OP_EnemyManager.Instance._enemyStatsMultiplyer * _lifeModifyer));
+    }
 }

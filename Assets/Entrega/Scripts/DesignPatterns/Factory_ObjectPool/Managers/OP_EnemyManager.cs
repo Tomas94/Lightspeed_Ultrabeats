@@ -6,6 +6,7 @@ public class OP_EnemyManager : MonoBehaviour
     public static OP_EnemyManager Instance;
     public List<ObjectsPoolElements<Enemy>> enemyPools;
     public Player player;
+    public float _enemyStatsMultiplyer;
 
     private void Awake()
     {

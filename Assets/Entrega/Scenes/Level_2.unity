@@ -2922,6 +2922,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: _enemyStatsMultiplyer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: enemyPools.Array.data[1].initAmount
       value: 5
       objectReference: {fileID: 0}

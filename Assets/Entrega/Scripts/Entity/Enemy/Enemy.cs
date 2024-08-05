@@ -6,6 +6,7 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
     public Action OnDesactivar;
     public Player _player;
     ObjectPool<Enemy> _enemyPool;
+    protected float _lifeModifyer;
 
     [HideInInspector] public bool outOfScreen;
 
@@ -66,7 +67,7 @@ public abstract class Enemy : Entity, IPooleableObject<Enemy>
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player") || other.gameObject.CompareTag("ResetTrigger"))
         {
-            other.GetComponent<Player>()?.TakeDamage(Fw_Pointer.AllEnemiesID.impactDamage);
+            other.GetComponent<Player>()?.TakeDamage(Fw_Pointer.AllEnemiesID.impactDamage * OP_EnemyManager.Instance._enemyStatsMultiplyer);
             RefillStock(this);
         }
     }

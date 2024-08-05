@@ -2922,11 +2922,27 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: _enemyStatsMultiplyer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: enemyPools.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: enemyPools.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 5958331996573192960, guid: 32898896cf04b0b42a7b97a85ca20f40, type: 3}
+    - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: enemyPools.Array.data[1].initAmount
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: enemyPools.Array.data[2].initAmount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: enemyPools.Array.data[3].initAmount
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3167,7 +3183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: _enemyTypes.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: _enemyTypes.Array.data[1]
@@ -3176,6 +3192,10 @@ PrefabInstance:
     - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: _enemyTypes.Array.data[2]
       value: bombardero
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
+      propertyPath: _enemyTypes.Array.data[3]
+      value: kamikazeV2
       objectReference: {fileID: 0}
     - target: {fileID: 2232107733314740403, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: m_RootOrder

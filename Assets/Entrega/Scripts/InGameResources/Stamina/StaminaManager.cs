@@ -48,10 +48,12 @@ public class StaminaManager : MonoBehaviour
         stamina = _gameStamina.RechargeStamina();
     }
 
-    public void PayForRecharge()
+    public void PayForRecharge(int price)
     {
-        if (CurrencyManager.instance.Currency < 1500 || stamina >= MaxStamina) return;
+        if (stamina >= MaxStamina) return;
         RefillStamina();
+        CurrencyManager.instance.SpentCurrency(price);
+
     }
 
     public void RefillStamina()

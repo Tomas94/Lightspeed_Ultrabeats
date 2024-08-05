@@ -1,11 +1,7 @@
 using UnityEngine;
 
 public class Caza : Enemy
-{    
-    private void Awake()
-    {
-        SetLife(Fw_Pointer.EnemyCaza.maxLife);
-    }
+{
 
     public void Update()
     {
@@ -29,7 +25,7 @@ public class Caza : Enemy
     {
         base.TurnOff(x);
         StopAllCoroutines();
-        ResetMaxLife(x, Fw_Pointer.EnemyCaza.maxLife);
+        //ResetMaxLife(x, Fw_Pointer.EnemyCaza.maxLife + (Fw_Pointer.EnemyCaza.maxLife * OP_EnemyManager.Instance._enemyStatsMultiplyer * _lifeModifyer));
     }
     private void OnDisable()
     {
@@ -38,6 +34,8 @@ public class Caza : Enemy
 
     private void OnEnable()
     {
-        StartCoroutine(ChargeShot(Fw_Pointer.EnemyCazaRate.rate,2));
+        _lifeModifyer = 0.7f;
+        SetLife(Fw_Pointer.EnemyCaza.maxLife + (Fw_Pointer.EnemyCaza.maxLife * OP_EnemyManager.Instance._enemyStatsMultiplyer * _lifeModifyer));
+        StartCoroutine(ChargeShot(Fw_Pointer.EnemyCazaRate.rate, 2));
     }
 }

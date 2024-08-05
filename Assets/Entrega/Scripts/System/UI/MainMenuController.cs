@@ -136,7 +136,7 @@ public class MainMenuController : MonoBehaviour
     public void TryRefillStaminaPaid(int cost)
     {
         if (_currencyManager.Currency < cost) return;
-        _staminaManager.PayForRecharge();
+        _staminaManager.PayForRecharge(cost);
 
     }
 

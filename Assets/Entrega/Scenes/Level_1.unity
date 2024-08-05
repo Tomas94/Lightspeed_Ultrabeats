@@ -991,6 +991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Object Pool Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 2093411901703110571, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: bulletPools.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 7319145011743582557, guid: ba9db6515a2103646bf7e0ce35fa2db2, type: 3}
     - target: {fileID: 2093411901703110580, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1034,6 +1038,10 @@ PrefabInstance:
     - target: {fileID: 2093411901703110580, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: _enemyStatsMultiplyer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d61207a86fad0f7498adf4542332577b, type: 3}
