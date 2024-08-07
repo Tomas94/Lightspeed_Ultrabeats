@@ -9764,9 +9764,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLife: 1
-  _player: {fileID: 0}
+  _lifeModifyer: 0.5
   outOfScreen: 0
+  _player: {fileID: 0}
   variant: 1
+  _variantSpeedModifyer: 2
   _playerPassed: 0
 --- !u!1 &7207308853422560222
 GameObject:

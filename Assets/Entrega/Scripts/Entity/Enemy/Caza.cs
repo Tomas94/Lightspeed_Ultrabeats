@@ -34,8 +34,7 @@ public class Caza : Enemy
 
     private void OnEnable()
     {
-        _lifeModifyer = 0.7f;
         SetLife(Fw_Pointer.EnemyCaza.maxLife + (Fw_Pointer.EnemyCaza.maxLife * OP_EnemyManager.Instance._enemyStatsMultiplyer * _lifeModifyer));
-        StartCoroutine(ChargeShot(Fw_Pointer.EnemyCazaRate.rate, 2));
+        StartCoroutine(ChargeShot(Fw_Pointer.EnemyCazaRate.rate * _fireRateModifyer, 2));
     }
 }

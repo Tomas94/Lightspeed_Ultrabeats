@@ -217,8 +217,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLife: 40
-  _player: {fileID: 0}
+  _lifeModifyer: 0.3
+  _fireRateModifyer: 1
   outOfScreen: 0
+  _player: {fileID: 0}
 --- !u!1 &4522132464327106607
 GameObject:
   m_ObjectHideFlags: 0

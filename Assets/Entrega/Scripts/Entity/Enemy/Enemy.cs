@@ -3,12 +3,13 @@ using UnityEngine;
 
 public abstract class Enemy : Entity, IPooleableObject<Enemy>
 {
+    [SerializeField] protected float _lifeModifyer;
+    [SerializeField] protected float _fireRateModifyer;
+    [HideInInspector] public bool outOfScreen;
+    ObjectPool<Enemy> _enemyPool;
+
     public Action OnDesactivar;
     public Player _player;
-    ObjectPool<Enemy> _enemyPool;
-    protected float _lifeModifyer;
-
-    [HideInInspector] public bool outOfScreen;
 
     public void Initialize(ObjectPool<Enemy> op) => _enemyPool = op;
 

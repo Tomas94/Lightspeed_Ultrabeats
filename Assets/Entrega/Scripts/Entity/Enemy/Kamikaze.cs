@@ -3,7 +3,9 @@ using UnityEngine;
 public class Kamikaze : Enemy
 {
     Vector3 dir;
+    
     public bool variant;
+    [SerializeField] float _variantSpeedModifyer;
 
     [SerializeField] bool _playerPassed;
 
@@ -25,7 +27,7 @@ public class Kamikaze : Enemy
 
         if (variant)
         {
-            transform.position += Fw_Pointer.EnemyKamikaze.speed * 2 * Time.deltaTime * dir.normalized;
+            transform.position += Fw_Pointer.EnemyKamikaze.speed * _variantSpeedModifyer * Time.deltaTime * dir.normalized;
         }
         else
         {
@@ -49,8 +51,6 @@ public class Kamikaze : Enemy
 
     private void OnEnable()
     {
-        if (variant) _lifeModifyer = 0.5f;
-        else _lifeModifyer = 0.8f;
         SetLife(Fw_Pointer.EnemyKamikaze.maxLife + (Fw_Pointer.EnemyKamikaze.maxLife * OP_EnemyManager.Instance._enemyStatsMultiplyer * _lifeModifyer));
     }
 }

@@ -48,8 +48,7 @@ public class Bombardero: Enemy
     private void OnEnable()
     {
         transform.forward = -transform.forward;
-        _lifeModifyer = 0.3f;
         SetLife(Fw_Pointer.EnemyBombardero.maxLife + (Fw_Pointer.EnemyBombardero.maxLife * OP_EnemyManager.Instance._enemyStatsMultiplyer * _lifeModifyer));
-        StartCoroutine(ChargeShot(Fw_Pointer.EnemyBombarderoRate.rate,3));
+        StartCoroutine(ChargeShot(Fw_Pointer.EnemyBombarderoRate.rate * _fireRateModifyer,3));
     }
 }
