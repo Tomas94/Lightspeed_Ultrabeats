@@ -448,7 +448,7 @@ MonoBehaviour:
   _playerWinSound: {fileID: 8300000, guid: a2c61751275d3bb4fa22a0a7d05f0a66, type: 3}
   audioSource: {fileID: 194531888}
   completedWaves: 0
-  wavesGoal: 5
+  wavesGoal: 8
   currentLevel: 2
 --- !u!114 &94803828
 MonoBehaviour:
@@ -2877,6 +2877,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Object Pool Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 2093411901703110571, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: bulletPools.Array.data[0].initAmount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093411901703110571, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: bulletPools.Array.data[1].initAmount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093411901703110571, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: bulletPools.Array.data[2].initAmount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093411901703110571, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: bulletPools.Array.data[3].initAmount
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2093411901703110580, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2923,11 +2939,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: _enemyStatsMultiplyer
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: enemyPools.Array.data[0].initAmount
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: enemyPools.Array.data[1].initAmount
-      value: 5
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: enemyPools.Array.data[2].initAmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d61207a86fad0f7498adf4542332577b, type: 3}
@@ -3418,11 +3442,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: _maxSpawnEnemies
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: _minSpawnEnemies
-      value: 4
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: _enemyTypes.Array.size

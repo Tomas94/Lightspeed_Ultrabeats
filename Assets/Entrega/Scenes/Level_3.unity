@@ -2874,8 +2874,20 @@ PrefabInstance:
       value: Object Pool Managers
       objectReference: {fileID: 0}
     - target: {fileID: 2093411901703110571, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: bulletPools.Array.data[0].initAmount
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093411901703110571, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: bulletPools.Array.data[1].initAmount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093411901703110571, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: bulletPools.Array.data[2].initAmount
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093411901703110571, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: bulletPools.Array.data[3].initAmount
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2093411901703110580, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: m_RootOrder
@@ -2923,7 +2935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: _enemyStatsMultiplyer
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: enemyPools.Array.size
@@ -2934,16 +2946,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5958331996573192960, guid: 32898896cf04b0b42a7b97a85ca20f40, type: 3}
     - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
+      propertyPath: enemyPools.Array.data[0].initAmount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: enemyPools.Array.data[1].initAmount
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: enemyPools.Array.data[2].initAmount
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2093411901703110581, guid: d61207a86fad0f7498adf4542332577b, type: 3}
       propertyPath: enemyPools.Array.data[3].initAmount
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d61207a86fad0f7498adf4542332577b, type: 3}
@@ -3175,11 +3191,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: _maxSpawnEnemies
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: _minSpawnEnemies
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2232107733314740402, guid: 29cbac1e46541a7488d77ef1da7c5753, type: 3}
       propertyPath: _enemyTypes.Array.size
@@ -4238,6 +4254,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4822707093251631412, guid: cec10e695792cff4f947e58a28bb67da, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8.9664
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822707093251631412, guid: cec10e695792cff4f947e58a28bb67da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.0849814
       objectReference: {fileID: 0}
@@ -4247,7 +4267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4822707093251631412, guid: cec10e695792cff4f947e58a28bb67da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.6105597
+      value: 4.2469
       objectReference: {fileID: 0}
     - target: {fileID: 4822707093251631412, guid: cec10e695792cff4f947e58a28bb67da, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4280,6 +4300,14 @@ PrefabInstance:
     - target: {fileID: 4822707093251631419, guid: cec10e695792cff4f947e58a28bb67da, type: 3}
       propertyPath: m_Name
       value: OutOfBoundsBounds
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822707094265750563, guid: cec10e695792cff4f947e58a28bb67da, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9569
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822707094349501600, guid: cec10e695792cff4f947e58a28bb67da, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9569
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cec10e695792cff4f947e58a28bb67da, type: 3}

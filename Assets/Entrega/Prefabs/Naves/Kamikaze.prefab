@@ -9763,11 +9763,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d3f81e5f9d2324288a48c1af770719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLife: 1
+  currentLife: 2
   _lifeModifyer: 0.8
+  _fireRateModifyer: 0
   outOfScreen: 0
   _player: {fileID: 0}
   variant: 0
+  _variantSpeedModifyer: 1
   _playerPassed: 0
 --- !u!1 &6947178796358248040
 GameObject:

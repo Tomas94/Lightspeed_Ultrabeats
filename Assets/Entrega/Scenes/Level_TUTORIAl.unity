@@ -210,7 +210,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 2168ddff633a88c46a410ba59145cbf4, type: 3}
+  m_Texture: {fileID: 2800000, guid: 70e0621fbc28c154a81e6008cb58fd0f, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -337,7 +337,7 @@ MonoBehaviour:
   _playerWinSound: {fileID: 8300000, guid: a2c61751275d3bb4fa22a0a7d05f0a66, type: 3}
   audioSource: {fileID: 194531888}
   completedWaves: 0
-  wavesGoal: 3
+  wavesGoal: 4
   currentLevel: 0
 --- !u!114 &94803828
 MonoBehaviour:
